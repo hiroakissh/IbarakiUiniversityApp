@@ -21,6 +21,9 @@
 		53A58E272707096D008EC8D7 /* PortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A58E262707096D008EC8D7 /* PortalViewController.swift */; };
 		53A58E2927070984008EC8D7 /* ManabaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A58E2827070984008EC8D7 /* ManabaViewController.swift */; };
 		53A58E2B2707099B008EC8D7 /* LabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A58E2A2707099B008EC8D7 /* LabViewController.swift */; };
+		53B5FD062814BBF100503725 /* RealmModel in Resources */ = {isa = PBXBuildFile; fileRef = 53B5FD052814BBF100503725 /* RealmModel */; };
+		53B5FD082814BBFC00503725 /* Repository in Resources */ = {isa = PBXBuildFile; fileRef = 53B5FD072814BBFC00503725 /* Repository */; };
+		53B5FD0A2814BC0700503725 /* SwiftModel in Resources */ = {isa = PBXBuildFile; fileRef = 53B5FD092814BC0700503725 /* SwiftModel */; };
 		53C6629327F04B5200E82593 /* DocumentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C6629127F04B5200E82593 /* DocumentTableViewCell.swift */; };
 		53C6629427F04B5200E82593 /* DocumentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53C6629227F04B5200E82593 /* DocumentTableViewCell.xib */; };
 		53E8EBEE27109D6000E2FB72 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E8EBED27109D6000E2FB72 /* ToDoModel.swift */; };
@@ -46,6 +49,9 @@
 		53A58E262707096D008EC8D7 /* PortalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewController.swift; sourceTree = "<group>"; };
 		53A58E2827070984008EC8D7 /* ManabaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManabaViewController.swift; sourceTree = "<group>"; };
 		53A58E2A2707099B008EC8D7 /* LabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabViewController.swift; sourceTree = "<group>"; };
+		53B5FD052814BBF100503725 /* RealmModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = RealmModel; sourceTree = "<group>"; };
+		53B5FD072814BBFC00503725 /* Repository */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Repository; sourceTree = "<group>"; };
+		53B5FD092814BC0700503725 /* SwiftModel */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SwiftModel; sourceTree = "<group>"; };
 		53C6629127F04B5200E82593 /* DocumentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTableViewCell.swift; sourceTree = "<group>"; };
 		53C6629227F04B5200E82593 /* DocumentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentTableViewCell.xib; sourceTree = "<group>"; };
 		53E8EBED27109D6000E2FB72 /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
@@ -157,6 +163,9 @@
 		53A58E22270707F8008EC8D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				53B5FD092814BC0700503725 /* SwiftModel */,
+				53B5FD072814BBFC00503725 /* Repository */,
+				53B5FD052814BBF100503725 /* RealmModel */,
 				53B5FCF22814B83200503725 /* DocumentModel */,
 				53B5FCF12814B81F00503725 /* LabToDoModel */,
 			);
@@ -260,10 +269,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53B5FD0A2814BC0700503725 /* SwiftModel in Resources */,
 				53C6629427F04B5200E82593 /* DocumentTableViewCell.xib in Resources */,
 				5309CBC627F467060072ED57 /* LabToDoTableViewCell.xib in Resources */,
 				53A58E1A2706F8BC008EC8D7 /* LaunchScreen.storyboard in Resources */,
 				53A58E172706F8BC008EC8D7 /* Assets.xcassets in Resources */,
+				53B5FD082814BBFC00503725 /* Repository in Resources */,
+				53B5FD062814BBF100503725 /* RealmModel in Resources */,
 				53A58E152706F8BA008EC8D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
