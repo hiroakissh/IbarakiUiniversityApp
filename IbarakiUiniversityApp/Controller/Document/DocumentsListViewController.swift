@@ -40,7 +40,7 @@ extension DocumentsListViewController: UITableViewDataSource {
         if documentItems.isEmpty {
             return 1
         } else {
-            return documentItems.count
+            return documentItems[0].documentToDos.count
         }
     }
 
@@ -63,7 +63,7 @@ extension DocumentsListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
 
-        documentCell.documentNameLabel?.text = documentItems[indexPath.row].documentToDos[0].documentToDo
+        documentCell.documentNameLabel?.text = documentItems[0].documentToDos[indexPath.row].documentToDo
         documentCell.deadlineLabel.text = diffdate(indexRow: indexPath.row)
 
         return documentCell
@@ -82,7 +82,7 @@ extension DocumentsListViewController: UITableViewDataSource {
                     let realm = try Realm()
                     documentItems = realm.objects(SubmitDocumentList.self)
                     try realm.write {
-                        realm.delete(documentItems[indexPath.row])
+                        realm.delete(documentItems[0].documentToDos[indexPath.row])
                     }
                 } catch {
                     print("Error")
@@ -97,7 +97,7 @@ extension DocumentsListViewController: UITableViewDataSource {
     func diffdate(indexRow: Int) -> String {
         let now = Date()
         let calender = Calendar(identifier: .gregorian)
-        let submitdate = documentItems[indexRow].documentToDos[0].deadline
+        let submitdate = documentItems[0].documentToDos[indexRow].deadline
         let diff = calender.dateComponents([.day], from: now, to: submitdate)
         guard let diffday = diff.day else {
             return "提出期限が設定されていません"
