@@ -10,11 +10,11 @@ import RealmSwift
 
 class AddDocumentViewController: UIViewController {
     @IBOutlet private weak var newDocumentTextField: UITextField!
-    @IBOutlet private weak var addButon: UIButton!
+    @IBOutlet private weak var addButton: UIButton!
     @IBOutlet private weak var datePicker: UIDatePicker!
 
     let documentInfo = Documentinfo()
-    var list: List<Documentinfo>!
+    var list: Results<SubmitDocumentList>!
 
     var picker: UIDatePicker = UIDatePicker()
 
@@ -38,14 +38,14 @@ class AddDocumentViewController: UIViewController {
 
         do {
             let realm = try Realm()
-            list = realm.objects(SubmitDocumentList.self).first?.documentToDos
+            list = realm.objects(SubmitDocumentList.self)
         } catch {
             print("Error")
         }
     }
 
     func uiSetting () {
-        addButon.layer.cornerRadius = 5.0
+        addButton.layer.cornerRadius = 5.0
         datePicker.preferredDatePickerStyle = .inline
         datePicker.datePickerMode = .date
     }
@@ -62,9 +62,13 @@ class AddDocumentViewController: UIViewController {
 
                 let realm = try Realm()
                 try realm.write {
-                    let documentList = SubmitDocumentList()
-                    documentList.documentToDos.append(documentInfo)
-                    realm.add(documentList)
+                    if list.isEmpty {
+                        let documentList = SubmitDocumentList()
+                        documentList.documentToDos.append(documentInfo)
+                        realm.add(documentList)
+                    } else {
+                        list[0].documentToDos.append(documentInfo)
+                    }
                 }
                 dismiss(animated: true)
             } catch {
