@@ -13,6 +13,8 @@ class LabViewController: UIViewController {
 
     var toDoItems: Results<ToDoModel>!
 
+    var todoRepository = ToDoRepository()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self

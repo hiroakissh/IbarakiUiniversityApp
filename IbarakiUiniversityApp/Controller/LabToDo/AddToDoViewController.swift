@@ -12,6 +12,8 @@ class AddToDoViewController: UIViewController {
     @IBOutlet private weak var newTextField: UITextField!
     @IBOutlet private weak var addButton: UIButton!
 
+    let todoRepository = ToDoRepository()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,8 @@ class AddToDoViewController: UIViewController {
 
     @IBAction private func addToDo(_ sender: Any) {
         if newTextField.text?.isEmpty != true {
+            // Repositoryを使用したデータ保存
+            todoRepository.appendLabToDo(todo: newTextField.text ?? "", uuid: newTextField.text ?? "")
             do {
                 let realm = try Realm()
                 let labToDo = ToDoModel()

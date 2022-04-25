@@ -20,9 +20,19 @@ final class ToDoRepository {
         return labToDos
     }
 
-    // 追加
-    func appendLabToDo() {
-
+    // 共通型で読み込んでRealmに保存
+    func appendLabToDo(todo: String, uuid: String) {
+        let realmToDo = RealmToDoModel()
+        realmToDo.uuidString = uuid
+        realmToDo.labTODO = todo
+        do {
+            try realm.write {
+            realm.add(realmToDo)
+            }
+        } catch {
+            print("Realm Add Error")
+            return
+        }
     }
 
     // 更新
@@ -30,7 +40,8 @@ final class ToDoRepository {
 
     }
 
-    // 削除
+    // 共通型で受け取って、アイテムの削除
+    // アイテムの削除で共通型で返す
     func removeLabToDo() {
 
     }
