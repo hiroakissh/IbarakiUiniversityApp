@@ -266,7 +266,7 @@
                                     <navigationItem title="提出物一覧" id="fSr-md-8DU">
                                         <barButtonItem key="rightBarButtonItem" title="追加" id="S8k-o1-NN3">
                                             <connections>
-                                                <segue destination="hm1-4m-WdA" kind="presentation" modalPresentationStyle="fullScreen" id="A38-5c-tEs"/>
+                                                <segue destination="hm1-4m-WdA" kind="presentation" modalPresentationStyle="fullScreen" id="hnX-OZ-PHa"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -385,7 +385,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mvG-tO-FZH"/>
                     <connections>
-                        <outlet property="addButon" destination="30s-rY-o51" id="yfz-mq-vSB"/>
+                        <outlet property="addButton" destination="30s-rY-o51" id="i1C-XJ-rE5"/>
                         <outlet property="datePicker" destination="bPa-nJ-msh" id="aN5-5n-G3s"/>
                         <outlet property="newDocumentTextField" destination="z6s-up-zER" id="88K-G6-pHC"/>
                     </connections>
@@ -417,7 +417,7 @@
     </scenes>
     <resources>
         <image name="document" width="25" height="25"/>
-        <image name="goforward" catalog="system" width="121" height="128"/>
+        <image name="goforward" catalog="system" width="32" height="32"/>
         <image name="logoIbarakiUniversity" width="25" height="25"/>
         <image name="manaba" width="25" height="25"/>
         <image name="study" width="25" height="25"/>
