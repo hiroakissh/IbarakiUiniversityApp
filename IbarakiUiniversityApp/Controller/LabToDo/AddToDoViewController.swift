@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class AddToDoViewController: UIViewController {
     @IBOutlet private weak var newTextField: UITextField!
