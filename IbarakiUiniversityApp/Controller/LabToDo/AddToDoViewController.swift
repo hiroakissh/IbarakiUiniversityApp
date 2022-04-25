@@ -26,23 +26,12 @@ class AddToDoViewController: UIViewController {
     }
 
     @IBAction private func addToDo(_ sender: Any) {
-        if newTextField.text?.isEmpty != true {
-            // Repositoryを使用したデータ保存
-            todoRepository.appendLabToDo(todo: newTextField.text ?? "", uuid: newTextField.text ?? "")
-            do {
-                let realm = try Realm()
-                let labToDo = ToDoModel()
-                labToDo.labTODO = newTextField?.text
-                try realm.write {
-                    realm.add(labToDo)
-                }
-                dismiss(animated: true)
-            } catch {
-                print("Error realm")
-            }
-        } else {
+        guard let addToDoText = newTextField.text
+        else {
             presentAlert()
+            return
         }
+        todoRepository.appendLabToDo(todo: addToDoText)
     }
 
     @IBAction private func backButton(_ sender: Any) {

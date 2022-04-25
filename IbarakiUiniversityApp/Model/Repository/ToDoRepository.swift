@@ -21,9 +21,10 @@ final class ToDoRepository {
     }
 
     // 共通型で読み込んでRealmに保存
-    func appendLabToDo(todo: String, uuid: String) {
+    func appendLabToDo(todo: String) {
         let realmToDo = RealmToDoModel()
-        realmToDo.uuidString = uuid
+        let uuid = UUID()
+        realmToDo.uuidString = uuid.uuidString
         realmToDo.labTODO = todo
         do {
             try realm.write {
@@ -33,6 +34,7 @@ final class ToDoRepository {
             print("Realm Add Error")
             return
         }
+        print(realmToDo)
     }
 
     // 更新
