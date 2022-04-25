@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5309CBC527F467060072ED57 /* LabToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309CBC327F467060072ED57 /* LabToDoTableViewCell.swift */; };
 		5309CBC627F467060072ED57 /* LabToDoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5309CBC427F467060072ED57 /* LabToDoTableViewCell.xib */; };
+		5314CCDE2816B83000213963 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5314CCDD2816B83000213963 /* Color.xcassets */; };
 		531A0177270C8FBB00F4F55B /* AddDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531A0176270C8FBB00F4F55B /* AddDocumentViewController.swift */; };
 		532D06D1270ED17C0010ABC4 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D06D0270ED17C0010ABC4 /* AddToDoViewController.swift */; };
 		53633A7E270EF392006C6802 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53633A7D270EF392006C6802 /* TabbarViewController.swift */; };
@@ -38,6 +39,7 @@
 		1CF31067AD0E10D906FA1207 /* Pods_IbarakiUiniversityApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IbarakiUiniversityApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5309CBC327F467060072ED57 /* LabToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabToDoTableViewCell.swift; sourceTree = "<group>"; };
 		5309CBC427F467060072ED57 /* LabToDoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabToDoTableViewCell.xib; sourceTree = "<group>"; };
+		5314CCDD2816B83000213963 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		531A0176270C8FBB00F4F55B /* AddDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocumentViewController.swift; sourceTree = "<group>"; };
 		532D06D0270ED17C0010ABC4 /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
 		53633A7D270EF392006C6802 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +124,24 @@
 			path = LabToDo;
 			sourceTree = "<group>";
 		};
+		5314CCDB2816B7D000213963 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				53A58E162706F8BC008EC8D7 /* Assets.xcassets */,
+				5314CCDD2816B83000213963 /* Color.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5314CCDC2816B7EC00213963 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				53A58E132706F8BA008EC8D7 /* Main.storyboard */,
+				53A58E182706F8BC008EC8D7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		53A58E012706F8BA008EC8D7 = {
 			isa = PBXGroup;
 			children = (
@@ -146,9 +166,8 @@
 				53A58E2327070802008EC8D7 /* View */,
 				53A58E22270707F8008EC8D7 /* Model */,
 				53A58E21270707E7008EC8D7 /* Controller */,
-				53A58E132706F8BA008EC8D7 /* Main.storyboard */,
-				53A58E162706F8BC008EC8D7 /* Assets.xcassets */,
-				53A58E182706F8BC008EC8D7 /* LaunchScreen.storyboard */,
+				5314CCDB2816B7D000213963 /* Assets */,
+				5314CCDC2816B7EC00213963 /* Storyboard */,
 				53A58E1B2706F8BC008EC8D7 /* Info.plist */,
 			);
 			path = IbarakiUiniversityApp;
@@ -307,6 +326,7 @@
 				53A58E1A2706F8BC008EC8D7 /* LaunchScreen.storyboard in Resources */,
 				53A58E172706F8BC008EC8D7 /* Assets.xcassets in Resources */,
 				53A58E152706F8BA008EC8D7 /* Main.storyboard in Resources */,
+				5314CCDE2816B83000213963 /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
