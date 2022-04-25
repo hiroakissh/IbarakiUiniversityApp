@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class RealmToDo: Object {
+class RealmToDoModel: Object {
     @objc dynamic var uuidString = ""
     @objc dynamic var labTODO: String?
 
@@ -27,13 +27,13 @@ class RealmToDo: Object {
 }
 
 private extension SwiftLabToDo {
-    init(managedObject: RealmToDo) {
+    init(managedObject: RealmToDoModel) {
         self.uuidString = managedObject.uuidString
         self.labToDo = managedObject.labTODO
     }
 
-    func managedObject() -> RealmToDo {
-        let realmToDo = RealmToDo()
+    func managedObject() -> RealmToDoModel {
+        let realmToDo = RealmToDoModel()
         realmToDo.uuidString = self.uuidString
         realmToDo.labTODO = self.labToDo
         return realmToDo
