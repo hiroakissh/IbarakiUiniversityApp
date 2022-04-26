@@ -23,6 +23,9 @@ class LabViewController: UIViewController {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
+
+    @IBAction private func exitCancel(segue: UIStoryboardSegue){
+    }
 }
 
 extension LabViewController: UITableViewDataSource {
