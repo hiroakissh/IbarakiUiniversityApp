@@ -312,7 +312,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="戻る"/>
                                 <connections>
-                                    <action selector="backButton:" destination="hm1-4m-WdA" eventType="touchUpInside" id="LGX-6E-87l"/>
+                                    <segue destination="Lu6-Gw-Qyv" kind="unwind" unwindAction="exitCancelWithSegue:" id="irf-Xr-cx3"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z6s-up-zER">
@@ -391,6 +391,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLR-km-QmT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Lu6-Gw-Qyv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2805" y="-368.66197183098592"/>
         </scene>
@@ -417,7 +418,7 @@
     </scenes>
     <resources>
         <image name="document" width="25" height="25"/>
-        <image name="goforward" catalog="system" width="32" height="32"/>
+        <image name="goforward" catalog="system" width="121" height="128"/>
         <image name="logoIbarakiUniversity" width="25" height="25"/>
         <image name="manaba" width="25" height="25"/>
         <image name="study" width="25" height="25"/>
