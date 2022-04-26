@@ -11,7 +11,7 @@ class AddToDoViewController: UIViewController {
     @IBOutlet private weak var newTextField: UITextField!
     @IBOutlet private weak var addButton: UIButton!
 
-    let todoRepository = ToDoRepository()
+    private let todoRepository = ToDoRepository()
 
     override func viewDidLoad() {
         super.viewDidLoad()
