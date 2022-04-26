@@ -50,6 +50,5 @@ class TabbarViewController: UITabBarController {
         }
         // TODO: Itemのトータルを入れる
         app.applicationIconBadgeNumber = 10
-
     }
 }
