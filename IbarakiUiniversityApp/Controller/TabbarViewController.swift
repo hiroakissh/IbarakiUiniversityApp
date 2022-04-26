@@ -15,6 +15,9 @@ enum TabBarItems {
 }
 
 class TabbarViewController: UITabBarController {
+
+    var todoRepository = ToDoRepository()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.selectedIndex = 0
@@ -39,14 +42,13 @@ class TabbarViewController: UITabBarController {
             // TODO: valueにアイテムの数を入れる
             submitDocumentTabItem.badgeValue = "1"
         case .labTodo:
-            // TODO: valueにアイテムの数を入れる
             let labToDoTabItem: UITabBarItem = tabBar.items![1]
-            labToDoTabItem.badgeValue = "2"
+            let labToDoItems = todoRepository.loadLabToDo()
+            labToDoTabItem.badgeValue = String(labToDoItems.count)
         default :
             print("manabaかポータルだね")
         }
         // TODO: Itemのトータルを入れる
         app.applicationIconBadgeNumber = 10
-
     }
 }

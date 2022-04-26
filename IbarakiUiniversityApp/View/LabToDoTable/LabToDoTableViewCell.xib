@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,7 +32,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                 </subviews>
-                <color key="backgroundColor" red="0.54867941740000004" green="0.1482984916" blue="0.1894721653" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <color key="backgroundColor" name="mainRed"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="Gpq-Wf-Yni" secondAttribute="trailing" constant="10" id="XGY-ia-YiS"/>
                     <constraint firstAttribute="bottom" secondItem="Gpq-Wf-Yni" secondAttribute="bottom" constant="10" id="jai-Ts-DiA"/>
@@ -41,6 +42,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="backgroundView" destination="H2p-sc-9uM" id="pYE-Lu-uKS"/>
                 <outlet property="todoContentView" destination="Gpq-Wf-Yni" id="nhW-8a-YId"/>
                 <outlet property="todoLabel" destination="3eG-H1-c6a" id="M3V-Bx-bHz"/>
             </connections>
@@ -48,6 +50,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <namedColor name="mainRed">
+            <color red="0.59607845540000004" green="0.1176470518" blue="0.20000001789999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

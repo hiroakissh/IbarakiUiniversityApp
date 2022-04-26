@@ -80,10 +80,6 @@ class AddDocumentViewController: UIViewController {
         }
     }
 
-    @IBAction private func backButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-
     private func presentAlert() {
         let alert = UIAlertController(
             title: "注意",

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5309CBC527F467060072ED57 /* LabToDoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5309CBC327F467060072ED57 /* LabToDoTableViewCell.swift */; };
 		5309CBC627F467060072ED57 /* LabToDoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5309CBC427F467060072ED57 /* LabToDoTableViewCell.xib */; };
+		5314CCDE2816B83000213963 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5314CCDD2816B83000213963 /* Color.xcassets */; };
 		531A0177270C8FBB00F4F55B /* AddDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531A0176270C8FBB00F4F55B /* AddDocumentViewController.swift */; };
 		532D06D1270ED17C0010ABC4 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D06D0270ED17C0010ABC4 /* AddToDoViewController.swift */; };
 		53633A7E270EF392006C6802 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53633A7D270EF392006C6802 /* TabbarViewController.swift */; };
@@ -24,6 +25,9 @@
 		53B5FD0D2814BD6000503725 /* RealmDocumentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FD0C2814BD6000503725 /* RealmDocumentModel.swift */; };
 		53B5FD102814BD7200503725 /* ToDoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FD0F2814BD7200503725 /* ToDoRepository.swift */; };
 		53B5FD132814BD7900503725 /* SwiftToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FD122814BD7900503725 /* SwiftToDoModel.swift */; };
+		53B5FD152814BDE900503725 /* SwiftDocumentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FD142814BDE900503725 /* SwiftDocumentModel.swift */; };
+		53B5FD172814BDFC00503725 /* DocumentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FD162814BDFC00503725 /* DocumentRepository.swift */; };
+		53B5FD192814BE2C00503725 /* RealmToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FD182814BE2C00503725 /* RealmToDoModel.swift */; };
 		53C6629327F04B5200E82593 /* DocumentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C6629127F04B5200E82593 /* DocumentTableViewCell.swift */; };
 		53C6629427F04B5200E82593 /* DocumentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53C6629227F04B5200E82593 /* DocumentTableViewCell.xib */; };
 		53E8EBEE27109D6000E2FB72 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E8EBED27109D6000E2FB72 /* ToDoModel.swift */; };
@@ -35,6 +39,7 @@
 		1CF31067AD0E10D906FA1207 /* Pods_IbarakiUiniversityApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IbarakiUiniversityApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5309CBC327F467060072ED57 /* LabToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabToDoTableViewCell.swift; sourceTree = "<group>"; };
 		5309CBC427F467060072ED57 /* LabToDoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabToDoTableViewCell.xib; sourceTree = "<group>"; };
+		5314CCDD2816B83000213963 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		531A0176270C8FBB00F4F55B /* AddDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocumentViewController.swift; sourceTree = "<group>"; };
 		532D06D0270ED17C0010ABC4 /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
 		53633A7D270EF392006C6802 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +57,9 @@
 		53B5FD0C2814BD6000503725 /* RealmDocumentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDocumentModel.swift; sourceTree = "<group>"; };
 		53B5FD0F2814BD7200503725 /* ToDoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoRepository.swift; sourceTree = "<group>"; };
 		53B5FD122814BD7900503725 /* SwiftToDoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftToDoModel.swift; sourceTree = "<group>"; };
+		53B5FD142814BDE900503725 /* SwiftDocumentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDocumentModel.swift; sourceTree = "<group>"; };
+		53B5FD162814BDFC00503725 /* DocumentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentRepository.swift; sourceTree = "<group>"; };
+		53B5FD182814BE2C00503725 /* RealmToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmToDoModel.swift; sourceTree = "<group>"; };
 		53C6629127F04B5200E82593 /* DocumentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTableViewCell.swift; sourceTree = "<group>"; };
 		53C6629227F04B5200E82593 /* DocumentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentTableViewCell.xib; sourceTree = "<group>"; };
 		53E8EBED27109D6000E2FB72 /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
@@ -116,6 +124,24 @@
 			path = LabToDo;
 			sourceTree = "<group>";
 		};
+		5314CCDB2816B7D000213963 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				53A58E162706F8BC008EC8D7 /* Assets.xcassets */,
+				5314CCDD2816B83000213963 /* Color.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		5314CCDC2816B7EC00213963 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				53A58E132706F8BA008EC8D7 /* Main.storyboard */,
+				53A58E182706F8BC008EC8D7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		53A58E012706F8BA008EC8D7 = {
 			isa = PBXGroup;
 			children = (
@@ -140,9 +166,8 @@
 				53A58E2327070802008EC8D7 /* View */,
 				53A58E22270707F8008EC8D7 /* Model */,
 				53A58E21270707E7008EC8D7 /* Controller */,
-				53A58E132706F8BA008EC8D7 /* Main.storyboard */,
-				53A58E162706F8BC008EC8D7 /* Assets.xcassets */,
-				53A58E182706F8BC008EC8D7 /* LaunchScreen.storyboard */,
+				5314CCDB2816B7D000213963 /* Assets */,
+				5314CCDC2816B7EC00213963 /* Storyboard */,
 				53A58E1B2706F8BC008EC8D7 /* Info.plist */,
 			);
 			path = IbarakiUiniversityApp;
@@ -203,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				53B5FD0C2814BD6000503725 /* RealmDocumentModel.swift */,
+				53B5FD182814BE2C00503725 /* RealmToDoModel.swift */,
 			);
 			path = RealmModel;
 			sourceTree = "<group>";
@@ -211,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				53B5FD0F2814BD7200503725 /* ToDoRepository.swift */,
+				53B5FD162814BDFC00503725 /* DocumentRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -219,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				53B5FD122814BD7900503725 /* SwiftToDoModel.swift */,
+				53B5FD142814BDE900503725 /* SwiftDocumentModel.swift */,
 			);
 			path = SwiftModel;
 			sourceTree = "<group>";
@@ -298,6 +326,7 @@
 				53A58E1A2706F8BC008EC8D7 /* LaunchScreen.storyboard in Resources */,
 				53A58E172706F8BC008EC8D7 /* Assets.xcassets in Resources */,
 				53A58E152706F8BA008EC8D7 /* Main.storyboard in Resources */,
+				5314CCDE2816B83000213963 /* Color.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,12 +396,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53B5FD192814BE2C00503725 /* RealmToDoModel.swift in Sources */,
 				53A58E2927070984008EC8D7 /* ManabaViewController.swift in Sources */,
 				531A0177270C8FBB00F4F55B /* AddDocumentViewController.swift in Sources */,
 				53A58E272707096D008EC8D7 /* PortalViewController.swift in Sources */,
 				53B5FD132814BD7900503725 /* SwiftToDoModel.swift in Sources */,
 				53E8EBEE27109D6000E2FB72 /* ToDoModel.swift in Sources */,
 				532D06D1270ED17C0010ABC4 /* AddToDoViewController.swift in Sources */,
+				53B5FD172814BDFC00503725 /* DocumentRepository.swift in Sources */,
 				53B5FD102814BD7200503725 /* ToDoRepository.swift in Sources */,
 				53A58E0E2706F8BA008EC8D7 /* AppDelegate.swift in Sources */,
 				53A58E102706F8BA008EC8D7 /* SceneDelegate.swift in Sources */,
@@ -382,6 +413,7 @@
 				53B5FD0D2814BD6000503725 /* RealmDocumentModel.swift in Sources */,
 				53633A7E270EF392006C6802 /* TabbarViewController.swift in Sources */,
 				53E8EBF027109D7200E2FB72 /* DocumentModel.swift in Sources */,
+				53B5FD152814BDE900503725 /* SwiftDocumentModel.swift in Sources */,
 				53A58E2B2707099B008EC8D7 /* LabViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

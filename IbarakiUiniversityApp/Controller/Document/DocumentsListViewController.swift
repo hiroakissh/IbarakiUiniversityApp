@@ -33,6 +33,9 @@ class DocumentsListViewController: UIViewController {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
+
+    @IBAction private func exitCancel(segue: UIStoryboardSegue){
+    }
 }
 
 extension DocumentsListViewController: UITableViewDataSource {

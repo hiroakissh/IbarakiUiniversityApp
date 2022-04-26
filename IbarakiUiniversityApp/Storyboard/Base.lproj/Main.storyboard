@@ -141,7 +141,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="戻る"/>
                                 <connections>
-                                    <action selector="backButton:" destination="DsT-Jx-Koi" eventType="touchUpInside" id="k9C-T5-dw8"/>
+                                    <segue destination="rWR-u0-XSJ" kind="unwind" unwindAction="exitCancelWithSegue:" id="9V7-xQ-gbf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKp-Gh-rja">
@@ -184,12 +184,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="NewTextField" destination="2Re-v2-PZI" id="zDX-OK-iPj"/>
                         <outlet property="addButton" destination="jKp-Gh-rja" id="g3s-9e-5FK"/>
                         <outlet property="newTextField" destination="2Re-v2-PZI" id="2C3-2F-kKQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fH-du-bFR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="rWR-u0-XSJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2807" y="1779"/>
         </scene>
@@ -266,7 +266,7 @@
                                     <navigationItem title="提出物一覧" id="fSr-md-8DU">
                                         <barButtonItem key="rightBarButtonItem" title="追加" id="S8k-o1-NN3">
                                             <connections>
-                                                <segue destination="hm1-4m-WdA" kind="presentation" modalPresentationStyle="fullScreen" id="A38-5c-tEs"/>
+                                                <segue destination="hm1-4m-WdA" kind="presentation" modalPresentationStyle="fullScreen" id="hnX-OZ-PHa"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -312,7 +312,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="戻る"/>
                                 <connections>
-                                    <action selector="backButton:" destination="hm1-4m-WdA" eventType="touchUpInside" id="LGX-6E-87l"/>
+                                    <segue destination="Lu6-Gw-Qyv" kind="unwind" unwindAction="exitCancelWithSegue:" id="irf-Xr-cx3"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z6s-up-zER">
@@ -385,12 +385,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="mvG-tO-FZH"/>
                     <connections>
-                        <outlet property="addButon" destination="30s-rY-o51" id="yfz-mq-vSB"/>
+                        <outlet property="addButton" destination="30s-rY-o51" id="i1C-XJ-rE5"/>
                         <outlet property="datePicker" destination="bPa-nJ-msh" id="aN5-5n-G3s"/>
                         <outlet property="newDocumentTextField" destination="z6s-up-zER" id="88K-G6-pHC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLR-km-QmT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Lu6-Gw-Qyv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2805" y="-368.66197183098592"/>
         </scene>
