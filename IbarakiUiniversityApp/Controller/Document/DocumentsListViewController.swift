@@ -35,7 +35,6 @@ class DocumentsListViewController: UIViewController {
     }
 
     @IBAction private func exitCancel(segue: UIStoryboardSegue){
-        
     }
 }
 

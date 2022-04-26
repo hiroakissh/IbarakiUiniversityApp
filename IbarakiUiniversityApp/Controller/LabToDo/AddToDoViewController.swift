@@ -25,16 +25,16 @@ class AddToDoViewController: UIViewController {
     }
 
     @IBAction private func addToDo(_ sender: Any) {
-        guard let addToDoText = newTextField.text
-        else {
-            presentAlert()
-            return
+        if let addToDoText = newTextField.text {
+            if addToDoText == "" {
+                presentAlert()
+                return
+            } else {
+                todoRepository.appendLabToDo(todo: addToDoText)
+            }
+        } else {
+            print("nil")
         }
-        todoRepository.appendLabToDo(todo: addToDoText)
-    }
-
-    @IBAction private func backButton(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
 
     private func presentAlert() {
