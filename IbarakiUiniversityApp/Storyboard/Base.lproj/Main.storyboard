@@ -184,7 +184,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="NewTextField" destination="2Re-v2-PZI" id="zDX-OK-iPj"/>
                         <outlet property="addButton" destination="jKp-Gh-rja" id="g3s-9e-5FK"/>
                         <outlet property="newTextField" destination="2Re-v2-PZI" id="2C3-2F-kKQ"/>
                     </connections>

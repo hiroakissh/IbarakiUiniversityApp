@@ -33,8 +33,9 @@ class AddToDoViewController: UIViewController {
                 todoRepository.appendLabToDo(todo: addToDoText)
             }
         } else {
-            print("nil")
+            return
         }
+        dismiss(animated: true)
     }
 
     private func presentAlert() {
