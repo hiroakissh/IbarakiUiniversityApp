@@ -39,13 +39,20 @@ final class ToDoRepository {
 
     // 更新
     func updateLabToDo() {
-
     }
 
     // 共通型で受け取って、アイテムの削除
     // アイテムの削除で共通型で返す
-    func removeLabToDo() {
-
+    func removeLabToDo(at index: Int) {
+        let toDoItems: Results<RealmToDoModel>!
+        toDoItems = realm.objects(RealmToDoModel.self)
+        do {
+            try realm.write {
+                realm.delete(toDoItems[index])
+            }
+        } catch {
+                print("Error")
+            }
     }
 }
 
