@@ -15,8 +15,8 @@ enum TabBarItems {
 }
 
 class TabbarViewController: UITabBarController {
-
     var todoRepository = ToDoRepository()
+    var documentRepository = DocumentRepository()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +29,9 @@ class TabbarViewController: UITabBarController {
             }
         }
         let application = UIApplication.shared
+        print(self.selectedIndex)
         // TODO: アイテムに追加や削除があったときに呼ぶ
-        addBadgeValue(item: .labTodo, app: application)
+        addBadgeValue(item: .submitDocument, app: application)
     }
 
     func addBadgeValue(item: TabBarItems, app: UIApplication) {
@@ -40,7 +41,8 @@ class TabbarViewController: UITabBarController {
         case .submitDocument:
             let submitDocumentTabItem: UITabBarItem = tabBar.items![0]
             // TODO: valueにアイテムの数を入れる
-            submitDocumentTabItem.badgeValue = "1"
+            let documentItems = documentRepository.loadDocument()
+            submitDocumentTabItem.badgeValue = String(documentItems.count)
         case .labTodo:
             let labToDoTabItem: UITabBarItem = tabBar.items![1]
             let labToDoItems = todoRepository.loadLabToDo()
