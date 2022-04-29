@@ -58,7 +58,8 @@ extension DocumentsListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         documentCell.documentNameLabel?.text = documentItems[indexPath.row].documentTitle
-        documentCell.deadlineLabel.text = diffdate(indexRow: indexPath.row)
+        documentCell.deadlineLabel.text = diffDate(indexRow: indexPath.row)
+        print(diffDate(indexRow: indexPath.row))
 
         return documentCell
     }
@@ -76,18 +77,18 @@ extension DocumentsListViewController: UITableViewDataSource {
         tableView.reloadData()
     }
 
-    func diffdate(indexRow: Int) -> String {
+    func diffDate(indexRow: Int) -> String {
         let documentItems = documentRepository.loadDocument()
         let now = Date()
         let calender = Calendar(identifier: .gregorian)
-        let submitdate = documentItems[0].deadLine
-        let diff = calender.dateComponents([.day], from: now, to: submitdate ?? now)
-        guard let diffday = diff.day else {
+        let submitDate = documentItems[indexRow].deadLine
+        let diff = calender.dateComponents([.day], from: now, to: submitDate ?? now)
+        guard let diffDay = diff.day else {
             return "提出期限が設定されていません"
         }
-        if diffday > 0 {
-            return "締め切りまで \(diffday) 日です"
-        } else if diffday == 0 {
+        if diffDay > 0 {
+            return "締め切りまで \(diffDay) 日です"
+        } else if diffDay == 0 {
             return "今日が提出期限です"
         } else {
             return "提出期限が過ぎています"
