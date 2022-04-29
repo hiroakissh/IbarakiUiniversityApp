@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct SwiftDocumentModel {
+    var documentTitle: String?
+    var deadLine: Date?
+}

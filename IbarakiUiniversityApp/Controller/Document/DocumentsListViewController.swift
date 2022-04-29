@@ -6,27 +6,17 @@
 //
 
 import UIKit
-import RealmSwift
 
 class DocumentsListViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
 
-    var documentItems: Results<SubmitDocumentList>!
-    var list: List<Documentinfo>!
-    var documentinfo = Documentinfo()
+    var documentRepository = DocumentRepository()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "DocumentTableViewCell", bundle: nil), forCellReuseIdentifier: "documentCell")
-
-        do {
-            let realm = try Realm()
-            documentItems = realm.objects(SubmitDocumentList.self)
-        } catch {
-            print("Error")
-        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -34,20 +24,22 @@ class DocumentsListViewController: UIViewController {
         tableView.reloadData()
     }
 
-    @IBAction private func exitCancel(segue: UIStoryboardSegue){
+    @IBAction private func exitCancel(segue: UIStoryboardSegue) {
     }
 }
 
 extension DocumentsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let documentItems = documentRepository.loadDocument()
         if documentItems.isEmpty {
             return 1
         } else {
-            return documentItems[0].documentToDos.count
+            return documentItems.count
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let documentItems = documentRepository.loadDocument()
         guard documentItems.count != 0
         else {
             let noneCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
@@ -65,10 +57,8 @@ extension DocumentsListViewController: UITableViewDataSource {
         else {
             return UITableViewCell()
         }
-
-        documentCell.documentNameLabel?.text = documentItems[0].documentToDos[indexPath.row].documentToDo
-        documentCell.deadlineLabel.text = diffdate(indexRow: indexPath.row)
-
+        documentCell.documentNameLabel?.text = documentItems[indexPath.row].documentTitle
+        documentCell.deadlineLabel.text = diffDate(indexRow: indexPath.row)
         return documentCell
     }
 
@@ -80,34 +70,23 @@ extension DocumentsListViewController: UITableViewDataSource {
                    commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
-            if documentItems.isEmpty != true {
-                do {
-                    let realm = try Realm()
-                    documentItems = realm.objects(SubmitDocumentList.self)
-                    try realm.write {
-                        realm.delete(documentItems[0].documentToDos[indexPath.row])
-                    }
-                } catch {
-                    print("Error")
-                }
-                tableView.reloadData()
-            } else {
-                return
-            }
+            documentRepository.removeDocument(at: indexPath.row)
         }
+        tableView.reloadData()
     }
 
-    func diffdate(indexRow: Int) -> String {
+    func diffDate(indexRow: Int) -> String {
+        let documentItems = documentRepository.loadDocument()
         let now = Date()
         let calender = Calendar(identifier: .gregorian)
-        let submitdate = documentItems[0].documentToDos[indexRow].deadline
-        let diff = calender.dateComponents([.day], from: now, to: submitdate)
-        guard let diffday = diff.day else {
+        let submitDate = documentItems[indexRow].deadLine
+        let diff = calender.dateComponents([.day], from: now, to: submitDate ?? now)
+        guard let diffDay = diff.day else {
             return "提出期限が設定されていません"
         }
-        if diffday > 0 {
-            return "締め切りまで \(diffday) 日です"
-        } else if diffday == 0 {
+        if diffDay > 0 {
+            return "締め切りまで \(diffDay) 日です"
+        } else if diffDay == 0 {
             return "今日が提出期限です"
         } else {
             return "提出期限が過ぎています"

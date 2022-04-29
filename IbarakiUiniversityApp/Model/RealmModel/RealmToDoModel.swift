@@ -26,7 +26,7 @@ class RealmToDoModel: Object {
     }
 }
 
-private extension SwiftLabToDo {
+private extension SwiftLabToDoModel {
     init(managedObject: RealmToDoModel) {
         self.uuidString = managedObject.uuidString
         self.labToDo = managedObject.labTODO
