@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 
 final class ToDoRepository {
-    // swiftlint:disable force_try
+    // swiftlint:disable:next force_try
     private let realm = try! Realm()
 
     // 読み込み 共通型で返す
@@ -37,10 +37,6 @@ final class ToDoRepository {
         print(realmToDo)
     }
 
-    // 更新
-    func updateLabToDo() {
-    }
-
     // 共通型で受け取って、アイテムの削除
     // アイテムの削除で共通型で返す
     func removeLabToDo(at index: Int) {
@@ -53,6 +49,11 @@ final class ToDoRepository {
         } catch {
                 print("Error")
             }
+    }
+
+
+    // 更新
+    func updateLabToDo() {
     }
 }
 

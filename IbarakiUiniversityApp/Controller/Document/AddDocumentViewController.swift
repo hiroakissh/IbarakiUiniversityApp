@@ -6,15 +6,13 @@
 //
 
 import UIKit
-import RealmSwift
 
 class AddDocumentViewController: UIViewController {
     @IBOutlet private weak var newDocumentTextField: UITextField!
     @IBOutlet private weak var addButton: UIButton!
     @IBOutlet private weak var datePicker: UIDatePicker!
 
-    let documentInfo = Documentinfo()
-    var list: Results<SubmitDocumentList>!
+    var documentRepository = DocumentRepository()
 
     var picker: UIDatePicker = UIDatePicker()
 
@@ -33,15 +31,7 @@ class AddDocumentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         uiSetting()
-
-        do {
-            let realm = try Realm()
-            list = realm.objects(SubmitDocumentList.self)
-        } catch {
-            print("Error")
-        }
     }
 
     func uiSetting () {
@@ -56,25 +46,10 @@ class AddDocumentViewController: UIViewController {
 
     @IBAction private func addDocument(_ sender: Any) {
         if newDocumentTextField.text?.isEmpty != true {
-            do {
-                documentInfo.documentToDo = newDocumentTextField.text ?? ""
-                documentInfo.deadline = datePicker.date
-
-                let realm = try Realm()
-                try realm.write {
-                    if list.isEmpty {
-                        let documentList = SubmitDocumentList()
-                        documentList.documentToDos.append(documentInfo)
-                        realm.add(documentList)
-                    } else {
-                        list[0].documentToDos.append(documentInfo)
-                    }
-                }
-                dismiss(animated: true)
-            } catch {
-                print("Error realm")
-            }
-            dismiss(animated: true, completion: nil)
+            let documentTitle = newDocumentTextField.text ?? ""
+            let deadLine = datePicker.date
+            documentRepository.appendDocument(documentTitle: documentTitle, deadLine: deadLine)
+            dismiss(animated: true)
         } else {
             presentAlert()
         }

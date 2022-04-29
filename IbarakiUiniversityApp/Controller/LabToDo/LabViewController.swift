@@ -24,7 +24,7 @@ class LabViewController: UIViewController {
         tableView.reloadData()
     }
 
-    @IBAction private func exitCancel(segue: UIStoryboardSegue){
+    @IBAction private func exitCancel(segue: UIStoryboardSegue) {
     }
 }
 
