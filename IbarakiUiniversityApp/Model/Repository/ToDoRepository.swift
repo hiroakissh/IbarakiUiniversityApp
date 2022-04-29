@@ -13,10 +13,10 @@ final class ToDoRepository {
     private let realm = try! Realm()
 
     // 読み込み 共通型で返す
-    func loadLabToDo() -> [SwiftLabToDo] {
+    func loadLabToDo() -> [SwiftLabToDoModel] {
         let realmToDos = realm.objects(RealmToDoModel.self)
         let realmToDosArray = Array(realmToDos)
-        let labToDos = realmToDosArray.map {SwiftLabToDo(managedObject: $0)}
+        let labToDos = realmToDosArray.map {SwiftLabToDoModel(managedObject: $0)}
         return labToDos
     }
 
@@ -57,7 +57,7 @@ final class ToDoRepository {
     }
 }
 
-private extension SwiftLabToDo {
+private extension SwiftLabToDoModel {
     // 共通型に変換
     init(managedObject: RealmToDoModel) {
         self.uuidString = managedObject.uuidString

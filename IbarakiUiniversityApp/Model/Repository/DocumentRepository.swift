@@ -14,8 +14,17 @@ final class DocumentRepository {
     let documentInfo = Documentinfo()
     var list: Results<SubmitDocumentList>!
 
-    func loadDocument() {
-
+    func loadDocument() -> [SwiftDocumentModel] {
+        list = realm.objects(SubmitDocumentList.self)
+        let realmList = list[0].documentToDos
+        var documentList = [SwiftDocumentModel]()
+        for index in realmList {
+            print(index.documentToDo)
+            print(index.deadline)
+            documentList.append(SwiftDocumentModel.init(documentTitle: index.documentToDo, deadLine: index.deadline))
+            print(documentList)
+        }
+        return documentList
     }
 
     func appendDocument(documentTitle: String, deadLine: Date) {
@@ -38,6 +47,14 @@ final class DocumentRepository {
     }
 
     func removeDocument(at index: Int) {
+        do {
+            list = realm.objects(SubmitDocumentList.self)
+            try realm.write {
+                realm.delete(list[0].documentToDos[index])
+            }
+        } catch {
+            print("Realm Remove Error")
+        }
     }
 
     func updateDocument() {

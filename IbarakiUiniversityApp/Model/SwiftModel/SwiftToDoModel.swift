@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SwiftLabToDo {
+struct SwiftLabToDoModel {
     var uuid: UUID? {
         UUID(uuidString: uuidString)
     }
