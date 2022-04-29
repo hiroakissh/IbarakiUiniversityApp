@@ -59,8 +59,6 @@ extension DocumentsListViewController: UITableViewDataSource {
         }
         documentCell.documentNameLabel?.text = documentItems[indexPath.row].documentTitle
         documentCell.deadlineLabel.text = diffDate(indexRow: indexPath.row)
-        print(diffDate(indexRow: indexPath.row))
-
         return documentCell
     }
 

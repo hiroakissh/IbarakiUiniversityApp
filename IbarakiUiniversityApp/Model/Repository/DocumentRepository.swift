@@ -19,10 +19,7 @@ final class DocumentRepository {
         let realmList = list[0].documentToDos
         var documentList = [SwiftDocumentModel]()
         for index in realmList {
-            print(index.documentToDo)
-            print(index.deadline)
             documentList.append(SwiftDocumentModel.init(documentTitle: index.documentToDo, deadLine: index.deadline))
-            print(documentList)
         }
         return documentList
     }
