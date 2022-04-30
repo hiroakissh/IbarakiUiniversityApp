@@ -33,9 +33,9 @@ private extension SwiftLabToDoModel {
     }
 
     func managedObject() -> RealmToDoModel {
-        let realmToDo = RealmToDoModel()
-        realmToDo.uuidString = self.uuidString
-        realmToDo.labTODO = self.labToDo
-        return realmToDo
+        let realmToDoModel = RealmToDoModel()
+        realmToDoModel.uuidString = self.uuidString
+        realmToDoModel.labTODO = self.labToDo
+        return realmToDoModel
     }
 }
