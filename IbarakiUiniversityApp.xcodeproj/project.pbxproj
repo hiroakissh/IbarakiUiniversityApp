@@ -543,7 +543,7 @@
 				DEVELOPMENT_TEAM = X5LBWH4CYQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IbarakiUiniversityApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "茨大非公式アプリ";
+				INFOPLIST_KEY_CFBundleDisplayName = IBADAI;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -574,7 +574,7 @@
 				DEVELOPMENT_TEAM = X5LBWH4CYQ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IbarakiUiniversityApp/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "茨大非公式アプリ";
+				INFOPLIST_KEY_CFBundleDisplayName = IBADAI;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
