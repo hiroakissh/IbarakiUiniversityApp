@@ -50,3 +50,10 @@ class AddToDoViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
+extension AddToDoViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}

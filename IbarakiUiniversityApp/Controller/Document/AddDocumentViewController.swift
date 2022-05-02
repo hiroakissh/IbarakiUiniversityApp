@@ -67,3 +67,10 @@ class AddDocumentViewController: UIViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
+extension AddDocumentViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
