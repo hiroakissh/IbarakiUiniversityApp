@@ -9,16 +9,16 @@ import Foundation
 import RealmSwift
 
 class RealmDocumentModel: Object {
-    @objc dynamic var uuidString = ""
-    @objc dynamic var documentTitle = ""
-    @objc dynamic var deadLine: Date = Date()
+    @objc dynamic var documentUUID = ""
+    @objc dynamic var documentTitle: String?
+    @objc dynamic var deadLine: Date?
 
     var uuid: UUID? {
-        UUID(uuidString: uuidString)
+        UUID(uuidString: documentUUID)
     }
 
     override class func primaryKey() -> String? {
-        "uuidString"
+        "documentUUID"
     }
 
     convenience init(documentTitle: String, deadLine: Date) {
@@ -34,14 +34,14 @@ class RealmSubmitDocumentList: Object {
 
 private extension SwiftDocumentModel {
     init(managedObject: RealmDocumentModel) {
-        self.uuidString = managedObject.uuidString
+        self.uuidString = managedObject.documentUUID
         self.documentTitle = managedObject.documentTitle
         self.deadLine = managedObject.deadLine
     }
 
     func managedObject() -> RealmDocumentModel {
         let realmDocumentModel = RealmDocumentModel()
-        realmDocumentModel.uuidString = self.uuidString
+        realmDocumentModel.documentUUID = self.uuidString
         realmDocumentModel.documentTitle = self.documentTitle
         realmDocumentModel.deadLine = self.deadLine
         return realmDocumentModel
