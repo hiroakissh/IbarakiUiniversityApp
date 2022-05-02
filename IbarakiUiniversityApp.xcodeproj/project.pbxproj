@@ -12,7 +12,7 @@
 		5314CCDE2816B83000213963 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5314CCDD2816B83000213963 /* Color.xcassets */; };
 		531A0177270C8FBB00F4F55B /* AddDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531A0176270C8FBB00F4F55B /* AddDocumentViewController.swift */; };
 		532D06D1270ED17C0010ABC4 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D06D0270ED17C0010ABC4 /* AddToDoViewController.swift */; };
-		53633A7E270EF392006C6802 /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53633A7D270EF392006C6802 /* TabbarViewController.swift */; };
+		53633A7E270EF392006C6802 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53633A7D270EF392006C6802 /* TabBarViewController.swift */; };
 		53A58E0E2706F8BA008EC8D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A58E0D2706F8BA008EC8D7 /* AppDelegate.swift */; };
 		53A58E102706F8BA008EC8D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A58E0F2706F8BA008EC8D7 /* SceneDelegate.swift */; };
 		53A58E152706F8BA008EC8D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53A58E132706F8BA008EC8D7 /* Main.storyboard */; };
@@ -40,7 +40,7 @@
 		5314CCDD2816B83000213963 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		531A0176270C8FBB00F4F55B /* AddDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocumentViewController.swift; sourceTree = "<group>"; };
 		532D06D0270ED17C0010ABC4 /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
-		53633A7D270EF392006C6802 /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		53633A7D270EF392006C6802 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		53A58E0A2706F8BA008EC8D7 /* IbarakiUiniversityApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IbarakiUiniversityApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53A58E0D2706F8BA008EC8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53A58E0F2706F8BA008EC8D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -176,7 +176,7 @@
 				53066BCB27FB17E2004F8A03 /* Document */,
 				53A58E262707096D008EC8D7 /* PortalViewController.swift */,
 				53A58E2827070984008EC8D7 /* ManabaViewController.swift */,
-				53633A7D270EF392006C6802 /* TabbarViewController.swift */,
+				53633A7D270EF392006C6802 /* TabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -388,7 +388,7 @@
 				5309CBC527F467060072ED57 /* LabToDoTableViewCell.swift in Sources */,
 				53C6629327F04B5200E82593 /* DocumentTableViewCell.swift in Sources */,
 				53B5FD0D2814BD6000503725 /* RealmDocumentModel.swift in Sources */,
-				53633A7E270EF392006C6802 /* TabbarViewController.swift in Sources */,
+				53633A7E270EF392006C6802 /* TabBarViewController.swift in Sources */,
 				53B5FD152814BDE900503725 /* SwiftDocumentModel.swift in Sources */,
 				53A58E2B2707099B008EC8D7 /* LabViewController.swift in Sources */,
 			);

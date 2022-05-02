@@ -10,10 +10,13 @@ import UIKit
 class DocumentsListViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
 
+    private let delegate = UIApplication.shared.delegate as? AppDelegate
+
     var documentRepository = DocumentRepository()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "DocumentTableViewCell", bundle: nil), forCellReuseIdentifier: "documentCell")
@@ -22,9 +25,22 @@ class DocumentsListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        updateBadge()
     }
 
     @IBAction private func exitCancel(segue: UIStoryboardSegue) {
+    }
+
+    private func updateBadge() {
+        let app = UIApplication.shared
+        let documentItems = documentRepository.loadDocument()
+        if let tabItems = tabBarController?.tabBar.items {
+            let tabItem = tabItems[0]
+            tabItem.badgeValue = String(documentItems.count)
+        }
+        delegate?.documentCount = documentItems.count
+        let totalCount: Int = (delegate?.todoCount ?? 0) + (delegate?.documentCount ?? 0)
+        app.applicationIconBadgeNumber = totalCount
     }
 }
 
@@ -73,6 +89,7 @@ extension DocumentsListViewController: UITableViewDataSource {
             documentRepository.removeDocument(at: indexPath.row)
         }
         tableView.reloadData()
+        updateBadge()
     }
 
     func diffDate(indexRow: Int) -> String {

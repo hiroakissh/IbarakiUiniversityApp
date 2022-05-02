@@ -242,7 +242,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="教務情報ポータル" image="logoIbarakiUniversity" selectedImage="logoIbarakiUniversity" id="bZ4-XW-YBL"/>
                     <connections>
-                        <outlet property="webview" destination="jaB-Pb-y5a" id="A5m-g3-BD1"/>
+                        <outlet property="webView" destination="jaB-Pb-y5a" id="A5m-g3-BD1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gj1-No-1pE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -417,10 +417,10 @@
             </objects>
             <point key="canvasLocation" x="2805" y="-368.66197183098592"/>
         </scene>
-        <!--Tabbar View Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="Gmm-K2-MZb">
             <objects>
-                <tabBarController id="Qqt-Ca-feS" customClass="TabbarViewController" customModule="IbarakiUiniversityApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="Qqt-Ca-feS" customClass="TabBarViewController" customModule="IbarakiUiniversityApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dGX-OV-b4t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

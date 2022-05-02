@@ -10,6 +10,8 @@ import UIKit
 class LabViewController: UIViewController {
     @IBOutlet private weak var tableView: UITableView!
 
+    private let delegate = UIApplication.shared.delegate as? AppDelegate
+
     var todoRepository = ToDoRepository()
 
     override func viewDidLoad() {
@@ -22,9 +24,22 @@ class LabViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
+        updateBadge()
     }
 
     @IBAction private func exitCancel(segue: UIStoryboardSegue) {
+    }
+
+    private func updateBadge() {
+        let app = UIApplication.shared
+        let todoItems = todoRepository.loadLabToDo()
+        if let tabItems = tabBarController?.tabBar.items {
+            let tabItem = tabItems[1]
+            tabItem.badgeValue = String(todoItems.count)
+        }
+        delegate?.todoCount = todoItems.count
+        let totalCount: Int = (delegate?.todoCount ?? 0) + (delegate?.documentCount ?? 0)
+        app.applicationIconBadgeNumber = totalCount
     }
 }
 
@@ -73,6 +88,7 @@ extension LabViewController: UITableViewDataSource {
             if !labToDoItems.isEmpty {
                 deleteLabToDo(at: indexPath.row)
                 tableView.reloadData()
+                updateBadge()
             } else {
                 return
             }
