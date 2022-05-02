@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,7 +19,14 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6g-Mq-z6i">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="mainFontBack"/>
+                                <color key="barTintColor" name="mainFontBack"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" name="mainFont"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" name="mainFont"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="研究室やることリスト" id="MC6-J7-iKa">
                                         <barButtonItem key="rightBarButtonItem" title="追加" id="qST-xl-lHv">
@@ -31,7 +39,7 @@
                             </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jdd-OP-dJf">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" red="0.54867941743195658" green="0.14829849163637179" blue="0.18947216525085198" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="mainRed"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="todononeCell" focusStyle="custom" rowHeight="100" id="4bv-Gd-VL1">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="100"/>
@@ -76,7 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sh7-67-J93">
-                                <rect key="frame" x="0.0" y="82" width="414" height="731"/>
+                                <rect key="frame" x="0.0" y="80" width="414" height="733"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -95,10 +103,12 @@
                         <viewLayoutGuide key="safeArea" id="D1U-7v-r6a"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Sh7-67-J93" firstAttribute="top" secondItem="IAU-P9-f1H" secondAttribute="bottom" constant="2" id="84W-7R-iSa"/>
+                            <constraint firstItem="Sh7-67-J93" firstAttribute="trailing" secondItem="D1U-7v-r6a" secondAttribute="trailing" id="KJV-Gm-6rT"/>
                             <constraint firstItem="IAU-P9-f1H" firstAttribute="top" secondItem="D1U-7v-r6a" secondAttribute="top" constant="5" id="XAi-xH-k9T"/>
                             <constraint firstItem="Sh7-67-J93" firstAttribute="trailing" secondItem="D1U-7v-r6a" secondAttribute="trailing" id="Zvf-br-M2e"/>
+                            <constraint firstItem="Sh7-67-J93" firstAttribute="leading" secondItem="D1U-7v-r6a" secondAttribute="leading" id="bZp-E7-zFi"/>
                             <constraint firstItem="Sh7-67-J93" firstAttribute="bottom" secondItem="D1U-7v-r6a" secondAttribute="bottom" id="rS6-JZ-dtX"/>
+                            <constraint firstItem="Sh7-67-J93" firstAttribute="top" secondItem="IAU-P9-f1H" secondAttribute="bottom" id="smB-mK-dEh"/>
                             <constraint firstItem="Sh7-67-J93" firstAttribute="leading" secondItem="D1U-7v-r6a" secondAttribute="leading" id="uFT-aQ-ePE"/>
                             <constraint firstItem="D1U-7v-r6a" firstAttribute="trailing" secondItem="IAU-P9-f1H" secondAttribute="trailing" constant="5" id="vlr-Tk-GcR"/>
                         </constraints>
@@ -146,7 +156,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKp-Gh-rja">
                                 <rect key="frame" x="117" y="770" width="180" height="42"/>
-                                <color key="backgroundColor" red="0.54867941740000004" green="0.1482984916" blue="0.1894721653" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="mainRed"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="3sb-z6-SCf"/>
                                 </constraints>
@@ -201,9 +211,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jaB-Pb-y5a">
-                                <rect key="frame" x="0.0" y="82" width="414" height="731"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jaB-Pb-y5a">
+                                <rect key="frame" x="0.0" y="83" width="414" height="730"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -211,7 +220,7 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obA-3q-BUX">
-                                <rect key="frame" x="364" y="49" width="45" height="31"/>
+                                <rect key="frame" x="364" y="49" width="45" height="34"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="goforward" catalog="system"/>
                                 <connections>
@@ -222,8 +231,13 @@
                         <viewLayoutGuide key="safeArea" id="M0C-b7-prH"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="jaB-Pb-y5a" firstAttribute="top" secondItem="obA-3q-BUX" secondAttribute="bottom" id="BAG-rb-IbN"/>
+                            <constraint firstItem="jaB-Pb-y5a" firstAttribute="bottom" secondItem="M0C-b7-prH" secondAttribute="bottom" id="BlU-ah-k3g"/>
                             <constraint firstItem="M0C-b7-prH" firstAttribute="trailing" secondItem="obA-3q-BUX" secondAttribute="trailing" constant="5" id="Hce-k1-s2d"/>
+                            <constraint firstItem="jaB-Pb-y5a" firstAttribute="trailing" secondItem="M0C-b7-prH" secondAttribute="trailing" id="Vch-r7-BZM"/>
+                            <constraint firstItem="jaB-Pb-y5a" firstAttribute="leading" secondItem="M0C-b7-prH" secondAttribute="leading" id="WMp-1Q-9y6"/>
                             <constraint firstItem="obA-3q-BUX" firstAttribute="top" secondItem="M0C-b7-prH" secondAttribute="top" constant="5" id="ZyP-vZ-7o2"/>
+                            <constraint firstItem="jaB-Pb-y5a" firstAttribute="centerY" secondItem="al8-jJ-NQx" secondAttribute="centerY" id="m4K-WD-ZMA"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="教務情報ポータル" image="logoIbarakiUniversity" selectedImage="logoIbarakiUniversity" id="bZ4-XW-YBL"/>
@@ -245,7 +259,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MKS-KA-s9L">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <color key="backgroundColor" red="0.069187328219999997" green="0.32682812210000001" blue="0.096027575429999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" name="mainGreen"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" rowHeight="150" id="sXK-2w-FFy">
                                         <rect key="frame" x="0.0" y="44.5" width="414" height="150"/>
@@ -261,7 +275,14 @@
                             </tableView>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCt-Bt-LMR">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="mainFontBack"/>
+                                <color key="barTintColor" name="mainFontBack"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" name="mainFont"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" name="mainFont"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="提出物一覧" id="fSr-md-8DU">
                                         <barButtonItem key="rightBarButtonItem" title="追加" id="S8k-o1-NN3">
@@ -346,12 +367,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bPa-nJ-msh">
-                                <rect key="frame" x="15" y="291" width="384" height="216"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="bPa-nJ-msh">
+                                <rect key="frame" x="15" y="291" width="384" height="359"/>
+                                <color key="backgroundColor" name="mainGreen"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30s-rY-o51">
                                 <rect key="frame" x="117" y="775" width="180" height="42"/>
-                                <color key="backgroundColor" red="0.1296853718" green="0.3210691256" blue="0.1266215393" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" name="mainGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="VD7-yM-nGV"/>
                                 </constraints>
@@ -402,7 +424,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dGX-OV-b4t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="mainFontBack"/>
+                        <color key="barTintColor" name="mainFontBack"/>
                     </tabBar>
                     <connections>
                         <segue destination="JdK-eT-5jv" kind="relationship" relationship="viewControllers" id="gXn-kg-sNh"/>
@@ -419,9 +442,21 @@
     <resources>
         <image name="document" width="25" height="25"/>
         <image name="goforward" catalog="system" width="121" height="128"/>
-        <image name="logoIbarakiUniversity" width="60" height="60"/>
+        <image name="logoIbarakiUniversity" width="25" height="25"/>
         <image name="manaba" width="25" height="25"/>
         <image name="study" width="25" height="25"/>
+        <namedColor name="mainFont">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="mainFontBack">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="mainGreen">
+            <color red="0.15299999713897705" green="0.34099999070167542" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="mainRed">
+            <color red="0.59600001573562622" green="0.11800000071525574" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
