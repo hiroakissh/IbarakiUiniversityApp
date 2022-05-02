@@ -9,16 +9,16 @@ import UIKit
 import WebKit
 
 class ManabaViewController: UIViewController {
-    @IBOutlet private weak var webview: WKWebView!
+    @IBOutlet private weak var webView: WKWebView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         if let url = URL(string: "https://manaba.ibaraki.ac.jp/") {
-            self.webview.load(URLRequest(url: url))
+            self.webView.load(URLRequest(url: url))
         }
     }
 
     @IBAction private func reloadButton(_ sender: Any) {
-        webview.reload()
+        webView.reload()
     }
 }

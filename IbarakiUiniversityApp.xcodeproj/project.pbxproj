@@ -30,8 +30,6 @@
 		53B5FD192814BE2C00503725 /* RealmToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FD182814BE2C00503725 /* RealmToDoModel.swift */; };
 		53C6629327F04B5200E82593 /* DocumentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C6629127F04B5200E82593 /* DocumentTableViewCell.swift */; };
 		53C6629427F04B5200E82593 /* DocumentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53C6629227F04B5200E82593 /* DocumentTableViewCell.xib */; };
-		53E8EBEE27109D6000E2FB72 /* ToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E8EBED27109D6000E2FB72 /* ToDoModel.swift */; };
-		53E8EBF027109D7200E2FB72 /* DocumentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E8EBEF27109D7200E2FB72 /* DocumentModel.swift */; };
 		5D564DF0AF03A309A908FAEE /* Pods_IbarakiUiniversityApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF31067AD0E10D906FA1207 /* Pods_IbarakiUiniversityApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,8 +60,6 @@
 		53B5FD182814BE2C00503725 /* RealmToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmToDoModel.swift; sourceTree = "<group>"; };
 		53C6629127F04B5200E82593 /* DocumentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTableViewCell.swift; sourceTree = "<group>"; };
 		53C6629227F04B5200E82593 /* DocumentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentTableViewCell.xib; sourceTree = "<group>"; };
-		53E8EBED27109D6000E2FB72 /* ToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoModel.swift; sourceTree = "<group>"; };
-		53E8EBEF27109D7200E2FB72 /* DocumentModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentModel.swift; sourceTree = "<group>"; };
 		88E042DD2DBC2ED028A21B82 /* Pods-IbarakiUiniversityApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IbarakiUiniversityApp.debug.xcconfig"; path = "Target Support Files/Pods-IbarakiUiniversityApp/Pods-IbarakiUiniversityApp.debug.xcconfig"; sourceTree = "<group>"; };
 		D16D301A054CBEDAFAF696CC /* Pods-IbarakiUiniversityApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IbarakiUiniversityApp.release.xcconfig"; path = "Target Support Files/Pods-IbarakiUiniversityApp/Pods-IbarakiUiniversityApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -191,8 +187,6 @@
 				53B5FD112814BD7900503725 /* SwiftModel */,
 				53B5FD0E2814BD7200503725 /* Repository */,
 				53B5FD0B2814BD6000503725 /* RealmModel */,
-				53B5FCF22814B83200503725 /* DocumentModel */,
-				53B5FCF12814B81F00503725 /* LabToDoModel */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -206,22 +200,6 @@
 				53A58E0F2706F8BA008EC8D7 /* SceneDelegate.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		53B5FCF12814B81F00503725 /* LabToDoModel */ = {
-			isa = PBXGroup;
-			children = (
-				53E8EBED27109D6000E2FB72 /* ToDoModel.swift */,
-			);
-			path = LabToDoModel;
-			sourceTree = "<group>";
-		};
-		53B5FCF22814B83200503725 /* DocumentModel */ = {
-			isa = PBXGroup;
-			children = (
-				53E8EBEF27109D7200E2FB72 /* DocumentModel.swift */,
-			);
-			path = DocumentModel;
 			sourceTree = "<group>";
 		};
 		53B5FD0B2814BD6000503725 /* RealmModel */ = {
@@ -401,7 +379,6 @@
 				531A0177270C8FBB00F4F55B /* AddDocumentViewController.swift in Sources */,
 				53A58E272707096D008EC8D7 /* PortalViewController.swift in Sources */,
 				53B5FD132814BD7900503725 /* SwiftToDoModel.swift in Sources */,
-				53E8EBEE27109D6000E2FB72 /* ToDoModel.swift in Sources */,
 				532D06D1270ED17C0010ABC4 /* AddToDoViewController.swift in Sources */,
 				53B5FD172814BDFC00503725 /* DocumentRepository.swift in Sources */,
 				53B5FD102814BD7200503725 /* ToDoRepository.swift in Sources */,
@@ -412,7 +389,6 @@
 				53C6629327F04B5200E82593 /* DocumentTableViewCell.swift in Sources */,
 				53B5FD0D2814BD6000503725 /* RealmDocumentModel.swift in Sources */,
 				53633A7E270EF392006C6802 /* TabbarViewController.swift in Sources */,
-				53E8EBF027109D7200E2FB72 /* DocumentModel.swift in Sources */,
 				53B5FD152814BDE900503725 /* SwiftDocumentModel.swift in Sources */,
 				53A58E2B2707099B008EC8D7 /* LabViewController.swift in Sources */,
 			);
