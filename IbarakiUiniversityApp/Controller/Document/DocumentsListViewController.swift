@@ -89,14 +89,21 @@ extension DocumentsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    commit editingStyle: UITableViewCell.EditingStyle,
                    forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete {
-            documentRepository.removeDocument(at: indexPath.row)
+        let documentItems = documentRepository.loadDocument()
+        if editingStyle == .delete {
+            if !documentItems.isEmpty {
+                documentRepository.removeDocument(at: indexPath.row)
+                tableView.reloadData()
+                updateBadge()
+            } else {
+                return
+            }
         }
-        tableView.reloadData()
-        updateBadge()
+        if editingStyle == .none {
+        }
     }
 
-    func diffDate(indexRow: Int) -> String {
+    private func diffDate(indexRow: Int) -> String {
         let documentItems = documentRepository.loadDocument()
         let now = Date()
         let calender = Calendar(identifier: .gregorian)

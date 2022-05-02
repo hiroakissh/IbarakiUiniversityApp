@@ -90,16 +90,13 @@ extension LabViewController: UITableViewDataSource {
         let labToDoItems = todoRepository.loadLabToDo()
         if editingStyle == .delete {
             if !labToDoItems.isEmpty {
-                deleteLabToDo(at: indexPath.row)
+                todoRepository.removeLabToDo(at: indexPath.row)
                 tableView.reloadData()
                 updateBadge()
             } else {
                 return
             }
         }
-    }
-    func deleteLabToDo (at index: Int) {
-        todoRepository.removeLabToDo(at: index)
     }
 }
 
