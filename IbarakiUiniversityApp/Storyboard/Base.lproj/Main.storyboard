@@ -176,12 +176,12 @@
                                     <constraint firstAttribute="height" constant="30" id="sMd-Hm-Sd5"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="mainFont"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QTL-sz-AJb"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="mainFontBack"/>
                         <constraints>
                             <constraint firstItem="jKp-Gh-rja" firstAttribute="centerX" secondItem="7hi-Ww-w6D" secondAttribute="centerX" id="3y4-TZ-kME"/>
                             <constraint firstItem="2Re-v2-PZI" firstAttribute="centerX" secondItem="7hi-Ww-w6D" secondAttribute="centerX" id="MMK-8w-Ydy"/>
@@ -354,7 +354,7 @@
                                     <constraint firstAttribute="height" constant="30" id="yVy-N5-mV0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="mainFont"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提出期限" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SE5-7o-974">
@@ -364,12 +364,12 @@
                                     <constraint firstAttribute="height" constant="30" id="Nhg-i2-tSb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" name="mainFont"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="bPa-nJ-msh">
                                 <rect key="frame" x="15" y="291" width="384" height="359"/>
-                                <color key="backgroundColor" name="mainGreen"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="30s-rY-o51">
                                 <rect key="frame" x="117" y="775" width="180" height="42"/>
@@ -388,7 +388,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UgU-8F-4RT"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" name="mainFontBack"/>
                         <constraints>
                             <constraint firstItem="SVx-OD-Je1" firstAttribute="leading" secondItem="UgU-8F-4RT" secondAttribute="leading" constant="15" id="1Qc-gg-ShF"/>
                             <constraint firstItem="SE5-7o-974" firstAttribute="centerX" secondItem="qk7-Gd-65J" secondAttribute="centerX" id="22Y-Rs-SoZ"/>
