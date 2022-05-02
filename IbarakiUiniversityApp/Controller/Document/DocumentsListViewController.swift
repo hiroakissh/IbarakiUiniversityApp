@@ -36,7 +36,11 @@ class DocumentsListViewController: UIViewController {
         let documentItems = documentRepository.loadDocument()
         if let tabItems = tabBarController?.tabBar.items {
             let tabItem = tabItems[0]
-            tabItem.badgeValue = String(documentItems.count)
+            if documentItems.count == 0 {
+                tabItem.badgeValue = nil
+            } else {
+                tabItem.badgeValue = String(documentItems.count)
+            }
         }
         delegate?.documentCount = documentItems.count
         let totalCount: Int = (delegate?.todoCount ?? 0) + (delegate?.documentCount ?? 0)

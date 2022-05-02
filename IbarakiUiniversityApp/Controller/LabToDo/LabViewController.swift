@@ -35,7 +35,11 @@ class LabViewController: UIViewController {
         let todoItems = todoRepository.loadLabToDo()
         if let tabItems = tabBarController?.tabBar.items {
             let tabItem = tabItems[1]
-            tabItem.badgeValue = String(todoItems.count)
+            if todoItems.count == 0 {
+                tabItem.badgeValue = nil
+            } else {
+                tabItem.badgeValue = String(todoItems.count)
+            }
         }
         delegate?.todoCount = todoItems.count
         let totalCount: Int = (delegate?.todoCount ?? 0) + (delegate?.documentCount ?? 0)
