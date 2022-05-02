@@ -15,6 +15,7 @@ class ManabaViewController: UIViewController {
         super.viewDidLoad()
         if let url = URL(string: "https://manaba.ibaraki.ac.jp/") {
             self.webView.load(URLRequest(url: url))
+            self.webView.allowsBackForwardNavigationGestures = true
         }
     }
 
