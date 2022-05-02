@@ -24,7 +24,7 @@ final class ToDoRepository {
     func appendLabToDo(todo: String) {
         let realmToDo = RealmToDoModel()
         let uuid = UUID()
-        realmToDo.uuidString = uuid.uuidString
+        realmToDo.todoUUID = uuid.uuidString
         realmToDo.labTODO = todo
         do {
             try realm.write {
@@ -51,7 +51,6 @@ final class ToDoRepository {
             }
     }
 
-
     // 更新
     func updateLabToDo() {
     }
@@ -60,14 +59,14 @@ final class ToDoRepository {
 private extension SwiftLabToDoModel {
     // 共通型に変換
     init(managedObject: RealmToDoModel) {
-        self.uuidString = managedObject.uuidString
+        self.uuidString = managedObject.todoUUID
         self.labToDo = managedObject.labTODO
     }
 
     // Realmオブジェクト変換
     func managedObject() -> RealmToDoModel {
         let realmLabToDo = RealmToDoModel()
-        realmLabToDo.uuidString = self.uuidString
+        realmLabToDo.todoUUID = self.uuidString
         realmLabToDo.labTODO = self.labToDo
         return realmLabToDo
     }

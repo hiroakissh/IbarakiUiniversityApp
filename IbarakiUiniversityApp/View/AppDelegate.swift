@@ -14,6 +14,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        // マイグレーションの処理
+        var config = Realm.Configuration()
+        config.migrationBlock = { migration, oldSchemaVersion in
+            if oldSchemaVersion < 1 {
+                migration.enumerateObjects(ofType: RealmDocumentModel.className()) { oldObject, newObject in
+                    oldObject!["uuidString"] as? String
+                    newObject!["todoUUID"] as? String
+                }
+            }
+        }
+        config.schemaVersion = 1
+        Realm.Configuration.defaultConfiguration = config
+
         print(Realm.Configuration.defaultConfiguration.fileURL!)
         return true
     }

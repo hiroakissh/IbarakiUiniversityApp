@@ -105,7 +105,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="manaba" image="manaba" selectedImage="manaba" id="sYw-1Z-XUP"/>
                     <connections>
-                        <outlet property="webview" destination="Sh7-67-J93" id="RC9-b2-OLp"/>
+                        <outlet property="webView" destination="Sh7-67-J93" id="RC9-b2-OLp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5bt-y8-uXk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -419,7 +419,7 @@
     <resources>
         <image name="document" width="25" height="25"/>
         <image name="goforward" catalog="system" width="121" height="128"/>
-        <image name="logoIbarakiUniversity" width="25" height="25"/>
+        <image name="logoIbarakiUniversity" width="60" height="60"/>
         <image name="manaba" width="25" height="25"/>
         <image name="study" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">

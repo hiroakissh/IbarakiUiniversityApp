@@ -9,15 +9,15 @@ import Foundation
 import RealmSwift
 
 class RealmToDoModel: Object {
-    @objc dynamic var uuidString = ""
+    @objc dynamic var todoUUID = ""
     @objc dynamic var labTODO: String?
 
     var uuid: UUID? {
-        UUID(uuidString: uuidString)
+        UUID(uuidString: todoUUID)
     }
 
     override class func primaryKey() -> String? {
-        "uuidString"
+        "todoUUID"
     }
 
     convenience init(labToDo: String) {
@@ -28,14 +28,14 @@ class RealmToDoModel: Object {
 
 private extension SwiftLabToDoModel {
     init(managedObject: RealmToDoModel) {
-        self.uuidString = managedObject.uuidString
+        self.uuidString = managedObject.todoUUID
         self.labToDo = managedObject.labTODO
     }
 
     func managedObject() -> RealmToDoModel {
-        let realmToDo = RealmToDoModel()
-        realmToDo.uuidString = self.uuidString
-        realmToDo.labTODO = self.labToDo
-        return realmToDo
+        let realmToDoModel = RealmToDoModel()
+        realmToDoModel.todoUUID = self.uuidString
+        realmToDoModel.labTODO = self.labToDo
+        return realmToDoModel
     }
 }

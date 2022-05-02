@@ -11,43 +11,37 @@ import RealmSwift
 final class DocumentRepository {
     // swiftlint:disable force_try
     private let realm = try! Realm()
-    let documentInfo = Documentinfo()
-    var list: Results<SubmitDocumentList>!
 
     func loadDocument() -> [SwiftDocumentModel] {
-        list = realm.objects(SubmitDocumentList.self)
-        let realmList = list[0].documentToDos
-        var documentList = [SwiftDocumentModel]()
-        for index in realmList {
-            documentList.append(SwiftDocumentModel.init(documentTitle: index.documentToDo, deadLine: index.deadline))
-        }
-        return documentList
+        let realmDocuments = realm.objects(RealmDocumentModel.self)
+        let realmDocumentsArray = Array(realmDocuments)
+        let documents = realmDocumentsArray.map {SwiftDocumentModel(managedObject: $0)}
+        return documents
     }
 
     func appendDocument(documentTitle: String, deadLine: Date) {
+        let realmDocument = RealmDocumentModel()
+        let uuid = UUID()
+        realmDocument.documentUUID = uuid.uuidString
+        realmDocument.documentTitle = documentTitle
+        realmDocument.deadLine = deadLine
         do {
-            list = realm.objects(SubmitDocumentList.self)
-            documentInfo.documentToDo = documentTitle
-            documentInfo.deadline = deadLine
             try realm.write {
-                if list == nil {
-                    let realmDocumentList = SubmitDocumentList()
-                    realmDocumentList.documentToDos.append(documentInfo)
-                    realm.add(realmDocumentList)
-                } else {
-                    list[0].documentToDos.append(documentInfo)
-                }
+                realm.add(realmDocument)
             }
         } catch {
             print("Realm Add Error")
+            return
         }
+        print(realmDocument)
     }
 
     func removeDocument(at index: Int) {
+        let documentItems: Results<RealmDocumentModel>!
+        documentItems = realm.objects(RealmDocumentModel.self)
         do {
-            list = realm.objects(SubmitDocumentList.self)
             try realm.write {
-                realm.delete(list[0].documentToDos[index])
+                realm.delete(documentItems[index])
             }
         } catch {
             print("Realm Remove Error")
@@ -55,5 +49,21 @@ final class DocumentRepository {
     }
 
     func updateDocument() {
+    }
+}
+
+private extension SwiftDocumentModel {
+    init(managedObject: RealmDocumentModel) {
+        self.uuidString = managedObject.documentUUID
+        self.documentTitle = managedObject.documentTitle
+        self.deadLine = managedObject.deadLine
+    }
+
+    func managedObject() -> RealmDocumentModel {
+        let realmDocumentModel = RealmDocumentModel()
+        realmDocumentModel.documentUUID = self.uuidString
+        realmDocumentModel.documentTitle = self.documentTitle
+        realmDocumentModel.deadLine = self.deadLine
+        return realmDocumentModel
     }
 }
