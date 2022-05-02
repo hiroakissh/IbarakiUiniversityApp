@@ -7,14 +7,7 @@
 
 import UIKit
 
-enum TabBarItems {
-    case submitDocument
-    case labTodo
-    case portal
-    case manaba
-}
-
-class TabbarViewController: UITabBarController {
+class TabBarViewController: UITabBarController {
     var todoRepository = ToDoRepository()
     var documentRepository = DocumentRepository()
 

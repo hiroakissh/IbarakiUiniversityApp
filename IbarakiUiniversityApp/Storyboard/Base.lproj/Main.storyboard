@@ -417,10 +417,10 @@
             </objects>
             <point key="canvasLocation" x="2805" y="-368.66197183098592"/>
         </scene>
-        <!--Tabbar View Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="Gmm-K2-MZb">
             <objects>
-                <tabBarController id="Qqt-Ca-feS" customClass="TabbarViewController" customModule="IbarakiUiniversityApp" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="Qqt-Ca-feS" customClass="TabBarViewController" customModule="IbarakiUiniversityApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dGX-OV-b4t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
