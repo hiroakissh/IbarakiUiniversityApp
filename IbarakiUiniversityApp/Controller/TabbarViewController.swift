@@ -28,29 +28,9 @@ class TabbarViewController: UITabBarController {
                 print(error)
             }
         }
-        let application = UIApplication.shared
-        print(self.selectedIndex)
-        // TODO: アイテムに追加や削除があったときに呼ぶ
-        addBadgeValue(item: .submitDocument, app: application)
-    }
-
-    func addBadgeValue(item: TabBarItems, app: UIApplication) {
-        let tabBarItems: TabBarItems = item
-
-        switch tabBarItems {
-        case .submitDocument:
-            let submitDocumentTabItem: UITabBarItem = tabBar.items![0]
-            // TODO: valueにアイテムの数を入れる
-            let documentItems = documentRepository.loadDocument()
-            submitDocumentTabItem.badgeValue = String(documentItems.count)
-        case .labTodo:
-            let labToDoTabItem: UITabBarItem = tabBar.items![1]
-            let labToDoItems = todoRepository.loadLabToDo()
-            labToDoTabItem.badgeValue = String(labToDoItems.count)
-        default :
-            print("manabaかポータルだね")
-        }
-        // TODO: Itemのトータルを入れる
-        app.applicationIconBadgeNumber = 10
+        let todoItems = todoRepository.loadLabToDo()
+        let documentItems = documentRepository.loadDocument()
+        tabBar.items?[0].badgeValue = "\(String(todoItems.count))"
+        tabBar.items?[1].badgeValue = "\(String(documentItems.count))"
     }
 }
