@@ -242,7 +242,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="教務情報ポータル" image="logoIbarakiUniversity" selectedImage="logoIbarakiUniversity" id="bZ4-XW-YBL"/>
                     <connections>
-                        <outlet property="webview" destination="jaB-Pb-y5a" id="A5m-g3-BD1"/>
+                        <outlet property="webView" destination="jaB-Pb-y5a" id="A5m-g3-BD1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gj1-No-1pE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
