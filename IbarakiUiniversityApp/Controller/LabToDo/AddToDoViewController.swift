@@ -15,8 +15,8 @@ class AddToDoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        addButton.layer.cornerRadius = 20.0
+        newTextField.delegate = self
+        addButton.layer.cornerRadius = 5.0
         newTextField.layer.borderWidth = 2.0
     }
 
@@ -53,7 +53,7 @@ class AddToDoViewController: UIViewController {
 
 extension AddToDoViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        newTextField.resignFirstResponder()
         return true
     }
 }

@@ -31,6 +31,7 @@ class AddDocumentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        newDocumentTextField.delegate = self
         uiSetting()
     }
 
@@ -71,6 +72,7 @@ class AddDocumentViewController: UIViewController {
 extension AddDocumentViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        newDocumentTextField.text = textField.text
         return true
     }
 }
