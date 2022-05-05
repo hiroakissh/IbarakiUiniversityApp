@@ -67,13 +67,13 @@ class DocumentsListViewController: UIViewController {
                 content: content,
                 trigger: morningTrigger
             )
-            UNUserNotificationCenter.current().add(morningRequest){ error in
+            UNUserNotificationCenter.current().add(morningRequest) { error in
                 if let error = error {
                     print(error.localizedDescription)
                 }
             }
             // 午後の通知
-            var afternoon = DateComponents()
+            let afternoon = DateComponents()
             morning.hour = 17
             morning.minute = 0
             let afternoonTrigger = UNCalendarNotificationTrigger(dateMatching: afternoon, repeats: false)
@@ -82,7 +82,7 @@ class DocumentsListViewController: UIViewController {
                 content: content,
                 trigger: afternoonTrigger
             )
-            UNUserNotificationCenter.current().add(afternoonRequest){ error in
+            UNUserNotificationCenter.current().add(afternoonRequest) { error in
                 if let error = error {
                     print(error.localizedDescription)
                 }
