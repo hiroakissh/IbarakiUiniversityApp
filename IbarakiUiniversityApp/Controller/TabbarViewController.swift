@@ -27,13 +27,13 @@ class TabBarViewController: UITabBarController {
         if todoItems.count == 0 {
             tabBar.items?[1].badgeValue = nil
         } else {
-            tabBar.items?[0].badgeValue = "\(String(todoItems.count))"
+            tabBar.items?[1].badgeValue = "\(String(todoItems.count))"
         }
 
         if documentItems.count == 0 {
             tabBar.items?[0].badgeValue = nil
         } else {
-            tabBar.items?[1].badgeValue = "\(String(documentItems.count))"
+            tabBar.items?[0].badgeValue = "\(String(documentItems.count))"
         }
     }
 }
