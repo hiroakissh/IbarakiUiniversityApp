@@ -46,6 +46,49 @@ class DocumentsListViewController: UIViewController {
         let totalCount: Int = (delegate?.todoCount ?? 0) + (delegate?.documentCount ?? 0)
         app.applicationIconBadgeNumber = totalCount
     }
+
+    private func notification() {
+        let documentItems = documentRepository.loadDocument()
+        for documentItem in documentItems {
+            let content = UNMutableNotificationContent()
+            content.sound = .default
+            content.title = documentItem.documentTitle ?? ""
+            content.subtitle = "締め切りが迫ってます。早めに済ませましょう"
+            content.body = "締め切りが過ぎたら土下座です"
+
+            // 午前の通知
+            var morning = DateComponents()
+            morning.hour = 8
+            morning.minute = 0
+            let identifier = String(documentItem.uuidString)
+            let morningTrigger = UNCalendarNotificationTrigger(dateMatching: morning, repeats: false)
+            let morningRequest = UNNotificationRequest(
+                identifier: identifier,
+                content: content,
+                trigger: morningTrigger
+            )
+            UNUserNotificationCenter.current().add(morningRequest){ error in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
+            // 午後の通知
+            var afternoon = DateComponents()
+            morning.hour = 17
+            morning.minute = 0
+            let afternoonTrigger = UNCalendarNotificationTrigger(dateMatching: afternoon, repeats: false)
+            let afternoonRequest = UNNotificationRequest(
+                identifier: identifier,
+                content: content,
+                trigger: afternoonTrigger
+            )
+            UNUserNotificationCenter.current().add(afternoonRequest){ error in
+                if let error = error {
+                    print(error.localizedDescription)
+                }
+            }
+        }
+    }
 }
 
 extension DocumentsListViewController: UITableViewDataSource {
