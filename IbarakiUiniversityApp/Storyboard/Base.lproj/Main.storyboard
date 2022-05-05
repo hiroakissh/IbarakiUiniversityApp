@@ -336,17 +336,6 @@
                                     <segue destination="Lu6-Gw-Qyv" kind="unwind" unwindAction="exitCancelWithSegue:" id="irf-Xr-cx3"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z6s-up-zER">
-                                <rect key="frame" x="117" y="191" width="180" height="40"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="CdJ-TS-K3c"/>
-                                    <constraint firstAttribute="height" constant="40" id="oAM-Pu-zUa"/>
-                                </constraints>
-                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提出物名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JdW-Yy-Myj">
                                 <rect key="frame" x="157" y="122" width="100" height="30"/>
                                 <constraints>
@@ -386,6 +375,17 @@
                                     <action selector="addDocument:" destination="hm1-4m-WdA" eventType="touchUpInside" id="Zms-VQ-f2S"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z6s-up-zER">
+                                <rect key="frame" x="117" y="160" width="180" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="CdJ-TS-K3c"/>
+                                    <constraint firstAttribute="height" constant="40" id="oAM-Pu-zUa"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UgU-8F-4RT"/>
                         <color key="backgroundColor" name="mainFontBack"/>
@@ -393,14 +393,14 @@
                             <constraint firstItem="SVx-OD-Je1" firstAttribute="leading" secondItem="UgU-8F-4RT" secondAttribute="leading" constant="15" id="1Qc-gg-ShF"/>
                             <constraint firstItem="SE5-7o-974" firstAttribute="centerX" secondItem="qk7-Gd-65J" secondAttribute="centerX" id="22Y-Rs-SoZ"/>
                             <constraint firstItem="SVx-OD-Je1" firstAttribute="top" secondItem="UgU-8F-4RT" secondAttribute="top" constant="20" id="2BY-Xp-u5q"/>
-                            <constraint firstItem="z6s-up-zER" firstAttribute="top" secondItem="JdW-Yy-Myj" secondAttribute="bottom" constant="39" id="DlY-Ws-qeL"/>
+                            <constraint firstItem="z6s-up-zER" firstAttribute="top" secondItem="JdW-Yy-Myj" secondAttribute="bottom" constant="8" id="DlY-Ws-qeL"/>
                             <constraint firstItem="z6s-up-zER" firstAttribute="centerX" secondItem="qk7-Gd-65J" secondAttribute="centerX" id="Fei-AW-dTL"/>
                             <constraint firstItem="30s-rY-o51" firstAttribute="centerX" secondItem="qk7-Gd-65J" secondAttribute="centerX" id="JBF-DF-91t"/>
                             <constraint firstItem="JdW-Yy-Myj" firstAttribute="top" secondItem="UgU-8F-4RT" secondAttribute="top" constant="78" id="McM-w2-NoY"/>
                             <constraint firstItem="bPa-nJ-msh" firstAttribute="leading" secondItem="UgU-8F-4RT" secondAttribute="leading" constant="15" id="dC2-1K-5FB"/>
                             <constraint firstItem="JdW-Yy-Myj" firstAttribute="centerX" secondItem="qk7-Gd-65J" secondAttribute="centerX" id="hR4-4Q-8nS"/>
                             <constraint firstItem="UgU-8F-4RT" firstAttribute="bottom" secondItem="30s-rY-o51" secondAttribute="bottom" constant="45" id="k22-wu-OhA"/>
-                            <constraint firstItem="SE5-7o-974" firstAttribute="top" secondItem="z6s-up-zER" secondAttribute="bottom" constant="25" id="nww-tb-2Cp"/>
+                            <constraint firstItem="SE5-7o-974" firstAttribute="top" secondItem="z6s-up-zER" secondAttribute="bottom" constant="56" id="nww-tb-2Cp"/>
                             <constraint firstItem="UgU-8F-4RT" firstAttribute="trailing" secondItem="bPa-nJ-msh" secondAttribute="trailing" constant="15" id="uev-kZ-DhU"/>
                             <constraint firstItem="bPa-nJ-msh" firstAttribute="top" secondItem="SE5-7o-974" secondAttribute="bottom" constant="5" id="vCl-cw-O6W"/>
                         </constraints>

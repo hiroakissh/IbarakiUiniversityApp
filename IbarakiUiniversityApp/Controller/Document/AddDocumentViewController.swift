@@ -37,6 +37,7 @@ class AddDocumentViewController: UIViewController {
 
     func uiSetting () {
         addButton.layer.cornerRadius = 5.0
+        newDocumentTextField.layer.borderWidth = 2.0
         datePicker.preferredDatePickerStyle = .inline
         datePicker.datePickerMode = .date
     }
