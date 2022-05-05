@@ -8,17 +8,32 @@
 import UIKit
 
 class LabViewController: UIViewController {
+
+    enum ToDoCellViewObject {
+        case none
+        case todo(String)
+    }
+
     @IBOutlet private weak var tableView: UITableView!
 
     private let delegate = UIApplication.shared.delegate as? AppDelegate
 
     var todoRepository = ToDoRepository()
 
+    private var todoCellViewObject: [ToDoCellViewObject] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "LabToDoTableViewCell", bundle: nil), forCellReuseIdentifier: "todoCell")
+
+        let todoItems = todoRepository.loadLabToDo()
+        if todoItems.isEmpty {
+            todoCellViewObject = [.none]
+        } else {
+            todoCellViewObject = todoItems.map { .todo($0.labToDo ?? "TODOが表示できません") }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -49,35 +64,54 @@ class LabViewController: UIViewController {
 
 extension LabViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let labToDoItems = todoRepository.loadLabToDo()
-        if labToDoItems.isEmpty {
-            return 1
-        } else {
-            return labToDoItems.count
-        }
+//        let labToDoItems = todoRepository.loadLabToDo()
+//        if labToDoItems.isEmpty {
+//            return 1
+//        } else {
+//            return labToDoItems.count
+//        }
+        todoCellViewObject.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let labToDoItems = todoRepository.loadLabToDo()
-        guard labToDoItems.count != 0
-        else {
+//        let labToDoItems = todoRepository.loadLabToDo()
+//        guard labToDoItems.count != 0
+//        else {
+//            let noneCell = tableView.dequeueReusableCell(withIdentifier: "todononeCell", for: indexPath)
+//            noneCell.textLabel?.text = "現在タスクがありません"
+//            noneCell.textLabel?.textAlignment = .center
+//            noneCell.textLabel?.textColor = .white
+//            noneCell.textLabel?.backgroundColor = .darkGray
+//            return noneCell
+//        }
+//        guard let toDoCell = tableView.dequeueReusableCell(
+//            withIdentifier: "todoCell",
+//            for: indexPath
+//        ) as? LabToDoTableViewCell
+//        else {
+//            return UITableViewCell()
+//        }
+//        let toDoObject = labToDoItems[indexPath.row]
+//        toDoCell.todoLabel?.text = toDoObject.labToDo
+//        return toDoCell
+
+        switch todoCellViewObject[indexPath.row] {
+        case .none:
             let noneCell = tableView.dequeueReusableCell(withIdentifier: "todononeCell", for: indexPath)
             noneCell.textLabel?.text = "現在タスクがありません"
             noneCell.textLabel?.textAlignment = .center
             noneCell.textLabel?.textColor = .white
             noneCell.textLabel?.backgroundColor = .darkGray
             return noneCell
+        case .todo(let name):
+            let toDoCell = tableView.dequeueReusableCell(
+                withIdentifier: "todoCell",
+                for: indexPath
+                // swiftlint:disable:next force_cast
+            ) as! LabToDoTableViewCell
+            toDoCell.todoLabel?.text = name
+            return toDoCell
         }
-        guard let toDoCell = tableView.dequeueReusableCell(
-            withIdentifier: "todoCell",
-            for: indexPath
-        ) as? LabToDoTableViewCell
-        else {
-            return UITableViewCell()
-        }
-        let toDoObject = labToDoItems[indexPath.row]
-        toDoCell.todoLabel?.text = toDoObject.labToDo
-        return toDoCell
     }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
