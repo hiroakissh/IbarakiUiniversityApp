@@ -89,33 +89,12 @@ class DocumentsListViewController: UIViewController {
             content.sound = .default
             content.title = documentItem.documentTitle ?? ""
             let documentStatus = observeDocumentStatus(date: documentItem.deadLine ?? Date())
-            switch documentStatus {
-            case .normal:
-                content.subtitle = "締め切りは１週間以上あります"
-                content.body = "早めに準備しておくことに越したことはないです"
-            case .befor1Week:
-                content.subtitle = "締め切りが１週間になりました"
-                content.body = "もう，出せるとこまで準備したら出しましょう"
-            case .befor3Day:
-                content.subtitle = "締め切りはあと３日です"
-                content.body = "３日前には出しておいた方が気持ち楽だと思います"
-            case .befor1Day:
-                content.subtitle = "締め切りは明日です"
-                content.body = "今すぐ出しにいきましょう！¥n今日中に出せない場合は連絡を入れましょう"
-            case .deadline:
-                content.subtitle = "今日が締め切りです！"
-                content.body = "今すぐ出そう！早く出そう！今日一番にやることは提出だ！"
-            case .overdue:
-                content.subtitle = "締め切りが過ぎてしまいました"
-                content.body = "土下座しにいく準備をしましょう"
-            case .none:
-                content.subtitle = "時間が指定されていません"
-                content.body = "この件は今すぐ済ませておいた方が無難"
-            }
+            notificationSubtitle(status: documentStatus, content: content)
             // 午前の通知
             var morning = DateComponents()
             morning.hour = 8
             morning.minute = 0
+
             let identifier = String(documentItem.uuidString)
             let morningTrigger = UNCalendarNotificationTrigger(dateMatching: morning, repeats: false)
             let morningRequest = UNNotificationRequest(
@@ -128,6 +107,31 @@ class DocumentsListViewController: UIViewController {
                     print(error.localizedDescription)
                 }
             }
+        }
+    }
+    func notificationSubtitle(status: DocumentStatus, content: UNMutableNotificationContent) {
+        switch status {
+        case .normal:
+            content.subtitle = "締め切りは１週間以上あります"
+            content.body = "早めに準備しておくことに越したことはないです"
+        case .befor1Week:
+            content.subtitle = "締め切りが１週間になりました"
+            content.body = "もう，出せるとこまで準備したら出しましょう"
+        case .befor3Day:
+            content.subtitle = "締め切りはあと３日です"
+            content.body = "３日前には出しておいた方が気持ち楽だと思います"
+        case .befor1Day:
+            content.subtitle = "締め切りは明日です"
+            content.body = "今すぐ出しにいきましょう！¥n今日中に出せない場合は連絡を入れましょう"
+        case .deadline:
+            content.subtitle = "今日が締め切りです！"
+            content.body = "今すぐ出そう！早く出そう！今日一番にやることは提出だ！"
+        case .overdue:
+            content.subtitle = "締め切りが過ぎてしまいました"
+            content.body = "土下座しにいく準備をしましょう"
+        case .none:
+            content.subtitle = "時間が指定されていません"
+            content.body = "この件は今すぐ済ませておいた方が無難"
         }
     }
 }
