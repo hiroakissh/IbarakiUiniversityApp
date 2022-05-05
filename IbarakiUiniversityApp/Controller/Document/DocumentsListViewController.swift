@@ -115,14 +115,14 @@ class DocumentsListViewController: UIViewController {
             content.subtitle = "締め切りは１週間以上あります"
             content.body = "早めに準備しておくことに越したことはないです"
         case .befor1Week:
-            content.subtitle = "締め切りが１週間になりました"
+            content.subtitle = "締め切りが１週間切りました"
             content.body = "もう，出せるとこまで準備したら出しましょう"
         case .befor3Day:
-            content.subtitle = "締め切りはあと３日です"
-            content.body = "３日前には出しておいた方が気持ち楽だと思います"
+            content.subtitle = "締め切りはあと３日切りました"
+            content.body = "直前になるよりは今、出しておいた方が気持ち楽だと思います"
         case .befor1Day:
             content.subtitle = "締め切りは明日です"
-            content.body = "今すぐ出しにいきましょう！¥n今日中に出せない場合は連絡を入れましょう"
+            content.body = "今すぐ出しにいきましょう！\n今日中に出せない場合は連絡を入れましょう"
         case .deadline:
             content.subtitle = "今日が締め切りです！"
             content.body = "今すぐ出そう！早く出そう！今日一番にやることは提出だ！"
@@ -130,8 +130,8 @@ class DocumentsListViewController: UIViewController {
             content.subtitle = "締め切りが過ぎてしまいました"
             content.body = "土下座しにいく準備をしましょう"
         case .none:
-            content.subtitle = "時間が指定されていません"
-            content.body = "この件は今すぐ済ませておいた方が無難"
+            content.subtitle = "近い提出物はありません"
+            content.body = "今日も一日頑張りましょう！"
         }
     }
 }
@@ -214,12 +214,21 @@ extension DocumentsListViewController: UITableViewDataSource {
 
     private func observeDocumentStatus(date: Date) -> DocumentStatus {
         let diffDay = diffDay(date: date)
-        if diffDay > 7 {
-            return .normal
-        } else if diffDay == 3 {
-            return .befor3Day
-        } else if diffDay == 1 {
+        if diffDay == 1 {
+            if diffDay > 1 {
+                if diffDay >= 3 {
+                    if diffDay > 7 {
+                        if diffDay > 14 {
+                            return .none
+                        }
+                        return .normal
+                    }
+                    return .befor1Week
+                }
+                return .befor3Day
+            }
             return .befor1Day
+
         } else if diffDay == 0 {
             return .deadline
         } else if diffDay < 0 {
