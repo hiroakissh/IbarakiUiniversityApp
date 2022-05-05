@@ -15,6 +15,7 @@ class DocumentsListViewController: UIViewController {
         case befor1Day
         case deadline
         case overdue
+        case none
     }
 
     enum DocumentCellObject {
@@ -37,6 +38,7 @@ class DocumentsListViewController: UIViewController {
         tableView.dataSource = self
         tableView.register(UINib(nibName: "DocumentTableViewCell", bundle: nil), forCellReuseIdentifier: "documentCell")
         observeDocumentCellObject()
+        notification()
     }
 
     func observeDocumentCellObject() {
@@ -53,6 +55,7 @@ class DocumentsListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         observeDocumentCellObject()
+        notification()
         tableView.reloadData()
         updateBadge()
     }
@@ -77,14 +80,38 @@ class DocumentsListViewController: UIViewController {
     }
 
     private func notification() {
+        let notificationRequest = UNUserNotificationCenter.current()
+        notificationRequest.removeAllPendingNotificationRequests()
+
         let documentItems = documentRepository.loadDocument()
         for documentItem in documentItems {
             let content = UNMutableNotificationContent()
             content.sound = .default
             content.title = documentItem.documentTitle ?? ""
-            content.subtitle = "締め切りが迫ってます。早めに済ませましょう"
-            content.body = "締め切りが過ぎたら土下座です"
-
+            let documentStatus = observeDocumentStatus(date: documentItem.deadLine ?? Date())
+            switch documentStatus {
+            case .normal:
+                content.subtitle = "締め切りは１週間以上あります"
+                content.body = "早めに準備しておくことに越したことはないです"
+            case .befor1Week:
+                content.subtitle = "締め切りが１週間になりました"
+                content.body = "もう，出せるとこまで準備したら出しましょう"
+            case .befor3Day:
+                content.subtitle = "締め切りはあと３日です"
+                content.body = "３日前には出しておいた方が気持ち楽だと思います"
+            case .befor1Day:
+                content.subtitle = "締め切りは明日です"
+                content.body = "今すぐ出しにいきましょう！¥n今日中に出せない場合は連絡を入れましょう"
+            case .deadline:
+                content.subtitle = "今日が締め切りです！"
+                content.body = "今すぐ出そう！早く出そう！今日一番にやることは提出だ！"
+            case .overdue:
+                content.subtitle = "締め切りが過ぎてしまいました"
+                content.body = "土下座しにいく準備をしましょう"
+            case .none:
+                content.subtitle = "時間が指定されていません"
+                content.body = "この件は今すぐ済ませておいた方が無難"
+            }
             // 午前の通知
             var morning = DateComponents()
             morning.hour = 8
@@ -96,22 +123,7 @@ class DocumentsListViewController: UIViewController {
                 content: content,
                 trigger: morningTrigger
             )
-            UNUserNotificationCenter.current().add(morningRequest) { error in
-                if let error = error {
-                    print(error.localizedDescription)
-                }
-            }
-            // 午後の通知
-            let afternoon = DateComponents()
-            morning.hour = 17
-            morning.minute = 0
-            let afternoonTrigger = UNCalendarNotificationTrigger(dateMatching: afternoon, repeats: false)
-            let afternoonRequest = UNNotificationRequest(
-                identifier: identifier,
-                content: content,
-                trigger: afternoonTrigger
-            )
-            UNUserNotificationCenter.current().add(afternoonRequest) { error in
+            notificationRequest.add(morningRequest) { error in
                 if let error = error {
                     print(error.localizedDescription)
                 }
@@ -157,6 +169,8 @@ extension DocumentsListViewController: UITableViewDataSource {
         if editingStyle == .delete {
             if !documentItems.isEmpty {
                 documentRepository.removeDocument(at: indexPath.row)
+                observeDocumentCellObject()
+                notification()
                 tableView.reloadData()
                 updateBadge()
             } else {
@@ -167,19 +181,47 @@ extension DocumentsListViewController: UITableViewDataSource {
         }
     }
 
-    private func diffDate(date: Date) -> String {
+    func diffDay(date: Date) -> Int {
+        // ここは後でよく考える
         let now = Date()
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyyMMdd"
+        let nowDayString = formatter.string(from: now)
+        let dateDayString = formatter.string(from: date)
+        let nowDay = formatter.date(from: nowDayString)
+        let dateDay = formatter.date(from: dateDayString)
         let calendar = Calendar(identifier: .gregorian)
-        let diff = calendar.dateComponents([.day], from: now, to: date)
-        guard let diffDay = diff.day else {
-            return "提出期限が設定されていません"
-        }
+
+        let diff = calendar.dateComponents([.day], from: nowDay ?? now, to: dateDay ?? now)
+        let diffDay = Int(diff.day!)
+        return diffDay
+    }
+
+    private func diffDate(date: Date) -> String {
+        let diffDay = diffDay(date: date)
         if diffDay > 0 {
             return "締め切りまで \(diffDay) 日です"
         } else if diffDay == 0 {
             return "今日が提出期限です"
         } else {
             return "提出期限が過ぎています"
+        }
+    }
+
+    private func observeDocumentStatus(date: Date) -> DocumentStatus {
+        let diffDay = diffDay(date: date)
+        if diffDay > 7 {
+            return .normal
+        } else if diffDay == 3 {
+            return .befor3Day
+        } else if diffDay == 1 {
+            return .befor1Day
+        } else if diffDay == 0 {
+            return .deadline
+        } else if diffDay < 0 {
+            return .overdue
+        } else {
+            return .none
         }
     }
 }
