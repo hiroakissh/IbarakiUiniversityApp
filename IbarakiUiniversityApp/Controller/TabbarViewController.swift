@@ -8,8 +8,8 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-    var todoRepository = ToDoRepository()
-    var documentRepository = DocumentRepository()
+    private var todoRepository = ToDoRepository()
+    private var documentRepository = DocumentRepository()
 
     override func viewDidLoad() {
         super.viewDidLoad()

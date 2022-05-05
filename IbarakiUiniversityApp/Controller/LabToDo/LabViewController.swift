@@ -18,7 +18,7 @@ class LabViewController: UIViewController {
 
     private weak var delegate = UIApplication.shared.delegate as? AppDelegate
 
-    var todoRepository = ToDoRepository()
+    private var todoRepository = ToDoRepository()
 
     private var todoCellViewObject: [ToDoCellViewObject] = []
 

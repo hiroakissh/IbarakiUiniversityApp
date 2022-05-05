@@ -8,11 +8,27 @@
 import UIKit
 
 class DocumentsListViewController: UIViewController {
+    enum DocumentStatus {
+        case normal
+        case befor1Week
+        case befor3Day
+        case befor1Day
+        case deadline
+        case overdue
+    }
+
+    enum DocumentCellObject {
+        case none
+        case document(String, Date)
+    }
+
     @IBOutlet private weak var tableView: UITableView!
 
-    private let delegate = UIApplication.shared.delegate as? AppDelegate
+    private weak var delegate = UIApplication.shared.delegate as? AppDelegate
 
-    var documentRepository = DocumentRepository()
+    private var documentRepository = DocumentRepository()
+
+    private var documentCellObject: [DocumentCellObject] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,10 +36,23 @@ class DocumentsListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "DocumentTableViewCell", bundle: nil), forCellReuseIdentifier: "documentCell")
+        observeDocumentCellObject()
+    }
+
+    func observeDocumentCellObject() {
+        let documentItems = documentRepository.loadDocument()
+        if documentItems.isEmpty {
+            documentCellObject = [.none]
+        } else {
+            documentCellObject = documentItems.map {
+                .document($0.documentTitle ?? "提出物が正しく表示できません", $0.deadLine ?? Date.now )
+            }
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        observeDocumentCellObject()
         tableView.reloadData()
         updateBadge()
     }
@@ -93,36 +122,34 @@ class DocumentsListViewController: UIViewController {
 
 extension DocumentsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let documentItems = documentRepository.loadDocument()
-        if documentItems.isEmpty {
-            return 1
-        } else {
-            return documentItems.count
-        }
+//        let documentItems = documentRepository.loadDocument()
+//        if documentItems.isEmpty {
+//            return 1
+//        } else {
+//            return documentItems.count
+//        }
+        documentCellObject.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let documentItems = documentRepository.loadDocument()
-        guard documentItems.count != 0
-        else {
+        switch documentCellObject[indexPath.row] {
+        case .none:
             let noneCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             noneCell.textLabel?.text = "予定されている提出物がありません"
             noneCell.textLabel?.textAlignment = .center
             noneCell.textLabel?.textColor = .white
             noneCell.textLabel?.backgroundColor = .darkGray
             return noneCell
+        case .document(let name, let date):
+            let documentCell = tableView.dequeueReusableCell(
+                withIdentifier: "documentCell",
+                for: indexPath
+                // swiftlint:disable:next force_cast
+            ) as! DocumentTableViewCell
+            documentCell.documentNameLabel?.text = name
+            documentCell.deadlineLabel.text = diffDate(date: date)
+            return documentCell
         }
-
-        guard let documentCell = tableView.dequeueReusableCell(
-            withIdentifier: "documentCell",
-            for: indexPath
-        ) as? DocumentTableViewCell
-        else {
-            return UITableViewCell()
-        }
-        documentCell.documentNameLabel?.text = documentItems[indexPath.row].documentTitle
-        documentCell.deadlineLabel.text = diffDate(indexRow: indexPath.row)
-        return documentCell
     }
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -146,12 +173,10 @@ extension DocumentsListViewController: UITableViewDataSource {
         }
     }
 
-    private func diffDate(indexRow: Int) -> String {
-        let documentItems = documentRepository.loadDocument()
+    private func diffDate(date: Date) -> String {
         let now = Date()
-        let calender = Calendar(identifier: .gregorian)
-        let submitDate = documentItems[indexRow].deadLine
-        let diff = calender.dateComponents([.day], from: now, to: submitDate ?? now)
+        let calendar = Calendar(identifier: .gregorian)
+        let diff = calendar.dateComponents([.day], from: now, to: date)
         guard let diffDay = diff.day else {
             return "提出期限が設定されていません"
         }
