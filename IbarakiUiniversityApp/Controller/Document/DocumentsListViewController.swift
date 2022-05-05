@@ -122,12 +122,6 @@ class DocumentsListViewController: UIViewController {
 
 extension DocumentsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        let documentItems = documentRepository.loadDocument()
-//        if documentItems.isEmpty {
-//            return 1
-//        } else {
-//            return documentItems.count
-//        }
         documentCellObject.count
     }
 
