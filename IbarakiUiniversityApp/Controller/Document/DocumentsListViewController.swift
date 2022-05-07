@@ -84,18 +84,19 @@ class DocumentsListViewController: UIViewController {
         notificationRequest.removeAllPendingNotificationRequests()
 
         let documentItems = documentRepository.loadDocument()
-        for documentItem in documentItems {
+        if documentItems.isEmpty {
+            print("通知一つ")
             let content = UNMutableNotificationContent()
             content.sound = .default
-            content.title = documentItem.documentTitle ?? ""
-            let documentStatus = observeDocumentStatus(date: documentItem.deadLine ?? Date())
-            notificationSubtitle(status: documentStatus, content: content)
-            // 午前の通知
+            content.title = "提出物はありません"
+            content.subtitle = "提出物がないので他のことに集中！！"
+            content.body = "この状態を維持するために、早めに行動しよう！"
+
             var morning = DateComponents()
             morning.hour = 8
             morning.minute = 0
 
-            let identifier = String(documentItem.uuidString)
+            let identifier = String(UUID().uuidString)
             let morningTrigger = UNCalendarNotificationTrigger(dateMatching: morning, repeats: false)
             let morningRequest = UNNotificationRequest(
                 identifier: identifier,
@@ -105,6 +106,36 @@ class DocumentsListViewController: UIViewController {
             notificationRequest.add(morningRequest) { error in
                 if let error = error {
                     print(error.localizedDescription)
+                }
+            }
+        } else {
+            for documentItem in documentItems {
+                let content = UNMutableNotificationContent()
+                content.sound = .default
+                content.title = documentItem.documentTitle ?? ""
+                let documentStatus = observeDocumentStatus(date: documentItem.deadLine ?? Date())
+                if documentStatus == .none {
+                    print("通知なし")
+                } else {
+                    print("通知あり")
+                    notificationSubtitle(status: documentStatus, content: content)
+                    // 午前の通知
+                    var morning = DateComponents()
+                    morning.hour = 8
+                    morning.minute = 0
+
+                    let identifier = String(documentItem.uuidString)
+                    let morningTrigger = UNCalendarNotificationTrigger(dateMatching: morning, repeats: false)
+                    let morningRequest = UNNotificationRequest(
+                        identifier: identifier,
+                        content: content,
+                        trigger: morningTrigger
+                    )
+                    notificationRequest.add(morningRequest) { error in
+                        if let error = error {
+                            print(error.localizedDescription)
+                        }
+                    }
                 }
             }
         }
