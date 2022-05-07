@@ -256,7 +256,6 @@ extension DocumentsListViewController: UITableViewDataSource {
                 return .befor3Day
             }
             return .befor1Day
-
         } else if diffDay == 0 {
             return .deadline
         } else if diffDay < 0 {
