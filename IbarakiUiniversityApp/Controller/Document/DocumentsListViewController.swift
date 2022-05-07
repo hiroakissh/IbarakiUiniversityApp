@@ -114,9 +114,7 @@ class DocumentsListViewController: UIViewController {
                 content.sound = .default
                 content.title = documentItem.documentTitle ?? ""
                 let documentStatus = observeDocumentStatus(date: documentItem.deadLine ?? Date())
-                if documentStatus == .none {
-                    print("通知なし")
-                } else {
+                if documentStatus != .none {
                     print("通知あり")
                     notificationSubtitle(status: documentStatus, content: content)
                     // 午前の通知
