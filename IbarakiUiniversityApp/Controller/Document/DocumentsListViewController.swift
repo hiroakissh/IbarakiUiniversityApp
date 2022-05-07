@@ -85,7 +85,6 @@ class DocumentsListViewController: UIViewController {
 
         let documentItems = documentRepository.loadDocument()
         if documentItems.isEmpty {
-            print("通知一つ")
             let content = UNMutableNotificationContent()
             content.sound = .default
             content.title = "提出物はありません"
@@ -104,7 +103,6 @@ class DocumentsListViewController: UIViewController {
                 content.title = documentItem.documentTitle ?? ""
                 let documentStatus = observeDocumentStatus(date: documentItem.deadLine ?? Date())
                 if documentStatus != .none {
-                    print("通知あり")
                     notificationSubtitle(status: documentStatus, content: content)
                     // 午前の通知
                     notificationDetail(
