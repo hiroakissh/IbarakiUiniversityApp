@@ -92,22 +92,11 @@ class DocumentsListViewController: UIViewController {
             content.subtitle = "提出物がないので他のことに集中！！"
             content.body = "この状態を維持するために、早めに行動しよう！"
 
-            var morning = DateComponents()
-            morning.hour = 8
-            morning.minute = 0
-
-            let identifier = String(UUID().uuidString)
-            let morningTrigger = UNCalendarNotificationTrigger(dateMatching: morning, repeats: false)
-            let morningRequest = UNNotificationRequest(
-                identifier: identifier,
+            notificationDetail(
+                uuid: String(UUID().uuidString),
                 content: content,
-                trigger: morningTrigger
+                notificationRequest: notificationRequest
             )
-            notificationRequest.add(morningRequest) { error in
-                if let error = error {
-                    print(error.localizedDescription)
-                }
-            }
         } else {
             for documentItem in documentItems {
                 let content = UNMutableNotificationContent()
@@ -118,26 +107,16 @@ class DocumentsListViewController: UIViewController {
                     print("通知あり")
                     notificationSubtitle(status: documentStatus, content: content)
                     // 午前の通知
-                    var morning = DateComponents()
-                    morning.hour = 8
-                    morning.minute = 0
-
-                    let identifier = String(documentItem.uuidString)
-                    let morningTrigger = UNCalendarNotificationTrigger(dateMatching: morning, repeats: false)
-                    let morningRequest = UNNotificationRequest(
-                        identifier: identifier,
+                    notificationDetail(
+                        uuid: String(documentItem.uuidString),
                         content: content,
-                        trigger: morningTrigger
+                        notificationRequest: notificationRequest
                     )
-                    notificationRequest.add(morningRequest) { error in
-                        if let error = error {
-                            print(error.localizedDescription)
-                        }
-                    }
                 }
             }
         }
     }
+
     func notificationSubtitle(status: DocumentStatus, content: UNMutableNotificationContent) {
         switch status {
         case .normal:
@@ -161,6 +140,28 @@ class DocumentsListViewController: UIViewController {
         case .none:
             content.subtitle = "近い提出物はありません"
             content.body = "今日も一日頑張りましょう！"
+        }
+    }
+
+    func notificationDetail(
+        uuid: String,
+        content: UNMutableNotificationContent,
+        notificationRequest: UNUserNotificationCenter
+    ) {
+        var morning = DateComponents()
+        morning.hour = 8
+        morning.minute = 0
+
+        let morningTrigger = UNCalendarNotificationTrigger(dateMatching: morning, repeats: false)
+        let morningRequest = UNNotificationRequest(
+            identifier: uuid,
+            content: content,
+            trigger: morningTrigger
+        )
+        notificationRequest.add(morningRequest) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
         }
     }
 }
