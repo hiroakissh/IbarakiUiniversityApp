@@ -28,7 +28,7 @@
                                     <color key="textColor" name="mainFont"/>
                                 </textAttributes>
                                 <items>
-                                    <navigationItem title="研究室やることリスト" id="MC6-J7-iKa">
+                                    <navigationItem title="やることリスト" id="MC6-J7-iKa">
                                         <barButtonItem key="rightBarButtonItem" title="追加" id="qST-xl-lHv">
                                             <connections>
                                                 <segue destination="DsT-Jx-Koi" kind="presentation" modalPresentationStyle="fullScreen" id="wS5-pj-Hem"/>

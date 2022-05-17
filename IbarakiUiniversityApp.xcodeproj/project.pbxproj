@@ -13,6 +13,8 @@
 		531A0177270C8FBB00F4F55B /* AddDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531A0176270C8FBB00F4F55B /* AddDocumentViewController.swift */; };
 		532D06D1270ED17C0010ABC4 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D06D0270ED17C0010ABC4 /* AddToDoViewController.swift */; };
 		53633A7E270EF392006C6802 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53633A7D270EF392006C6802 /* TabBarViewController.swift */; };
+		5384D9422833B761007F3408 /* IBADAIAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5384D9412833B761007F3408 /* IBADAIAppUITests.swift */; };
+		5384D9442833B761007F3408 /* IBADAIAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5384D9432833B761007F3408 /* IBADAIAppUITestsLaunchTests.swift */; };
 		53A58E0E2706F8BA008EC8D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A58E0D2706F8BA008EC8D7 /* AppDelegate.swift */; };
 		53A58E102706F8BA008EC8D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A58E0F2706F8BA008EC8D7 /* SceneDelegate.swift */; };
 		53A58E152706F8BA008EC8D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53A58E132706F8BA008EC8D7 /* Main.storyboard */; };
@@ -33,6 +35,16 @@
 		5D564DF0AF03A309A908FAEE /* Pods_IbarakiUiniversityApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF31067AD0E10D906FA1207 /* Pods_IbarakiUiniversityApp.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5384D9452833B761007F3408 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53A58E022706F8BA008EC8D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53A58E092706F8BA008EC8D7;
+			remoteInfo = IbarakiUiniversityApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1CF31067AD0E10D906FA1207 /* Pods_IbarakiUiniversityApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IbarakiUiniversityApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5309CBC327F467060072ED57 /* LabToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabToDoTableViewCell.swift; sourceTree = "<group>"; };
@@ -41,6 +53,9 @@
 		531A0176270C8FBB00F4F55B /* AddDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocumentViewController.swift; sourceTree = "<group>"; };
 		532D06D0270ED17C0010ABC4 /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
 		53633A7D270EF392006C6802 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		5384D93F2833B761007F3408 /* IBADAIAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IBADAIAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5384D9412833B761007F3408 /* IBADAIAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBADAIAppUITests.swift; sourceTree = "<group>"; };
+		5384D9432833B761007F3408 /* IBADAIAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBADAIAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		53A58E0A2706F8BA008EC8D7 /* IbarakiUiniversityApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IbarakiUiniversityApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53A58E0D2706F8BA008EC8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53A58E0F2706F8BA008EC8D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +80,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5384D93C2833B761007F3408 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53A58E072706F8BA008EC8D7 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -138,10 +160,20 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		5384D9402833B761007F3408 /* IBADAIAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5384D9412833B761007F3408 /* IBADAIAppUITests.swift */,
+				5384D9432833B761007F3408 /* IBADAIAppUITestsLaunchTests.swift */,
+			);
+			path = IBADAIAppUITests;
+			sourceTree = "<group>";
+		};
 		53A58E012706F8BA008EC8D7 = {
 			isa = PBXGroup;
 			children = (
 				53A58E0C2706F8BA008EC8D7 /* IbarakiUiniversityApp */,
+				5384D9402833B761007F3408 /* IBADAIAppUITests */,
 				53A58E0B2706F8BA008EC8D7 /* Products */,
 				93A94E09C52777FDEF6622C7 /* Pods */,
 				28FFFED6D00F6AB67182AE55 /* Frameworks */,
@@ -152,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				53A58E0A2706F8BA008EC8D7 /* IbarakiUiniversityApp.app */,
+				5384D93F2833B761007F3408 /* IBADAIAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,6 +274,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5384D93E2833B761007F3408 /* IBADAIAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5384D9472833B761007F3408 /* Build configuration list for PBXNativeTarget "IBADAIAppUITests" */;
+			buildPhases = (
+				5384D93B2833B761007F3408 /* Sources */,
+				5384D93C2833B761007F3408 /* Frameworks */,
+				5384D93D2833B761007F3408 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5384D9462833B761007F3408 /* PBXTargetDependency */,
+			);
+			name = IBADAIAppUITests;
+			productName = IBADAIAppUITests;
+			productReference = 5384D93F2833B761007F3408 /* IBADAIAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		53A58E092706F8BA008EC8D7 /* IbarakiUiniversityApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53A58E1E2706F8BC008EC8D7 /* Build configuration list for PBXNativeTarget "IbarakiUiniversityApp" */;
@@ -268,9 +319,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					5384D93E2833B761007F3408 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 53A58E092706F8BA008EC8D7;
+					};
 					53A58E092706F8BA008EC8D7 = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -290,11 +345,19 @@
 			projectRoot = "";
 			targets = (
 				53A58E092706F8BA008EC8D7 /* IbarakiUiniversityApp */,
+				5384D93E2833B761007F3408 /* IBADAIAppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5384D93D2833B761007F3408 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53A58E082706F8BA008EC8D7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -370,6 +433,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5384D93B2833B761007F3408 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5384D9442833B761007F3408 /* IBADAIAppUITestsLaunchTests.swift in Sources */,
+				5384D9422833B761007F3408 /* IBADAIAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53A58E062706F8BA008EC8D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,6 +468,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5384D9462833B761007F3408 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53A58E092706F8BA008EC8D7 /* IbarakiUiniversityApp */;
+			targetProxy = 5384D9452833B761007F3408 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		53A58E132706F8BA008EC8D7 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -416,6 +496,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5384D9482833B761007F3408 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5LBWH4CYQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakiapp.IBADAIAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IbarakiUiniversityApp;
+			};
+			name = Debug;
+		};
+		5384D9492833B761007F3408 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5LBWH4CYQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakiapp.IBADAIAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IbarakiUiniversityApp;
+			};
+			name = Release;
+		};
 		53A58E1C2706F8BC008EC8D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -597,6 +713,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5384D9472833B761007F3408 /* Build configuration list for PBXNativeTarget "IBADAIAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5384D9482833B761007F3408 /* Debug */,
+				5384D9492833B761007F3408 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		53A58E052706F8BA008EC8D7 /* Build configuration list for PBXProject "IbarakiUiniversityApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
