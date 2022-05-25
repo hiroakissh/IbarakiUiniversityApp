@@ -19,7 +19,7 @@ class PortalViewController: UIViewController {
         move()
     }
     private func move() {
-s        if moveEnable {
+        if moveEnable {
             let url = NSURL(string: "https://idc.ibaraki.ac.jp/portal/")
             UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
         } else {
