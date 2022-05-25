@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qqt-Ca-feS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -211,38 +212,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jaB-Pb-y5a">
-                                <rect key="frame" x="0.0" y="83" width="414" height="730"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
-                                    <wkPreferences key="preferences"/>
-                                </wkWebViewConfiguration>
-                            </wkWebView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obA-3q-BUX">
-                                <rect key="frame" x="364" y="49" width="45" height="34"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqp-EQ-CR3">
+                                <rect key="frame" x="132" y="507" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="RJZ-Bs-fSv"/>
+                                    <constraint firstAttribute="height" constant="50" id="Z03-aF-x8Y"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="goforward" catalog="system"/>
+                                <buttonConfiguration key="configuration" style="plain" title="許可の確認">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                </buttonConfiguration>
                                 <connections>
-                                    <action selector="reloadButton:" destination="shq-AB-qga" eventType="touchUpInside" id="fnk-io-lF5"/>
+                                    <action selector="permissionAction:" destination="shq-AB-qga" eventType="touchUpInside" id="dpF-AG-Bmm"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ポータルサイトを外部ブラウザで開いてもよろしいでしょうか？" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mn6-in-vTG">
+                                <rect key="frame" x="20" y="194" width="374" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c1S-pF-G5L">
+                                <rect key="frame" x="37" y="277" width="340" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="340" id="ZQI-Af-QeJ"/>
+                                    <constraint firstAttribute="height" constant="50" id="mEk-Cu-RvD"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ポータルサイトを開く">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="loadButton:" destination="shq-AB-qga" eventType="touchUpInside" id="WYu-Kp-G4n"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="M0C-b7-prH"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jaB-Pb-y5a" firstAttribute="top" secondItem="obA-3q-BUX" secondAttribute="bottom" id="BAG-rb-IbN"/>
-                            <constraint firstItem="jaB-Pb-y5a" firstAttribute="bottom" secondItem="M0C-b7-prH" secondAttribute="bottom" id="BlU-ah-k3g"/>
-                            <constraint firstItem="M0C-b7-prH" firstAttribute="trailing" secondItem="obA-3q-BUX" secondAttribute="trailing" constant="5" id="Hce-k1-s2d"/>
-                            <constraint firstItem="jaB-Pb-y5a" firstAttribute="trailing" secondItem="M0C-b7-prH" secondAttribute="trailing" id="Vch-r7-BZM"/>
-                            <constraint firstItem="jaB-Pb-y5a" firstAttribute="leading" secondItem="M0C-b7-prH" secondAttribute="leading" id="WMp-1Q-9y6"/>
-                            <constraint firstItem="obA-3q-BUX" firstAttribute="top" secondItem="M0C-b7-prH" secondAttribute="top" constant="5" id="ZyP-vZ-7o2"/>
-                            <constraint firstItem="jaB-Pb-y5a" firstAttribute="centerY" secondItem="al8-jJ-NQx" secondAttribute="centerY" id="m4K-WD-ZMA"/>
+                            <constraint firstItem="hqp-EQ-CR3" firstAttribute="centerX" secondItem="al8-jJ-NQx" secondAttribute="centerX" id="26n-dp-PjX"/>
+                            <constraint firstItem="c1S-pF-G5L" firstAttribute="top" secondItem="Mn6-in-vTG" secondAttribute="bottom" constant="40" id="Nsy-fK-G0W"/>
+                            <constraint firstItem="Mn6-in-vTG" firstAttribute="centerX" secondItem="al8-jJ-NQx" secondAttribute="centerX" id="Uhs-6U-VWi"/>
+                            <constraint firstItem="M0C-b7-prH" firstAttribute="trailing" secondItem="Mn6-in-vTG" secondAttribute="trailing" constant="20" id="lb5-68-mn5"/>
+                            <constraint firstItem="Mn6-in-vTG" firstAttribute="top" secondItem="M0C-b7-prH" secondAttribute="top" constant="150" id="lnW-Md-06J"/>
+                            <constraint firstItem="c1S-pF-G5L" firstAttribute="centerX" secondItem="al8-jJ-NQx" secondAttribute="centerX" id="sPj-Wn-4gb"/>
+                            <constraint firstItem="Mn6-in-vTG" firstAttribute="leading" secondItem="M0C-b7-prH" secondAttribute="leading" constant="20" id="y4P-QB-8aI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="教務情報ポータル" image="logoIbarakiUniversity" selectedImage="logoIbarakiUniversity" id="bZ4-XW-YBL"/>
                     <connections>
-                        <outlet property="webView" destination="jaB-Pb-y5a" id="A5m-g3-BD1"/>
+                        <outlet property="moveButton" destination="c1S-pF-G5L" id="cGX-db-3Z8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gj1-No-1pE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
