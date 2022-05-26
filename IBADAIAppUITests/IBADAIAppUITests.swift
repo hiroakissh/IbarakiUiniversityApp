@@ -27,6 +27,8 @@ class IBADAIAppUITests: XCTestCase {
         let app = XCUIApplication()
         app.launch()
 
+//        let addButton = app.buttons[""]
+//        app.buttons[""].tap()
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
 
