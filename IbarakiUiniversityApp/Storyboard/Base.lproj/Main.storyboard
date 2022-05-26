@@ -212,7 +212,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqp-EQ-CR3">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqp-EQ-CR3">
                                 <rect key="frame" x="132" y="507" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="RJZ-Bs-fSv"/>
@@ -250,6 +250,7 @@
                         <viewLayoutGuide key="safeArea" id="M0C-b7-prH"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="M0C-b7-prH" firstAttribute="bottom" secondItem="hqp-EQ-CR3" secondAttribute="bottom" constant="256" id="0UB-Vj-GU1"/>
                             <constraint firstItem="hqp-EQ-CR3" firstAttribute="centerX" secondItem="al8-jJ-NQx" secondAttribute="centerX" id="26n-dp-PjX"/>
                             <constraint firstItem="c1S-pF-G5L" firstAttribute="top" secondItem="Mn6-in-vTG" secondAttribute="bottom" constant="40" id="Nsy-fK-G0W"/>
                             <constraint firstItem="Mn6-in-vTG" firstAttribute="centerX" secondItem="al8-jJ-NQx" secondAttribute="centerX" id="Uhs-6U-VWi"/>
