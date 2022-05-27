@@ -9,18 +9,28 @@ import UIKit
 import WebKit
 
 class PortalViewController: UIViewController {
-    @IBOutlet private weak var moveButton: UIButton!
+    @IBOutlet private weak var portalButton: UIButton!
+
+    @IBOutlet private weak var manabaButton: UIButton!
 
     var moveEnable: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         presentAlert()
-        move()
     }
-    private func move() {
+    private func movePortal() {
         if moveEnable {
             let url = NSURL(string: "https://idc.ibaraki.ac.jp/portal/")
+            UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+        } else {
+            return
+        }
+    }
+
+    private func moveManaba() {
+        if moveEnable {
+            let url = NSURL(string: "https://manaba.ibaraki.ac.jp/")
             UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
         } else {
             return
@@ -52,14 +62,20 @@ class PortalViewController: UIViewController {
 
     private func cancelEnableAction() {
         moveEnable = false
-        moveButton.isEnabled = false
+        portalButton.isEnabled = false
+        manabaButton.isEnabled = false
     }
     private func okEnableAction() {
         moveEnable = true
-        moveButton.isEnabled = true
+        portalButton.isEnabled = true
+        manabaButton.isEnabled = true
     }
-    @IBAction private func loadButton(_ sender: Any) {
-        move()
+    @IBAction private func movePortalButton(_ sender: Any) {
+        movePortal()
+    }
+
+    @IBAction private func moveManabaButton(_ sender: Any) {
+        moveManaba()
     }
     @IBAction private func permissionAction(_ sender: Any) {
         presentAlert()
