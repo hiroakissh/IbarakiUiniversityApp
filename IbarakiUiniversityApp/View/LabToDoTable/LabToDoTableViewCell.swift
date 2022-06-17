@@ -14,7 +14,7 @@ class LabToDoTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         todoContentView.layer.cornerRadius = 20.0
-        todoContentView.layer.shadowOffset = .init(width: 0.25, height: 0.5)
+        todoContentView.layer.shadowOffset = .init(width: 0.2, height: 0.2)
         todoContentView.layer.shadowOpacity = 0.3
         todoContentView.layer.shadowRadius = 10.0
     }
