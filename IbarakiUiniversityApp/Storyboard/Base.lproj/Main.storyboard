@@ -156,10 +156,10 @@
             </objects>
             <point key="canvasLocation" x="2804" y="366"/>
         </scene>
-        <!--View Controller-->
+        <!--Show Web Site View Controller-->
         <scene sceneID="XEw-Mv-MqV">
             <objects>
-                <viewController id="s9h-XS-v2P" sceneMemberID="viewController">
+                <viewController id="s9h-XS-v2P" customClass="showWebSiteViewController" customModule="IbarakiUiniversityApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="osI-Xk-8gB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,10 +221,14 @@
                             <constraint firstItem="8zZ-A4-2Hl" firstAttribute="centerX" secondItem="osI-Xk-8gB" secondAttribute="centerX" id="wLt-gL-24p"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="classTableView" destination="z6A-82-xYV" id="cSG-Ai-ywB"/>
+                        <outlet property="homeTableView" destination="pVg-DV-ko1" id="IzZ-pI-h2r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXX-Fr-DXz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2477" y="1168"/>
+            <point key="canvasLocation" x="2486" y="1195"/>
         </scene>
         <!--学校サイト-->
         <scene sceneID="dtC-oG-jlK">
