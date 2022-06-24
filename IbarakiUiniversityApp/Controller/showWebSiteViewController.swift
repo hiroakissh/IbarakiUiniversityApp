@@ -12,8 +12,7 @@ enum SiteType {
     case home
 }
 
-class showWebSiteViewController: UIViewController {
-
+class ShowWebSiteViewController: UIViewController {
     @IBOutlet private weak var classTableView: UITableView!
     @IBOutlet private weak var homeTableView: UITableView!
 
@@ -27,22 +26,25 @@ class showWebSiteViewController: UIViewController {
         classTableView.dataSource = self
         homeTableView.delegate = self
         homeTableView.dataSource = self
-
     }
 }
 
-
-extension showWebSiteViewController: UITableViewDataSource {
+extension ShowWebSiteViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        if (classTableView != nil) {
+            return classSite.count
+        } else if (homeTableView != nil) {
+            return homeSite.count
+        } else {
+            return 1
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SiteCell", for: indexPath)
+        return cell
     }
 }
 
-extension showWebSiteViewController: UITableViewDelegate {
-
+extension ShowWebSiteViewController: UITableViewDelegate {
 }
-
