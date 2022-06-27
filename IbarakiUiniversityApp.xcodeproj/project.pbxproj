@@ -12,6 +12,7 @@
 		5314CCDE2816B83000213963 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5314CCDD2816B83000213963 /* Color.xcassets */; };
 		531A0177270C8FBB00F4F55B /* AddDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531A0176270C8FBB00F4F55B /* AddDocumentViewController.swift */; };
 		532D06D1270ED17C0010ABC4 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D06D0270ED17C0010ABC4 /* AddToDoViewController.swift */; };
+		533BFA12286600970058455D /* ShowWebSiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BFA11286600970058455D /* ShowWebSiteViewController.swift */; };
 		53633A7E270EF392006C6802 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53633A7D270EF392006C6802 /* TabBarViewController.swift */; };
 		5384D9422833B761007F3408 /* IBADAIAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5384D9412833B761007F3408 /* IBADAIAppUITests.swift */; };
 		5384D9442833B761007F3408 /* IBADAIAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5384D9432833B761007F3408 /* IBADAIAppUITestsLaunchTests.swift */; };
@@ -22,7 +23,6 @@
 		53A58E1A2706F8BC008EC8D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53A58E182706F8BC008EC8D7 /* LaunchScreen.storyboard */; };
 		53A58E252707091E008EC8D7 /* DocumentsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A58E242707091E008EC8D7 /* DocumentsListViewController.swift */; };
 		53A58E272707096D008EC8D7 /* PortalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A58E262707096D008EC8D7 /* PortalViewController.swift */; };
-		53A58E2927070984008EC8D7 /* ManabaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A58E2827070984008EC8D7 /* ManabaViewController.swift */; };
 		53A58E2B2707099B008EC8D7 /* LabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A58E2A2707099B008EC8D7 /* LabViewController.swift */; };
 		53B5FD0D2814BD6000503725 /* RealmDocumentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FD0C2814BD6000503725 /* RealmDocumentModel.swift */; };
 		53B5FD102814BD7200503725 /* ToDoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FD0F2814BD7200503725 /* ToDoRepository.swift */; };
@@ -52,6 +52,7 @@
 		5314CCDD2816B83000213963 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		531A0176270C8FBB00F4F55B /* AddDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocumentViewController.swift; sourceTree = "<group>"; };
 		532D06D0270ED17C0010ABC4 /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
+		533BFA11286600970058455D /* ShowWebSiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShowWebSiteViewController.swift; path = IbarakiUiniversityApp/Controller/ShowWebSiteViewController.swift; sourceTree = SOURCE_ROOT; };
 		53633A7D270EF392006C6802 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		5384D93F2833B761007F3408 /* IBADAIAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IBADAIAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5384D9412833B761007F3408 /* IBADAIAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBADAIAppUITests.swift; sourceTree = "<group>"; };
@@ -65,7 +66,6 @@
 		53A58E1B2706F8BC008EC8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		53A58E242707091E008EC8D7 /* DocumentsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsListViewController.swift; sourceTree = "<group>"; };
 		53A58E262707096D008EC8D7 /* PortalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortalViewController.swift; sourceTree = "<group>"; };
-		53A58E2827070984008EC8D7 /* ManabaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManabaViewController.swift; sourceTree = "<group>"; };
 		53A58E2A2707099B008EC8D7 /* LabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabViewController.swift; sourceTree = "<group>"; };
 		53B5FD0C2814BD6000503725 /* RealmDocumentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDocumentModel.swift; sourceTree = "<group>"; };
 		53B5FD0F2814BD7200503725 /* ToDoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoRepository.swift; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 				53066BCC27FB17FA004F8A03 /* LabToDo */,
 				53066BCB27FB17E2004F8A03 /* Document */,
 				53A58E262707096D008EC8D7 /* PortalViewController.swift */,
-				53A58E2827070984008EC8D7 /* ManabaViewController.swift */,
+				533BFA11286600970058455D /* ShowWebSiteViewController.swift */,
 				53633A7D270EF392006C6802 /* TabBarViewController.swift */,
 			);
 			path = Controller;
@@ -447,7 +447,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				53B5FD192814BE2C00503725 /* RealmToDoModel.swift in Sources */,
-				53A58E2927070984008EC8D7 /* ManabaViewController.swift in Sources */,
 				531A0177270C8FBB00F4F55B /* AddDocumentViewController.swift in Sources */,
 				53A58E272707096D008EC8D7 /* PortalViewController.swift in Sources */,
 				53B5FD132814BD7900503725 /* SwiftToDoModel.swift in Sources */,
@@ -459,6 +458,7 @@
 				53A58E252707091E008EC8D7 /* DocumentsListViewController.swift in Sources */,
 				5309CBC527F467060072ED57 /* LabToDoTableViewCell.swift in Sources */,
 				53C6629327F04B5200E82593 /* DocumentTableViewCell.swift in Sources */,
+				533BFA12286600970058455D /* ShowWebSiteViewController.swift in Sources */,
 				53B5FD0D2814BD6000503725 /* RealmDocumentModel.swift in Sources */,
 				53633A7E270EF392006C6802 /* TabBarViewController.swift in Sources */,
 				53B5FD152814BDE900503725 /* SwiftDocumentModel.swift in Sources */,
