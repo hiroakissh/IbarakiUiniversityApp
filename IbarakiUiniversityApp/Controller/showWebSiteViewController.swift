@@ -59,6 +59,31 @@ extension ShowWebSiteViewController: UITableViewDataSource {
 
 extension ShowWebSiteViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+        if classTableView == tableView {
+            let siteName = classSite[indexPath.row]
+            if siteName == "ポータルサイト" {
+                print("ポータルサイト")
+            } else if siteName == "manaba" {
+                print("manaba")
+            }
+        } else if homeTableView == tableView {
+            let siteName = homeSite[indexPath.row]
+            if siteName == "全学部共通" {
+                print("全学部共通")
+            } else if siteName == "工学部" {
+                print("工学部")
+            } else if siteName == "理学部" {
+                print("理学部")
+            } else if siteName == "農学部" {
+                print("農学部")
+            } else if siteName == "人文社会学部" {
+                print("人文社会学部")
+            } else if siteName == "教育学部" {
+                print("教育学部")
+            }
+        } else {
+            print("tableViewが正常に読み込まれていません")
+            fatalError()
+        }
     }
 }
