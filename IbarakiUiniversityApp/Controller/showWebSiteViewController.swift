@@ -26,6 +26,13 @@ class ShowWebSiteViewController: UIViewController {
         classTableView.dataSource = self
         homeTableView.delegate = self
         homeTableView.dataSource = self
+
+        settingUI()
+    }
+
+    func settingUI() {
+        classTableView.layer.cornerRadius = 10
+        homeTableView.layer.cornerRadius = 10
     }
 }
 
