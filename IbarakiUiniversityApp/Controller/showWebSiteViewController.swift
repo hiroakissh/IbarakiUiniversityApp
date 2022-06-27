@@ -31,9 +31,9 @@ class ShowWebSiteViewController: UIViewController {
 
 extension ShowWebSiteViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (classTableView != nil) {
+        if classTableView == tableView {
             return classSite.count
-        } else if (homeTableView != nil) {
+        } else if homeTableView == tableView {
             return homeSite.count
         } else {
             return 1
@@ -41,10 +41,24 @@ extension ShowWebSiteViewController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SiteCell", for: indexPath)
-        return cell
+        if classTableView == tableView {
+            let classCell = classTableView.dequeueReusableCell(withIdentifier: "classCell", for: indexPath)
+            classCell.textLabel?.text = classSite[indexPath.row]
+            return classCell
+        } else if homeTableView == tableView {
+            let homeSiteCell = homeTableView.dequeueReusableCell(withIdentifier: "homeSiteCell", for: indexPath)
+            homeSiteCell.textLabel?.text = homeSite[indexPath.row]
+            return homeSiteCell
+        } else {
+            let cell = classTableView.dequeueReusableCell(withIdentifier: "classCell", for: indexPath)
+            cell.textLabel?.text = "読み込めていません"
+            return cell
+        }
     }
 }
 
 extension ShowWebSiteViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
 }
