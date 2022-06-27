@@ -6,11 +6,7 @@
 //
 
 import UIKit
-
-enum SiteType {
-    case classes
-    case home
-}
+import WebKit
 
 class ShowWebSiteViewController: UIViewController {
     @IBOutlet private weak var classTableView: UITableView!
