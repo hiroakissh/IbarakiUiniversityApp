@@ -134,7 +134,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="QTL-sz-AJb"/>
-                        <color key="backgroundColor" name="mainFontBack"/>
+                        <color key="backgroundColor" name="AppBack"/>
                         <constraints>
                             <constraint firstItem="jKp-Gh-rja" firstAttribute="centerX" secondItem="7hi-Ww-w6D" secondAttribute="centerX" id="3y4-TZ-kME"/>
                             <constraint firstItem="2Re-v2-PZI" firstAttribute="centerX" secondItem="7hi-Ww-w6D" secondAttribute="centerX" id="MMK-8w-Ydy"/>
@@ -386,7 +386,7 @@
                             </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UgU-8F-4RT"/>
-                        <color key="backgroundColor" name="mainFontBack"/>
+                        <color key="backgroundColor" name="AppBack"/>
                         <constraints>
                             <constraint firstItem="SVx-OD-Je1" firstAttribute="leading" secondItem="UgU-8F-4RT" secondAttribute="leading" constant="15" id="1Qc-gg-ShF"/>
                             <constraint firstItem="SE5-7o-974" firstAttribute="centerX" secondItem="qk7-Gd-65J" secondAttribute="centerX" id="22Y-Rs-SoZ"/>
@@ -440,6 +440,9 @@
         <image name="document" width="25" height="25"/>
         <image name="logoIbarakiUniversity" width="25" height="25"/>
         <image name="study" width="25" height="25"/>
+        <namedColor name="AppBack">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="mainFont">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
