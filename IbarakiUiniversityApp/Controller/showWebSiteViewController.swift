@@ -15,6 +15,15 @@ class ShowWebSiteViewController: UIViewController {
     private let classSite = ["ポータルサイト", "manaba"]
     private let homeSite = ["全学部共通", "工学部", "理学部", "農学部", "人文社会学部", "教育学部"]
 
+    private let classSiteURL = ["https://idc.ibaraki.ac.jp/portal/",
+                                "https://manaba.ibaraki.ac.jp/"]
+    private let homeSiteURL = ["https://www.ibaraki.ac.jp/",
+                               "https://www.eng.ibaraki.ac.jp/",
+                               "https://www.sci.ibaraki.ac.jp/",
+                               "https://www.agr.ibaraki.ac.jp/",
+                               "http://www.hum.ibaraki.ac.jp/",
+                               "http://www.edu.ibaraki.ac.jp/"]
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
