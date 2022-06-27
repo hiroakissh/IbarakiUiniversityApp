@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--研究室ToDo-->
+        <!--やることToDo-->
         <scene sceneID="ps6-Z2-5da">
             <objects>
                 <viewController id="1OR-rD-MuK" customClass="LabViewController" customModule="IbarakiUiniversityApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -66,7 +66,7 @@
                             <constraint firstItem="Y6g-Mq-z6i" firstAttribute="top" secondItem="qAM-cV-Fha" secondAttribute="top" id="yc7-Yl-nqN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="研究室ToDo" image="study" selectedImage="study" id="fvX-e6-xB5"/>
+                    <tabBarItem key="tabBarItem" title="やることToDo" image="study" selectedImage="study" id="fvX-e6-xB5"/>
                     <connections>
                         <outlet property="tableView" destination="jdd-OP-dJf" id="p1N-uE-6fu"/>
                     </connections>
@@ -156,7 +156,7 @@
             </objects>
             <point key="canvasLocation" x="2804" y="366"/>
         </scene>
-        <!--Show Web Site View Controller-->
+        <!--学校サイト-->
         <scene sceneID="XEw-Mv-MqV">
             <objects>
                 <viewController id="s9h-XS-v2P" customClass="ShowWebSiteViewController" customModule="IbarakiUiniversityApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -177,13 +177,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="大学ホームページ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BhX-c8-KPk">
-                                <rect key="frame" x="109.5" y="376.5" width="195" height="29"/>
+                                <rect key="frame" x="109.5" y="316.5" width="195" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pVg-DV-ko1">
-                                <rect key="frame" x="60" y="425.5" width="294" height="396.5"/>
+                                <rect key="frame" x="60" y="365.5" width="294" height="427.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" tag="1" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeSiteCell" id="rRH-y8-7aZ">
@@ -197,10 +197,10 @@
                                 </prototypes>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="z6A-82-xYV">
-                                <rect key="frame" x="60" y="186.5" width="294" height="150"/>
+                                <rect key="frame" x="60" y="186.5" width="294" height="90"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="bK8-Ln-B0u"/>
+                                    <constraint firstAttribute="height" constant="90" id="bK8-Ln-B0u"/>
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="classCell" id="lUW-U1-Tau">
@@ -233,9 +233,10 @@
                             <constraint firstItem="BhX-c8-KPk" firstAttribute="top" secondItem="z6A-82-xYV" secondAttribute="bottom" constant="40" id="voV-eg-5ZZ"/>
                             <constraint firstItem="8zZ-A4-2Hl" firstAttribute="centerX" secondItem="osI-Xk-8gB" secondAttribute="centerX" id="wLt-gL-24p"/>
                             <constraint firstItem="Mon-YV-hGo" firstAttribute="trailing" secondItem="pVg-DV-ko1" secondAttribute="trailing" constant="60" id="xfU-wP-Of8"/>
-                            <constraint firstItem="Mon-YV-hGo" firstAttribute="bottom" secondItem="pVg-DV-ko1" secondAttribute="bottom" constant="40" id="yQh-g9-1yq"/>
+                            <constraint firstItem="Mon-YV-hGo" firstAttribute="bottom" secondItem="pVg-DV-ko1" secondAttribute="bottom" constant="20" id="yQh-g9-1yq"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="学校サイト" image="logoIbarakiUniversity" selectedImage="logoIbarakiUniversity" id="fV7-bC-XJn"/>
                     <navigationItem key="navigationItem" id="WSb-3T-tYP"/>
                     <connections>
                         <outlet property="classTableView" destination="z6A-82-xYV" id="cSG-Ai-ywB"/>
@@ -244,111 +245,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rXX-Fr-DXz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2486" y="1195"/>
-        </scene>
-        <!--学校サイト-->
-        <scene sceneID="dtC-oG-jlK">
-            <objects>
-                <viewController id="shq-AB-qga" customClass="PortalViewController" customModule="IbarakiUiniversityApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="al8-jJ-NQx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqp-EQ-CR3">
-                                <rect key="frame" x="269" y="64" width="150" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Tga-g7-Tbm"/>
-                                    <constraint firstAttribute="width" constant="150" id="k4K-fv-HOD"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="許可の確認">
-                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="permissionAction:" destination="shq-AB-qga" eventType="touchUpInside" id="dpF-AG-Bmm"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mn6-in-vTG">
-                                <rect key="frame" x="10" y="670" width="394" height="43"/>
-                                <string key="text">学校のサイトは外部ブラウザを
-用いて開きます</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="md1-Gm-WiI">
-                                <rect key="frame" x="10" y="164" width="394" height="176"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="学校サイト一覧" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="deY-RJ-QcQ">
-                                        <rect key="frame" x="0.0" y="0.0" width="394" height="29"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSg-KZ-Cyu">
-                                        <rect key="frame" x="0.0" y="55" width="394" height="47.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="ポータルサイト">
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="28"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="movePortalButton:" destination="shq-AB-qga" eventType="touchUpInside" id="bX3-M6-Ieo"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcA-rz-VBe">
-                                        <rect key="frame" x="0.0" y="128.5" width="394" height="47.5"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="manaba">
-                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="28"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <action selector="moveManabaButton:" destination="shq-AB-qga" eventType="touchUpInside" id="llq-00-FeI"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="注意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrN-6h-WUC">
-                                <rect key="frame" x="182.5" y="621" width="49" height="29"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wEw-t3-uXa">
-                                <rect key="frame" x="58" y="83" width="67" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
-                                <connections>
-                                    <segue destination="s9h-XS-v2P" kind="presentation" modalPresentationStyle="fullScreen" id="kcR-Cg-avs"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="M0C-b7-prH"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="M0C-b7-prH" firstAttribute="trailing" secondItem="Mn6-in-vTG" secondAttribute="trailing" constant="10" id="361-Qy-Ypv"/>
-                            <constraint firstItem="M0C-b7-prH" firstAttribute="trailing" secondItem="md1-Gm-WiI" secondAttribute="trailing" constant="10" id="5KA-ug-YKh"/>
-                            <constraint firstItem="Mn6-in-vTG" firstAttribute="centerX" secondItem="al8-jJ-NQx" secondAttribute="centerX" id="9L8-zk-s6j"/>
-                            <constraint firstItem="md1-Gm-WiI" firstAttribute="top" secondItem="hqp-EQ-CR3" secondAttribute="bottom" constant="50" id="Bga-Qz-aBa"/>
-                            <constraint firstItem="zrN-6h-WUC" firstAttribute="centerX" secondItem="al8-jJ-NQx" secondAttribute="centerX" id="Ish-7n-7xC"/>
-                            <constraint firstItem="Mn6-in-vTG" firstAttribute="leading" secondItem="M0C-b7-prH" secondAttribute="leading" constant="10" id="Ory-hK-vhU"/>
-                            <constraint firstItem="Mn6-in-vTG" firstAttribute="top" secondItem="zrN-6h-WUC" secondAttribute="bottom" constant="20" id="R71-2W-L1Y"/>
-                            <constraint firstItem="md1-Gm-WiI" firstAttribute="centerX" secondItem="al8-jJ-NQx" secondAttribute="centerX" id="VfQ-Co-Yhb"/>
-                            <constraint firstItem="hqp-EQ-CR3" firstAttribute="trailing" secondItem="M0C-b7-prH" secondAttribute="trailing" constant="5" id="VqW-mP-YiW"/>
-                            <constraint firstItem="hqp-EQ-CR3" firstAttribute="top" secondItem="M0C-b7-prH" secondAttribute="top" constant="20" id="hQh-vY-cSW"/>
-                            <constraint firstItem="md1-Gm-WiI" firstAttribute="leading" secondItem="M0C-b7-prH" secondAttribute="leading" constant="10" id="tcW-oW-GCU"/>
-                            <constraint firstItem="M0C-b7-prH" firstAttribute="bottom" secondItem="Mn6-in-vTG" secondAttribute="bottom" constant="100" id="vom-Q7-bkB"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="学校サイト" image="logoIbarakiUniversity" selectedImage="logoIbarakiUniversity" id="bZ4-XW-YBL"/>
-                    <connections>
-                        <outlet property="manabaButton" destination="dcA-rz-VBe" id="7uX-C1-g7W"/>
-                        <outlet property="portalButton" destination="vSg-KZ-Cyu" id="f1S-Ul-0Mv"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gj1-No-1pE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1715.9420289855075" y="1194.6428571428571"/>
+            <point key="canvasLocation" x="1716" y="1198"/>
         </scene>
         <!--提出物一覧-->
         <scene sceneID="Sne-ZW-tNC">
@@ -531,7 +428,7 @@
                     <connections>
                         <segue destination="JdK-eT-5jv" kind="relationship" relationship="viewControllers" id="gXn-kg-sNh"/>
                         <segue destination="1OR-rD-MuK" kind="relationship" relationship="viewControllers" id="5LO-88-1YI"/>
-                        <segue destination="shq-AB-qga" kind="relationship" relationship="viewControllers" id="sg7-0B-4ft"/>
+                        <segue destination="s9h-XS-v2P" kind="relationship" relationship="viewControllers" id="l9F-QZ-RMj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pB-sg-qY5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
