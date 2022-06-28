@@ -53,6 +53,8 @@
 		531A0176270C8FBB00F4F55B /* AddDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocumentViewController.swift; sourceTree = "<group>"; };
 		532D06D0270ED17C0010ABC4 /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
 		533BFA11286600970058455D /* ShowWebSiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShowWebSiteViewController.swift; path = IbarakiUiniversityApp/Controller/ShowWebSiteViewController.swift; sourceTree = SOURCE_ROOT; };
+		535F67CA286ABE0500433752 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		535F67CB286ABE0500433752 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		53633A7D270EF392006C6802 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		5384D93F2833B761007F3408 /* IBADAIAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IBADAIAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5384D9412833B761007F3408 /* IBADAIAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBADAIAppUITests.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 53A58E012706F8BA008EC8D7;
 			productRefGroup = 53A58E0B2706F8BA008EC8D7 /* Products */;
@@ -481,6 +484,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				53A58E142706F8BA008EC8D7 /* Base */,
+				535F67CA286ABE0500433752 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -489,6 +493,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				53A58E192706F8BC008EC8D7 /* Base */,
+				535F67CB286ABE0500433752 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -536,6 +541,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -597,6 +603,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

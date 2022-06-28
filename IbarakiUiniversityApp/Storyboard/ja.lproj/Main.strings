@@ -1,0 +1,51 @@
+
+/* Class = "UIButton"; normalTitle = "追加"; ObjectID = "30s-rY-o51"; */
+"30s-rY-o51.normalTitle" = "追加";
+
+/* Class = "UILabel"; text = "授業に関するサイト"; ObjectID = "8zZ-A4-2Hl"; */
+"8zZ-A4-2Hl.text" = "授業に関するサイト";
+
+/* Class = "UILabel"; text = "やること"; ObjectID = "A4W-GH-fc8"; */
+"A4W-GH-fc8.text" = "やること";
+
+/* Class = "UILabel"; text = "大学ホームページ"; ObjectID = "BhX-c8-KPk"; */
+"BhX-c8-KPk.text" = "大学ホームページ";
+
+/* Class = "UILabel"; text = "提出物名"; ObjectID = "JdW-Yy-Myj"; */
+"JdW-Yy-Myj.text" = "提出物名";
+
+/* Class = "UINavigationItem"; title = "やることリスト"; ObjectID = "MC6-J7-iKa"; */
+"MC6-J7-iKa.title" = "やることリスト";
+
+/* Class = "UIBarButtonItem"; title = "追加"; ObjectID = "S8k-o1-NN3"; */
+"S8k-o1-NN3.title" = "追加";
+
+/* Class = "UILabel"; text = "提出期限"; ObjectID = "SE5-7o-974"; */
+"SE5-7o-974.text" = "提出期限";
+
+/* Class = "UIButton"; normalTitle = "戻る"; ObjectID = "SVx-OD-Je1"; */
+"SVx-OD-Je1.normalTitle" = "戻る";
+
+/* Class = "UILabel"; text = "茨大サイト 一覧"; ObjectID = "YAS-1a-SLS"; */
+"YAS-1a-SLS.text" = "茨大サイト 一覧";
+
+/* Class = "UITabBarItem"; title = "提出物一覧"; ObjectID = "cMB-BS-hUb"; */
+"cMB-BS-hUb.title" = "提出物一覧";
+
+/* Class = "UINavigationItem"; title = "提出物一覧"; ObjectID = "fSr-md-8DU"; */
+"fSr-md-8DU.title" = "提出物一覧";
+
+/* Class = "UITabBarItem"; title = "学校サイト"; ObjectID = "fV7-bC-XJn"; */
+"fV7-bC-XJn.title" = "学校サイト";
+
+/* Class = "UITabBarItem"; title = "やることToDo"; ObjectID = "fvX-e6-xB5"; */
+"fvX-e6-xB5.title" = "やることToDo";
+
+/* Class = "UIButton"; normalTitle = "追加"; ObjectID = "jKp-Gh-rja"; */
+"jKp-Gh-rja.normalTitle" = "追加";
+
+/* Class = "UIBarButtonItem"; title = "追加"; ObjectID = "qST-xl-lHv"; */
+"qST-xl-lHv.title" = "追加";
+
+/* Class = "UIButton"; normalTitle = "戻る"; ObjectID = "wGv-cO-LeZ"; */
+"wGv-cO-LeZ.normalTitle" = "戻る";
