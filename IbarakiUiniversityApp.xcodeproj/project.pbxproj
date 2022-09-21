@@ -12,6 +12,7 @@
 		5314CCDE2816B83000213963 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5314CCDD2816B83000213963 /* Color.xcassets */; };
 		531A0177270C8FBB00F4F55B /* AddDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531A0176270C8FBB00F4F55B /* AddDocumentViewController.swift */; };
 		532D06D1270ED17C0010ABC4 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D06D0270ED17C0010ABC4 /* AddToDoViewController.swift */; };
+		532EA2E528DAB81000DD1A28 /* IbarakiUnimversityAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532EA2E428DAB81000DD1A28 /* IbarakiUnimversityAppTests.swift */; };
 		533BFA12286600970058455D /* ShowWebSiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BFA11286600970058455D /* ShowWebSiteViewController.swift */; };
 		53633A7E270EF392006C6802 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53633A7D270EF392006C6802 /* TabBarViewController.swift */; };
 		5384D9422833B761007F3408 /* IBADAIAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5384D9412833B761007F3408 /* IBADAIAppUITests.swift */; };
@@ -36,6 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		532EA2E628DAB81000DD1A28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 53A58E022706F8BA008EC8D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53A58E092706F8BA008EC8D7;
+			remoteInfo = IbarakiUiniversityApp;
+		};
 		5384D9452833B761007F3408 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 53A58E022706F8BA008EC8D7 /* Project object */;
@@ -52,6 +60,8 @@
 		5314CCDD2816B83000213963 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		531A0176270C8FBB00F4F55B /* AddDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDocumentViewController.swift; sourceTree = "<group>"; };
 		532D06D0270ED17C0010ABC4 /* AddToDoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
+		532EA2E228DAB81000DD1A28 /* IbarakiUnimversityAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IbarakiUnimversityAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		532EA2E428DAB81000DD1A28 /* IbarakiUnimversityAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IbarakiUnimversityAppTests.swift; sourceTree = "<group>"; };
 		533BFA11286600970058455D /* ShowWebSiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShowWebSiteViewController.swift; path = IbarakiUiniversityApp/Controller/ShowWebSiteViewController.swift; sourceTree = SOURCE_ROOT; };
 		535F67CA286ABE0500433752 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		535F67CB286ABE0500433752 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -82,6 +92,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		532EA2DF28DAB81000DD1A28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5384D93C2833B761007F3408 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -162,6 +179,14 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		532EA2E328DAB81000DD1A28 /* IbarakiUnimversityAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				532EA2E428DAB81000DD1A28 /* IbarakiUnimversityAppTests.swift */,
+			);
+			path = IbarakiUnimversityAppTests;
+			sourceTree = "<group>";
+		};
 		5384D9402833B761007F3408 /* IBADAIAppUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +201,7 @@
 			children = (
 				53A58E0C2706F8BA008EC8D7 /* IbarakiUiniversityApp */,
 				5384D9402833B761007F3408 /* IBADAIAppUITests */,
+				532EA2E328DAB81000DD1A28 /* IbarakiUnimversityAppTests */,
 				53A58E0B2706F8BA008EC8D7 /* Products */,
 				93A94E09C52777FDEF6622C7 /* Pods */,
 				28FFFED6D00F6AB67182AE55 /* Frameworks */,
@@ -187,6 +213,7 @@
 			children = (
 				53A58E0A2706F8BA008EC8D7 /* IbarakiUiniversityApp.app */,
 				5384D93F2833B761007F3408 /* IBADAIAppUITests.xctest */,
+				532EA2E228DAB81000DD1A28 /* IbarakiUnimversityAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -276,6 +303,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		532EA2E128DAB81000DD1A28 /* IbarakiUnimversityAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 532EA2EA28DAB81000DD1A28 /* Build configuration list for PBXNativeTarget "IbarakiUnimversityAppTests" */;
+			buildPhases = (
+				532EA2DE28DAB81000DD1A28 /* Sources */,
+				532EA2DF28DAB81000DD1A28 /* Frameworks */,
+				532EA2E028DAB81000DD1A28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				532EA2E728DAB81000DD1A28 /* PBXTargetDependency */,
+			);
+			name = IbarakiUnimversityAppTests;
+			productName = IbarakiUnimversityAppTests;
+			productReference = 532EA2E228DAB81000DD1A28 /* IbarakiUnimversityAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		5384D93E2833B761007F3408 /* IBADAIAppUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5384D9472833B761007F3408 /* Build configuration list for PBXNativeTarget "IBADAIAppUITests" */;
@@ -321,9 +366,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					532EA2E128DAB81000DD1A28 = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 53A58E092706F8BA008EC8D7;
+					};
 					5384D93E2833B761007F3408 = {
 						CreatedOnToolsVersion = 13.3;
 						TestTargetID = 53A58E092706F8BA008EC8D7;
@@ -349,11 +398,19 @@
 			targets = (
 				53A58E092706F8BA008EC8D7 /* IbarakiUiniversityApp */,
 				5384D93E2833B761007F3408 /* IBADAIAppUITests */,
+				532EA2E128DAB81000DD1A28 /* IbarakiUnimversityAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		532EA2E028DAB81000DD1A28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5384D93D2833B761007F3408 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -436,6 +493,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		532EA2DE28DAB81000DD1A28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				532EA2E528DAB81000DD1A28 /* IbarakiUnimversityAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5384D93B2833B761007F3408 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -472,6 +537,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		532EA2E728DAB81000DD1A28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 53A58E092706F8BA008EC8D7 /* IbarakiUiniversityApp */;
+			targetProxy = 532EA2E628DAB81000DD1A28 /* PBXContainerItemProxy */;
+		};
 		5384D9462833B761007F3408 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 53A58E092706F8BA008EC8D7 /* IbarakiUiniversityApp */;
@@ -501,6 +571,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		532EA2E828DAB81000DD1A28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5LBWH4CYQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakiapp.IbarakiUnimversityAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IbarakiUiniversityApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IbarakiUiniversityApp";
+			};
+			name = Debug;
+		};
+		532EA2E928DAB81000DD1A28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X5LBWH4CYQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hiroakiapp.IbarakiUnimversityAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IbarakiUiniversityApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/IbarakiUiniversityApp";
+			};
+			name = Release;
+		};
 		5384D9482833B761007F3408 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -720,6 +830,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		532EA2EA28DAB81000DD1A28 /* Build configuration list for PBXNativeTarget "IbarakiUnimversityAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				532EA2E828DAB81000DD1A28 /* Debug */,
+				532EA2E928DAB81000DD1A28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5384D9472833B761007F3408 /* Build configuration list for PBXNativeTarget "IBADAIAppUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
