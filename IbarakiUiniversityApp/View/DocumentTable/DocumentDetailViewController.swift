@@ -22,6 +22,13 @@ class DocumentDetailViewController: UIViewController {
         formatter.dateFormat = "yyyy-MM-dd"
         dateLabel.text = formatter.string(from: detailDocument.2)
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditDocument" {
+            let editDocumentVC = segue.destination as? EditDocumentViewController
+            editDocumentVC?.editDocumentUUID = sender as? String
+        }
+    }
     @IBAction private func editButton(_ sender: Any) {
         performSegue(withIdentifier: "EditDocument", sender: detailDocument?.0)
     }

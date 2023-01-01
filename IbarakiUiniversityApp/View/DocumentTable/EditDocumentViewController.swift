@@ -9,9 +9,10 @@ import UIKit
 
 class EditDocumentViewController: UIViewController {
 
+    var editDocumentUUID: String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        print(editDocumentUUID)
     }
 }
