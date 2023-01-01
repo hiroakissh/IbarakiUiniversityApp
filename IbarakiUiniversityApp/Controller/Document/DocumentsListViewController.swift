@@ -11,7 +11,7 @@ class DocumentsListViewController: UIViewController {
 
     enum DocumentCellObject {
         case none
-        case document(String, Date)
+        case document(String, String, Date)
     }
 
     @IBOutlet private weak var tableView: UITableView!
@@ -40,7 +40,7 @@ class DocumentsListViewController: UIViewController {
             documentCellObject = [.none]
         } else {
             documentCellObject = documentItems.map {
-                .document($0.documentTitle ?? "提出物が正しく表示できません", $0.deadLine ?? Date.now )
+                .document($0.uuidString ,$0.documentTitle ?? "提出物が正しく表示できません", $0.deadLine ?? Date.now )
             }
         }
     }
@@ -171,7 +171,7 @@ extension DocumentsListViewController: UITableViewDataSource {
             noneCell.textLabel?.textColor = .white
             noneCell.textLabel?.backgroundColor = .darkGray
             return noneCell
-        case .document(let name, let date):
+        case .document(_, let name, let date):
             let documentCell = tableView.dequeueReusableCell(
                 withIdentifier: "documentCell",
                 for: indexPath
@@ -215,7 +215,7 @@ extension DocumentsListViewController: UITableViewDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "DocumentDetail" {
             let documentDetailVC = segue.destination as? DocumentDetailViewController
-            documentDetailVC?.detailDocument = sender as? (String, Date)
+            documentDetailVC?.detailDocument = sender as? (String, String, Date)
         }
     }
 
@@ -223,8 +223,8 @@ extension DocumentsListViewController: UITableViewDelegate {
         switch documentCellObject[indexPath.row] {
         case .none:
             return
-        case .document(let name, let date):
-            performSegue(withIdentifier: "DocumentDetail", sender: (name, date))
+        case .document(let uuid, let name, let date):
+            performSegue(withIdentifier: "DocumentDetail", sender: (uuid, name, date))
         }
     }
 }
