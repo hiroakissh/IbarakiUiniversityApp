@@ -337,6 +337,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="編集"/>
+                                <connections>
+                                    <action selector="editButton:" destination="Wsu-3q-J7h" eventType="touchUpInside" id="Mm7-O5-Rs5"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="提出締め切り" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsz-hb-Syu">
                                 <rect key="frame" x="155" y="217" width="104" height="21"/>
@@ -367,17 +370,17 @@
                     <connections>
                         <outlet property="dateLabel" destination="9aO-oy-hx3" id="RIf-Yd-Rcd"/>
                         <outlet property="titleLabel" destination="pWq-nW-iEY" id="t8G-f0-6mL"/>
-                        <segue destination="cYp-MP-Gd0" kind="presentation" modalPresentationStyle="fullScreen" id="HEu-Is-A1c"/>
+                        <segue destination="cYp-MP-Gd0" kind="presentation" identifier="EditDocument" modalPresentationStyle="fullScreen" id="HEu-Is-A1c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khs-9G-kiz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2802.898550724638" y="-1210.0446428571429"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Document View Controller-->
         <scene sceneID="H35-gZ-Ay6">
             <objects>
-                <viewController id="cYp-MP-Gd0" sceneMemberID="viewController">
+                <viewController id="cYp-MP-Gd0" customClass="EditDocumentViewController" customModule="IbarakiUiniversityApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mct-VT-5VY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

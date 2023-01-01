@@ -23,7 +23,7 @@ class DocumentDetailViewController: UIViewController {
         dateLabel.text = formatter.string(from: detailDocument.2)
     }
     @IBAction private func editButton(_ sender: Any) {
-        
+        performSegue(withIdentifier: "EditDocument", sender: detailDocument?.0)
     }
     @IBAction private func backButton(_ sender: Any) {
         dismiss(animated: true)
