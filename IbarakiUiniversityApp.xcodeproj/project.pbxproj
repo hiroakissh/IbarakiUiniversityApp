@@ -33,7 +33,9 @@
 		53B5FD192814BE2C00503725 /* RealmToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FD182814BE2C00503725 /* RealmToDoModel.swift */; };
 		53C6629327F04B5200E82593 /* DocumentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C6629127F04B5200E82593 /* DocumentTableViewCell.swift */; };
 		53C6629427F04B5200E82593 /* DocumentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53C6629227F04B5200E82593 /* DocumentTableViewCell.xib */; };
-		5D564DF0AF03A309A908FAEE /* Pods_IbarakiUiniversityApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CF31067AD0E10D906FA1207 /* Pods_IbarakiUiniversityApp.framework */; };
+		53F2F29A295FDC76004BD749 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 53F2F299295FDC76004BD749 /* RealmSwift */; };
+		53F2F29C295FDE22004BD749 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 53F2F29B295FDE22004BD749 /* RealmSwift */; };
+		53F2F29E295FDE28004BD749 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 53F2F29D295FDE28004BD749 /* RealmSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +56,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1CF31067AD0E10D906FA1207 /* Pods_IbarakiUiniversityApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IbarakiUiniversityApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5309CBC327F467060072ED57 /* LabToDoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabToDoTableViewCell.swift; sourceTree = "<group>"; };
 		5309CBC427F467060072ED57 /* LabToDoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabToDoTableViewCell.xib; sourceTree = "<group>"; };
 		5314CCDD2816B83000213963 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
@@ -87,8 +88,6 @@
 		53B5FD182814BE2C00503725 /* RealmToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmToDoModel.swift; sourceTree = "<group>"; };
 		53C6629127F04B5200E82593 /* DocumentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTableViewCell.swift; sourceTree = "<group>"; };
 		53C6629227F04B5200E82593 /* DocumentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentTableViewCell.xib; sourceTree = "<group>"; };
-		88E042DD2DBC2ED028A21B82 /* Pods-IbarakiUiniversityApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IbarakiUiniversityApp.debug.xcconfig"; path = "Target Support Files/Pods-IbarakiUiniversityApp/Pods-IbarakiUiniversityApp.debug.xcconfig"; sourceTree = "<group>"; };
-		D16D301A054CBEDAFAF696CC /* Pods-IbarakiUiniversityApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IbarakiUiniversityApp.release.xcconfig"; path = "Target Support Files/Pods-IbarakiUiniversityApp/Pods-IbarakiUiniversityApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53F2F29E295FDE28004BD749 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53F2F29C295FDE22004BD749 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,21 +111,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D564DF0AF03A309A908FAEE /* Pods_IbarakiUiniversityApp.framework in Frameworks */,
+				53F2F29A295FDC76004BD749 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		28FFFED6D00F6AB67182AE55 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1CF31067AD0E10D906FA1207 /* Pods_IbarakiUiniversityApp.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		53066BC927FB179D004F8A03 /* DocumentTable */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,8 +196,6 @@
 				5384D9402833B761007F3408 /* IBADAIAppUITests */,
 				532EA2E328DAB81000DD1A28 /* IbarakiUnimversityAppTests */,
 				53A58E0B2706F8BA008EC8D7 /* Products */,
-				93A94E09C52777FDEF6622C7 /* Pods */,
-				28FFFED6D00F6AB67182AE55 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -291,15 +282,6 @@
 			path = SwiftModel;
 			sourceTree = "<group>";
 		};
-		93A94E09C52777FDEF6622C7 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				88E042DD2DBC2ED028A21B82 /* Pods-IbarakiUiniversityApp.debug.xcconfig */,
-				D16D301A054CBEDAFAF696CC /* Pods-IbarakiUiniversityApp.release.xcconfig */,
-			);
-			path = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -317,6 +299,9 @@
 				532EA2E728DAB81000DD1A28 /* PBXTargetDependency */,
 			);
 			name = IbarakiUnimversityAppTests;
+			packageProductDependencies = (
+				53F2F29D295FDE28004BD749 /* RealmSwift */,
+			);
 			productName = IbarakiUnimversityAppTests;
 			productReference = 532EA2E228DAB81000DD1A28 /* IbarakiUnimversityAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -335,6 +320,9 @@
 				5384D9462833B761007F3408 /* PBXTargetDependency */,
 			);
 			name = IBADAIAppUITests;
+			packageProductDependencies = (
+				53F2F29B295FDE22004BD749 /* RealmSwift */,
+			);
 			productName = IBADAIAppUITests;
 			productReference = 5384D93F2833B761007F3408 /* IBADAIAppUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -343,18 +331,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 53A58E1E2706F8BC008EC8D7 /* Build configuration list for PBXNativeTarget "IbarakiUiniversityApp" */;
 			buildPhases = (
-				28C09911647909F79EB3C316 /* [CP] Check Pods Manifest.lock */,
 				53A58E062706F8BA008EC8D7 /* Sources */,
 				53A58E072706F8BA008EC8D7 /* Frameworks */,
 				53A58E082706F8BA008EC8D7 /* Resources */,
 				5305DB8D27C8EF530028F472 /* ShellScript */,
-				2C953FB031B981CC945DD438 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = IbarakiUiniversityApp;
+			packageProductDependencies = (
+				53F2F299295FDC76004BD749 /* RealmSwift */,
+			);
 			productName = IbarakiUiniversityApp;
 			productReference = 53A58E0A2706F8BA008EC8D7 /* IbarakiUiniversityApp.app */;
 			productType = "com.apple.product-type.application";
@@ -392,6 +381,9 @@
 				ja,
 			);
 			mainGroup = 53A58E012706F8BA008EC8D7;
+			packageReferences = (
+				53F2F294295FDBF9004BD749 /* XCRemoteSwiftPackageReference "realm-swift.git" */,
+			);
 			productRefGroup = 53A58E0B2706F8BA008EC8D7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -434,45 +426,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		28C09911647909F79EB3C316 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-IbarakiUiniversityApp-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2C953FB031B981CC945DD438 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IbarakiUiniversityApp/Pods-IbarakiUiniversityApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-IbarakiUiniversityApp/Pods-IbarakiUiniversityApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IbarakiUiniversityApp/Pods-IbarakiUiniversityApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		5305DB8D27C8EF530028F472 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -488,7 +441,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n${PODS_ROOT}/SwiftLint/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Don't run this during index builds\nif [ $ACTION = \"indexbuild\" ]; then exit 0; fi\n\n# Go to the build root and search up the chain to find the Derived Data Path where the source packages are checked out.\nDERIVED_DATA_CANDIDATE=\"${BUILD_ROOT}\"\n\nwhile ! [ -d \"${DERIVED_DATA_CANDIDATE}/SourcePackages\" ]; do\n  if [ \"${DERIVED_DATA_CANDIDATE}\" = / ]; then\n    echo >&2 \"error: Unable to locate SourcePackages directory from BUILD_ROOT: '${BUILD_ROOT}'\"\n    exit 1\n  fi\n\n  DERIVED_DATA_CANDIDATE=\"$(dirname \"${DERIVED_DATA_CANDIDATE}\")\"\ndone\n\n# Grab a reference to the directory where scripts are checked out\nSCRIPT_PATH=\"${DERIVED_DATA_CANDIDATE}/SourcePackages/checkouts/SwiftLint\"\n\nif [ -z \"${SCRIPT_PATH}\" ]; then\n    echo >&2 \"error: Couldn't find the SwiftLint script in your checked out SPM packages; make sure to add the framework to your project.\"\n    exit 1\nfi\n\nCURRENT_DIR=`pwd`\n\ncd \"${SCRIPT_PATH}\"/Source\n\n/usr/bin/xcrun --sdk macosx swift run swiftlint \"${CURRENT_DIR}\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -767,7 +720,6 @@
 		};
 		53A58E1F2706F8BC008EC8D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 88E042DD2DBC2ED028A21B82 /* Pods-IbarakiUiniversityApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -798,7 +750,6 @@
 		};
 		53A58E202706F8BC008EC8D7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D16D301A054CBEDAFAF696CC /* Pods-IbarakiUiniversityApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -867,6 +818,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		53F2F294295FDBF9004BD749 /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		53F2F299295FDC76004BD749 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53F2F294295FDBF9004BD749 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			productName = RealmSwift;
+		};
+		53F2F29B295FDE22004BD749 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53F2F294295FDBF9004BD749 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			productName = RealmSwift;
+		};
+		53F2F29D295FDE28004BD749 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53F2F294295FDBF9004BD749 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 53A58E022706F8BA008EC8D7 /* Project object */;
 }
