@@ -8,16 +8,17 @@
 import Foundation
 import RealmSwift
 
-enum UpdateDocumentError: Error {
-    case invalid
+enum EditDocumentsDBError: Error {
+    case updateFailure
+    case removeFailure
 }
 
 protocol DocumentRepositoryProtocol {
     func loadDocument() -> [SwiftDocumentModel]
     func loadDocumentOfUUID(uuid: String) -> SwiftDocumentModel
     func appendDocument(documentTitle: String, deadLine: Date)
-    func removeDocument(at index: Int)
-    func updateDocument(uuid: String, updateDocument: SwiftDocumentModel) -> Result<String, UpdateDocumentError>
+    func removeDocument(at index: Int) -> Result<String, EditDocumentsDBError>
+    func updateDocument(uuid: String, updateDocument: SwiftDocumentModel) -> Result<String, EditDocumentsDBError>
 }
 
 final class DocumentRepository: DocumentRepositoryProtocol {
@@ -54,7 +55,7 @@ final class DocumentRepository: DocumentRepositoryProtocol {
         print(realmDocument)
     }
 
-    func removeDocument(at index: Int) {
+    func removeDocument(at index: Int) -> Result<String, EditDocumentsDBError>{
         let documentItems: Results<RealmDocumentModel>!
         documentItems = realm.objects(RealmDocumentModel.self)
         do {
@@ -63,10 +64,12 @@ final class DocumentRepository: DocumentRepositoryProtocol {
             }
         } catch {
             print("Realm Remove Error")
+            return .failure(.removeFailure)
         }
+        return .success("Success")
     }
 
-    func updateDocument(uuid: String, updateDocument: SwiftDocumentModel) -> Result<String, UpdateDocumentError> {
+    func updateDocument(uuid: String, updateDocument: SwiftDocumentModel) -> Result<String, EditDocumentsDBError> {
         let realmDocument = realm.objects(RealmDocumentModel.self).filter("documentUUID=='\(uuid)'")
         do {
             try realm.write {
@@ -74,7 +77,7 @@ final class DocumentRepository: DocumentRepositoryProtocol {
                 realmDocument.first?.deadLine = updateDocument.deadLine
             }
         } catch {
-            return .failure(.invalid)
+            return .failure(.updateFailure)
         }
         return .success("Success")
     }

@@ -193,11 +193,17 @@ extension DocumentsListViewController: UITableViewDataSource {
         let documentItems = documentRepository.loadDocument()
         if editingStyle == .delete {
             if !documentItems.isEmpty {
-                documentRepository.removeDocument(at: indexPath.row)
-                observeDocumentCellObject()
-                notification()
-                tableView.reloadData()
-                updateBadge()
+                let removeResult = documentRepository.removeDocument(at: indexPath.row)
+                switch removeResult {
+                case .success(_):
+                    observeDocumentCellObject()
+                    notification()
+                    tableView.reloadData()
+                    updateBadge()
+                case .failure(let error):
+                    print(error)
+                    return
+                }
             } else {
                 return
             }
