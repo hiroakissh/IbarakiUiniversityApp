@@ -10,9 +10,12 @@ import UIKit
 class EditDocumentViewController: UIViewController {
 
     var editDocumentUUID: String?
+    var documentRepository = DocumentRepository()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print(editDocumentUUID)
+        guard let editDocumentUUID = editDocumentUUID else { return }
+        print(documentRepository.loadDocumentOfUUID(uuid: editDocumentUUID))
     }
 }

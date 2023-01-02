@@ -8,7 +8,19 @@
 import Foundation
 import RealmSwift
 
-final class DocumentRepository {
+enum UpdateDocumentError: Error {
+    case invalid
+}
+
+protocol DocumentRepositoryProtocol {
+    func loadDocument() -> [SwiftDocumentModel]
+    func loadDocumentOfUUID(uuid: String) -> SwiftDocumentModel
+    func appendDocument(documentTitle: String, deadLine: Date)
+    func removeDocument(at index: Int)
+    func updateDocument(uuid: String, updateDocument: SwiftDocumentModel) -> Result<String, UpdateDocumentError>
+}
+
+final class DocumentRepository: DocumentRepositoryProtocol {
     // swiftlint:disable force_try
     private let realm = try! Realm()
 
@@ -17,6 +29,12 @@ final class DocumentRepository {
         let realmDocumentsArray = Array(realmDocuments)
         let documents = realmDocumentsArray.map {SwiftDocumentModel(managedObject: $0)}
         return documents
+    }
+
+    func loadDocumentOfUUID(uuid: String) -> SwiftDocumentModel {
+        let realmDocument = realm.objects(RealmDocumentModel.self).filter("documentUUID=='\(uuid)'")
+        let document = SwiftDocumentModel(managedObject: realmDocument.first!)
+        return document
     }
 
     func appendDocument(documentTitle: String, deadLine: Date) {
@@ -48,7 +66,17 @@ final class DocumentRepository {
         }
     }
 
-    func updateDocument() {
+    func updateDocument(uuid: String, updateDocument: SwiftDocumentModel) -> Result<String, UpdateDocumentError> {
+        let realmDocument = realm.objects(RealmDocumentModel.self).filter("documentUUID=='\(uuid)'")
+        do {
+            try realm.write {
+                realmDocument.first?.documentTitle = updateDocument.documentTitle
+                realmDocument.first?.deadLine = updateDocument.deadLine
+            }
+        } catch {
+            return .failure(.invalid)
+        }
+        return .success("Success")
     }
 }
 
