@@ -390,11 +390,81 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="戻る"/>
+                                <connections>
+                                    <action selector="backButton:" destination="cYp-MP-Gd0" eventType="touchUpInside" id="0SE-92-azZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提出物名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcX-ya-oh3">
+                                <rect key="frame" x="157" y="126" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="5Hs-by-gAO"/>
+                                    <constraint firstAttribute="height" constant="30" id="gB9-1B-A5W"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" name="mainFont"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提出期限" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mH-xi-vR6">
+                                <rect key="frame" x="157" y="260" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="3K3-Tm-ZBS"/>
+                                    <constraint firstAttribute="height" constant="30" id="WZb-BC-CqM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" name="mainFont"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="gc6-Ta-6He">
+                                <rect key="frame" x="47" y="295" width="320" height="307"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </datePicker>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="09w-Js-iCv">
+                                <rect key="frame" x="117" y="164" width="180" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="RPg-dN-trE"/>
+                                    <constraint firstAttribute="height" constant="40" id="cnq-Z3-tdH"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGD-mJ-YGh">
+                                <rect key="frame" x="117" y="775" width="180" height="42"/>
+                                <color key="backgroundColor" name="mainGreen"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="180" id="c5u-hI-2Gs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="更新">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="addDocument:" destination="hm1-4m-WdA" eventType="touchUpInside" id="6qR-Nu-4jt"/>
+                                    <action selector="uodateDocument:" destination="cYp-MP-Gd0" eventType="touchUpInside" id="WcE-Kp-glk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Ja5-mh-ACf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="gc6-Ta-6He" firstAttribute="top" secondItem="7mH-xi-vR6" secondAttribute="bottom" constant="5" id="1gt-Ac-xaW"/>
+                            <constraint firstItem="7mH-xi-vR6" firstAttribute="centerX" secondItem="Mct-VT-5VY" secondAttribute="centerX" id="7gg-NT-iEZ"/>
+                            <constraint firstItem="7mH-xi-vR6" firstAttribute="top" secondItem="09w-Js-iCv" secondAttribute="bottom" constant="56" id="9R6-Sq-DQf"/>
+                            <constraint firstItem="09w-Js-iCv" firstAttribute="top" secondItem="hcX-ya-oh3" secondAttribute="bottom" constant="8" id="Fsn-86-myG"/>
+                            <constraint firstItem="zGD-mJ-YGh" firstAttribute="centerX" secondItem="Mct-VT-5VY" secondAttribute="centerX" id="IfZ-n0-V46"/>
+                            <constraint firstItem="hcX-ya-oh3" firstAttribute="top" secondItem="Ja5-mh-ACf" secondAttribute="top" constant="78" id="Ne4-NU-Y2A"/>
+                            <constraint firstItem="09w-Js-iCv" firstAttribute="centerX" secondItem="Mct-VT-5VY" secondAttribute="centerX" id="XW7-Sn-bUj"/>
+                            <constraint firstItem="hcX-ya-oh3" firstAttribute="centerX" secondItem="Mct-VT-5VY" secondAttribute="centerX" id="fkE-8F-Aw9"/>
+                            <constraint firstItem="gc6-Ta-6He" firstAttribute="centerX" secondItem="Mct-VT-5VY" secondAttribute="centerX" id="tpS-Uj-Kxi"/>
+                            <constraint firstItem="Ja5-mh-ACf" firstAttribute="bottom" secondItem="zGD-mJ-YGh" secondAttribute="bottom" constant="45" id="vZ6-bb-R7U"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="documentDataPicker" destination="gc6-Ta-6He" id="XZb-QG-Iku"/>
+                        <outlet property="documentNameTextField" destination="09w-Js-iCv" id="2ek-mS-TQm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxD-dm-uSl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
