@@ -22,10 +22,9 @@ protocol DocumentRepositoryProtocol {
 }
 
 final class DocumentRepository: DocumentRepositoryProtocol {
-    // swiftlint:disable force_try
-    private let realm = try! Realm()
-
     func loadDocument() -> [SwiftDocumentModel] {
+        // swiftlint:disable:next force_try
+        let realm = try! Realm()
         let realmDocuments = realm.objects(RealmDocumentModel.self)
         let realmDocumentsArray = Array(realmDocuments)
         let documents = realmDocumentsArray.map {SwiftDocumentModel(managedObject: $0)}
@@ -33,12 +32,16 @@ final class DocumentRepository: DocumentRepositoryProtocol {
     }
 
     func loadDocumentOfUUID(uuid: String) -> SwiftDocumentModel {
+        // swiftlint:disable:next force_try
+        let realm = try! Realm()
         let realmDocument = realm.objects(RealmDocumentModel.self).filter("documentUUID=='\(uuid)'")
         let document = SwiftDocumentModel(managedObject: realmDocument.first!)
         return document
     }
 
     func appendDocument(documentTitle: String, deadLine: Date) {
+        // swiftlint:disable:next force_try
+        let realm = try! Realm()
         let realmDocument = RealmDocumentModel()
         let uuid = UUID()
         realmDocument.documentUUID = uuid.uuidString
@@ -56,6 +59,8 @@ final class DocumentRepository: DocumentRepositoryProtocol {
     }
 
     func removeDocument(at index: Int) -> Result<String, EditDocumentsDBError>{
+        // swiftlint:disable:next force_try
+        let realm = try! Realm()
         let documentItems: Results<RealmDocumentModel>!
         documentItems = realm.objects(RealmDocumentModel.self)
         do {
@@ -70,6 +75,8 @@ final class DocumentRepository: DocumentRepositoryProtocol {
     }
 
     func updateDocument(uuid: String, updateDocument: SwiftDocumentModel) -> Result<String, EditDocumentsDBError> {
+        // swiftlint:disable:next force_try
+        let realm = try! Realm()
         let realmDocument = realm.objects(RealmDocumentModel.self).filter("documentUUID=='\(uuid)'")
         do {
             try realm.write {
