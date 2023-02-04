@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--やることToDo-->
+        <!--やることリスト-->
         <scene sceneID="ps6-Z2-5da">
             <objects>
                 <viewController id="1OR-rD-MuK" customClass="LabViewController" customModule="IbarakiUiniversityApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,26 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y6g-Mq-z6i">
-                                <rect key="frame" x="0.0" y="48" width="414" height="44"/>
-                                <color key="backgroundColor" name="mainFontBack"/>
-                                <color key="barTintColor" name="mainFontBack"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" name="mainFont"/>
-                                </textAttributes>
-                                <textAttributes key="largeTitleTextAttributes">
-                                    <color key="textColor" name="mainFont"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="やることリスト" id="MC6-J7-iKa">
-                                        <barButtonItem key="rightBarButtonItem" title="追加" id="qST-xl-lHv">
-                                            <connections>
-                                                <segue destination="DsT-Jx-Koi" kind="presentation" modalPresentationStyle="fullScreen" id="wS5-pj-Hem"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jdd-OP-dJf">
                                 <rect key="frame" x="0.0" y="92" width="414" height="721"/>
                                 <color key="backgroundColor" name="mainRed"/>
@@ -58,23 +38,26 @@
                         <viewLayoutGuide key="safeArea" id="qAM-cV-Fha"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Y6g-Mq-z6i" firstAttribute="leading" secondItem="qAM-cV-Fha" secondAttribute="leading" id="6rm-x8-pWO"/>
                             <constraint firstItem="jdd-OP-dJf" firstAttribute="trailing" secondItem="qAM-cV-Fha" secondAttribute="trailing" id="EhS-3H-hD7"/>
+                            <constraint firstItem="jdd-OP-dJf" firstAttribute="top" secondItem="qAM-cV-Fha" secondAttribute="top" id="LoA-ID-plA"/>
                             <constraint firstItem="jdd-OP-dJf" firstAttribute="bottom" secondItem="qAM-cV-Fha" secondAttribute="bottom" id="Z3l-k9-cPc"/>
                             <constraint firstItem="jdd-OP-dJf" firstAttribute="leading" secondItem="qAM-cV-Fha" secondAttribute="leading" id="atK-Er-qdz"/>
-                            <constraint firstItem="jdd-OP-dJf" firstAttribute="top" secondItem="Y6g-Mq-z6i" secondAttribute="bottom" id="bOw-8p-Rt7"/>
-                            <constraint firstItem="Y6g-Mq-z6i" firstAttribute="trailing" secondItem="qAM-cV-Fha" secondAttribute="trailing" id="r2q-KP-wnl"/>
-                            <constraint firstItem="Y6g-Mq-z6i" firstAttribute="top" secondItem="qAM-cV-Fha" secondAttribute="top" id="yc7-Yl-nqN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="やることToDo" image="study" selectedImage="study" id="fvX-e6-xB5"/>
+                    <navigationItem key="navigationItem" title="やることリスト" id="9Rd-GP-KNi">
+                        <barButtonItem key="rightBarButtonItem" title="追加" id="qST-xl-lHv">
+                            <connections>
+                                <segue destination="DsT-Jx-Koi" kind="show" id="wS5-pj-Hem"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="jdd-OP-dJf" id="p1N-uE-6fu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yMF-9E-hOe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1716" y="366"/>
+            <point key="canvasLocation" x="2626.0869565217395" y="365.625"/>
         </scene>
         <!--Add To Do View Controller-->
         <scene sceneID="UmA-r1-ple">
@@ -85,7 +68,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Re-v2-PZI">
-                                <rect key="frame" x="117" y="206" width="180" height="40"/>
+                                <rect key="frame" x="117" y="250" width="180" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="EDM-E4-rQQ"/>
@@ -95,21 +78,8 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wGv-cO-LeZ">
-                                <rect key="frame" x="15" y="62" width="66" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="66" id="05g-7O-0Kv"/>
-                                    <constraint firstAttribute="height" constant="31" id="gdB-iu-on2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="戻る"/>
-                                <connections>
-                                    <segue destination="rWR-u0-XSJ" kind="unwind" unwindAction="exitCancelWithSegue:" id="9V7-xQ-gbf"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKp-Gh-rja">
-                                <rect key="frame" x="117" y="770" width="180" height="42"/>
+                                <rect key="frame" x="117" y="721" width="180" height="42"/>
                                 <color key="backgroundColor" name="mainRed"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="3sb-z6-SCf"/>
@@ -124,7 +94,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="やること" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A4W-GH-fc8">
-                                <rect key="frame" x="157" y="142" width="100" height="30"/>
+                                <rect key="frame" x="157" y="186" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="U9u-Tn-07w"/>
                                     <constraint firstAttribute="height" constant="30" id="sMd-Hm-Sd5"/>
@@ -140,22 +110,20 @@
                             <constraint firstItem="jKp-Gh-rja" firstAttribute="centerX" secondItem="7hi-Ww-w6D" secondAttribute="centerX" id="3y4-TZ-kME"/>
                             <constraint firstItem="2Re-v2-PZI" firstAttribute="centerX" secondItem="7hi-Ww-w6D" secondAttribute="centerX" id="MMK-8w-Ydy"/>
                             <constraint firstItem="QTL-sz-AJb" firstAttribute="bottom" secondItem="jKp-Gh-rja" secondAttribute="bottom" constant="50" id="O3c-4R-43Y"/>
-                            <constraint firstItem="wGv-cO-LeZ" firstAttribute="leading" secondItem="QTL-sz-AJb" secondAttribute="leading" constant="15" id="PxW-xo-Xxo"/>
-                            <constraint firstItem="wGv-cO-LeZ" firstAttribute="top" secondItem="QTL-sz-AJb" secondAttribute="top" constant="14" id="Y98-dh-hh9"/>
                             <constraint firstItem="2Re-v2-PZI" firstAttribute="top" secondItem="A4W-GH-fc8" secondAttribute="bottom" constant="34" id="mhM-dB-Ned"/>
                             <constraint firstItem="A4W-GH-fc8" firstAttribute="top" secondItem="QTL-sz-AJb" secondAttribute="top" constant="94" id="naa-UY-SiJ"/>
                             <constraint firstItem="A4W-GH-fc8" firstAttribute="centerX" secondItem="7hi-Ww-w6D" secondAttribute="centerX" id="unE-oa-9xj"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="5W8-X6-tA3"/>
                     <connections>
                         <outlet property="addButton" destination="jKp-Gh-rja" id="g3s-9e-5FK"/>
                         <outlet property="newTextField" destination="2Re-v2-PZI" id="2C3-2F-kKQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fH-du-bFR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="rWR-u0-XSJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2804" y="366"/>
+            <point key="canvasLocation" x="3713" y="366"/>
         </scene>
         <!--学校サイト-->
         <scene sceneID="XEw-Mv-MqV">
@@ -569,7 +537,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="Xjn-Yy-Hh7" kind="relationship" relationship="viewControllers" id="gXn-kg-sNh"/>
-                        <segue destination="1OR-rD-MuK" kind="relationship" relationship="viewControllers" id="5LO-88-1YI"/>
+                        <segue destination="Tcq-cR-IW4" kind="relationship" relationship="viewControllers" id="5LO-88-1YI"/>
                         <segue destination="s9h-XS-v2P" kind="relationship" relationship="viewControllers" id="l9F-QZ-RMj"/>
                     </connections>
                 </tabBarController>
@@ -595,6 +563,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sd8-0L-ar7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1715.9420289855075" y="-508.25892857142856"/>
+        </scene>
+        <!--やることToDo-->
+        <scene sceneID="SAp-SY-gqk">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tcq-cR-IW4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="やることToDo" image="study" selectedImage="study" id="fvX-e6-xB5"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vbS-qn-BlM">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="1OR-rD-MuK" kind="relationship" relationship="rootViewController" id="HdZ-q2-R7v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BmV-Om-Dad" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1715.9420289855075" y="365.625"/>
         </scene>
     </scenes>
     <resources>
