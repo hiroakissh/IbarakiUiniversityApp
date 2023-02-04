@@ -26,7 +26,7 @@ class EditDocumentViewController: UIViewController {
         documentDataPicker.date = deadLine
     }
 
-    @IBAction private func uodateDocument(_ sender: Any) {
+    @IBAction private func updateDocument(_ sender: Any) {
     }
     @IBAction private func backButton(_ sender: Any) {
         dismiss(animated: true)
