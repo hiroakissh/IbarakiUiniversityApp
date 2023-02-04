@@ -27,8 +27,7 @@ class EditDocumentViewController: UIViewController {
     }
 
     @IBAction private func updateDocument(_ sender: Any) {
-    }
-    @IBAction private func backButton(_ sender: Any) {
-        dismiss(animated: true)
+        print("データの更新")
+        self.navigationController?.popViewController(animated: true)
     }
 }

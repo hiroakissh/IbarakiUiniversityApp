@@ -11,16 +11,17 @@ class DocumentDetailViewController: UIViewController {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
 
-    var detailDocument: (String, String, Date)? = nil
+    var detailDocument: DocumentTransitionModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(detailDocument)
         guard let detailDocument = detailDocument else { return }
-        titleLabel.text = detailDocument.1
+        titleLabel.text = detailDocument.title
 
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
-        dateLabel.text = formatter.string(from: detailDocument.2)
+        dateLabel.text = formatter.string(from: detailDocument.deadLine)
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -30,9 +31,6 @@ class DocumentDetailViewController: UIViewController {
         }
     }
     @IBAction private func editButton(_ sender: Any) {
-        performSegue(withIdentifier: "EditDocument", sender: detailDocument?.0)
-    }
-    @IBAction private func backButton(_ sender: Any) {
-        dismiss(animated: true)
+        performSegue(withIdentifier: "EditDocument", sender: detailDocument?.uuid)
     }
 }

@@ -272,50 +272,33 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sCt-Bt-LMR">
-                                <rect key="frame" x="0.0" y="48" width="414" height="44"/>
-                                <color key="backgroundColor" name="mainFontBack"/>
-                                <color key="barTintColor" name="mainFontBack"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" name="mainFont"/>
-                                </textAttributes>
-                                <textAttributes key="largeTitleTextAttributes">
-                                    <color key="textColor" name="mainFont"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="提出物一覧" id="fSr-md-8DU">
-                                        <barButtonItem key="rightBarButtonItem" title="追加" id="S8k-o1-NN3">
-                                            <connections>
-                                                <segue destination="hm1-4m-WdA" kind="presentation" modalPresentationStyle="fullScreen" id="hnX-OZ-PHa"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l7d-Xr-V2U"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="MKS-KA-s9L" firstAttribute="trailing" secondItem="l7d-Xr-V2U" secondAttribute="trailing" id="AOG-LV-02M"/>
+                            <constraint firstItem="MKS-KA-s9L" firstAttribute="top" secondItem="l7d-Xr-V2U" secondAttribute="top" id="Bw4-83-3xV"/>
                             <constraint firstItem="MKS-KA-s9L" firstAttribute="leading" secondItem="l7d-Xr-V2U" secondAttribute="leading" id="U5w-M0-jEo"/>
-                            <constraint firstItem="sCt-Bt-LMR" firstAttribute="trailing" secondItem="l7d-Xr-V2U" secondAttribute="trailing" id="UNr-F5-5i0"/>
-                            <constraint firstItem="MKS-KA-s9L" firstAttribute="top" secondItem="sCt-Bt-LMR" secondAttribute="bottom" id="Zx5-LC-Vo6"/>
-                            <constraint firstItem="sCt-Bt-LMR" firstAttribute="top" secondItem="l7d-Xr-V2U" secondAttribute="top" id="iIb-p0-LYv"/>
-                            <constraint firstItem="sCt-Bt-LMR" firstAttribute="leading" secondItem="l7d-Xr-V2U" secondAttribute="leading" id="oz9-Gf-Shf"/>
                             <constraint firstItem="MKS-KA-s9L" firstAttribute="bottom" secondItem="l7d-Xr-V2U" secondAttribute="bottom" id="pbL-gU-nCG"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="提出物一覧" image="document" selectedImage="document" id="cMB-BS-hUb"/>
+                    <navigationItem key="navigationItem" title="提出物一覧" id="8vd-pj-ugR">
+                        <barButtonItem key="rightBarButtonItem" title="追加" id="S8k-o1-NN3">
+                            <connections>
+                                <segue destination="hm1-4m-WdA" kind="presentation" modalPresentationStyle="fullScreen" id="hnX-OZ-PHa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="MKS-KA-s9L" id="GSI-ki-d1u"/>
-                        <segue destination="Wsu-3q-J7h" kind="presentation" identifier="DocumentDetail" modalPresentationStyle="fullScreen" id="dfE-Ym-l6I"/>
+                        <segue destination="Wsu-3q-J7h" kind="show" identifier="DocumentDetail" id="QHW-20-JAU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h7F-11-c4T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1716" y="-508"/>
+            <point key="canvasLocation" x="2626.0869565217395" y="-508.25892857142856"/>
         </scene>
-        <!--Document Detail View Controller-->
+        <!--提出物詳細-->
         <scene sceneID="lWd-C0-lcA">
             <objects>
                 <viewController id="Wsu-3q-J7h" customClass="DocumentDetailViewController" customModule="IbarakiUiniversityApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -323,24 +306,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ji3-9Q-Iki">
-                                <rect key="frame" x="25" y="48" width="59" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="戻る"/>
-                                <connections>
-                                    <action selector="backButton:" destination="Wsu-3q-J7h" eventType="touchUpInside" id="YqW-Nv-BpB"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ua6-Ca-2GQ">
-                                <rect key="frame" x="330" y="48" width="59" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="編集"/>
-                                <connections>
-                                    <action selector="editButton:" destination="Wsu-3q-J7h" eventType="touchUpInside" id="Mm7-O5-Rs5"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提出締め切り" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsz-hb-Syu">
-                                <rect key="frame" x="155" y="217" width="104" height="21"/>
+                                <rect key="frame" x="155" y="261" width="104" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="104" id="DuA-QJ-xZH"/>
                                     <constraint firstAttribute="height" constant="21" id="TPf-zF-iot"/>
@@ -350,7 +317,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ーーーーーーー" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9aO-oy-hx3">
-                                <rect key="frame" x="107" y="288" width="200" height="29"/>
+                                <rect key="frame" x="107" y="332" width="200" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Kpv-Gm-T7y"/>
                                     <constraint firstAttribute="height" constant="29" id="SKf-8V-4NX"/>
@@ -360,7 +327,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pWq-nW-iEY">
-                                <rect key="frame" x="82" y="123" width="250" height="29"/>
+                                <rect key="frame" x="82" y="167" width="250" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Sqw-98-Bkk"/>
                                 </constraints>
@@ -373,27 +340,35 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="lsz-hb-Syu" firstAttribute="top" secondItem="pWq-nW-iEY" secondAttribute="bottom" constant="65" id="2cn-Lh-vfZ"/>
-                            <constraint firstItem="ji3-9Q-Iki" firstAttribute="leading" secondItem="kNa-GW-otC" secondAttribute="leading" constant="25" id="5Ti-jJ-guD"/>
                             <constraint firstItem="9aO-oy-hx3" firstAttribute="centerX" secondItem="uSb-Oj-5It" secondAttribute="centerX" id="KyA-MX-XFp"/>
-                            <constraint firstItem="ji3-9Q-Iki" firstAttribute="top" secondItem="kNa-GW-otC" secondAttribute="top" id="MIg-m7-pw5"/>
-                            <constraint firstItem="pWq-nW-iEY" firstAttribute="top" secondItem="ji3-9Q-Iki" secondAttribute="bottom" constant="40" id="O0H-ei-4XJ"/>
                             <constraint firstItem="pWq-nW-iEY" firstAttribute="centerX" secondItem="uSb-Oj-5It" secondAttribute="centerX" id="O4b-M5-dF9"/>
-                            <constraint firstItem="kNa-GW-otC" firstAttribute="trailing" secondItem="ua6-Ca-2GQ" secondAttribute="trailing" constant="25" id="Z46-xf-cs9"/>
+                            <constraint firstItem="pWq-nW-iEY" firstAttribute="top" secondItem="kNa-GW-otC" secondAttribute="top" constant="75" id="XGv-2E-Bjj"/>
                             <constraint firstItem="9aO-oy-hx3" firstAttribute="top" secondItem="lsz-hb-Syu" secondAttribute="bottom" constant="50" id="aj3-mq-mbr"/>
                             <constraint firstItem="lsz-hb-Syu" firstAttribute="centerX" secondItem="uSb-Oj-5It" secondAttribute="centerX" id="bV4-9S-jnQ"/>
-                            <constraint firstItem="ua6-Ca-2GQ" firstAttribute="top" secondItem="kNa-GW-otC" secondAttribute="top" id="is7-4P-NjY"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bTB-Gl-8Tx"/>
+                    <navigationItem key="navigationItem" title="提出物詳細" id="yzc-ur-csL">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ick-EW-3BJ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="ua6-Ca-2GQ">
+                                <rect key="frame" x="335" y="4.5" width="59" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="編集"/>
+                                <connections>
+                                    <action selector="editButton:" destination="Wsu-3q-J7h" eventType="touchUpInside" id="Mm7-O5-Rs5"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="9aO-oy-hx3" id="RIf-Yd-Rcd"/>
                         <outlet property="titleLabel" destination="pWq-nW-iEY" id="t8G-f0-6mL"/>
-                        <segue destination="cYp-MP-Gd0" kind="presentation" identifier="EditDocument" modalPresentationStyle="fullScreen" id="HEu-Is-A1c"/>
+                        <segue destination="cYp-MP-Gd0" kind="show" identifier="EditDocument" id="HEu-Is-A1c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Khs-9G-kiz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2802.898550724638" y="-1210.0446428571429"/>
+            <point key="canvasLocation" x="3713.04347826087" y="-1210.0446428571429"/>
         </scene>
         <!--Edit Document View Controller-->
         <scene sceneID="H35-gZ-Ay6">
@@ -403,17 +378,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEr-pn-Ynk">
-                                <rect key="frame" x="28" y="48" width="59" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="戻る"/>
-                                <connections>
-                                    <action selector="backButton:" destination="cYp-MP-Gd0" eventType="touchUpInside" id="0SE-92-azZ"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提出物名" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcX-ya-oh3">
-                                <rect key="frame" x="157" y="126" width="100" height="30"/>
+                                <rect key="frame" x="157" y="170" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="5Hs-by-gAO"/>
                                     <constraint firstAttribute="height" constant="30" id="gB9-1B-A5W"/>
@@ -423,7 +389,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提出期限" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7mH-xi-vR6">
-                                <rect key="frame" x="157" y="260" width="100" height="30"/>
+                                <rect key="frame" x="157" y="304" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="3K3-Tm-ZBS"/>
                                     <constraint firstAttribute="height" constant="30" id="WZb-BC-CqM"/>
@@ -433,11 +399,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="gc6-Ta-6He">
-                                <rect key="frame" x="47" y="295" width="320" height="307"/>
+                                <rect key="frame" x="47" y="339" width="320" height="307"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="09w-Js-iCv">
-                                <rect key="frame" x="82" y="164" width="250" height="40"/>
+                                <rect key="frame" x="82" y="208" width="250" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="RPg-dN-trE"/>
@@ -448,7 +414,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zGD-mJ-YGh">
-                                <rect key="frame" x="117" y="775" width="180" height="42"/>
+                                <rect key="frame" x="117" y="726" width="180" height="42"/>
                                 <color key="backgroundColor" name="mainGreen"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="180" id="c5u-hI-2Gs"/>
@@ -459,8 +425,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="addDocument:" destination="hm1-4m-WdA" eventType="touchUpInside" id="6qR-Nu-4jt"/>
-                                    <action selector="uodateDocument:" destination="cYp-MP-Gd0" eventType="touchUpInside" id="WcE-Kp-glk"/>
+                                    <action selector="updateDocument:" destination="cYp-MP-Gd0" eventType="touchUpInside" id="WDv-N6-aqo"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -479,6 +444,7 @@
                             <constraint firstItem="Ja5-mh-ACf" firstAttribute="bottom" secondItem="zGD-mJ-YGh" secondAttribute="bottom" constant="45" id="vZ6-bb-R7U"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="FVF-2F-nBE"/>
                     <connections>
                         <outlet property="documentDataPicker" destination="gc6-Ta-6He" id="XZb-QG-Iku"/>
                         <outlet property="documentNameTextField" destination="09w-Js-iCv" id="2ek-mS-TQm"/>
@@ -486,7 +452,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxD-dm-uSl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3795.652173913044" y="-1210.0446428571429"/>
+            <point key="canvasLocation" x="4705.7971014492759" y="-1210.0446428571429"/>
         </scene>
         <!--Add Document View Controller-->
         <scene sceneID="3Ul-jf-e3f">
@@ -588,7 +554,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HLR-km-QmT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Lu6-Gw-Qyv" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2803" y="-508"/>
+            <point key="canvasLocation" x="3713.04347826087" y="-508.25892857142856"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="Gmm-K2-MZb">
@@ -601,7 +567,7 @@
                         <color key="barTintColor" name="mainFontBack"/>
                     </tabBar>
                     <connections>
-                        <segue destination="JdK-eT-5jv" kind="relationship" relationship="viewControllers" id="gXn-kg-sNh"/>
+                        <segue destination="Xjn-Yy-Hh7" kind="relationship" relationship="viewControllers" id="gXn-kg-sNh"/>
                         <segue destination="1OR-rD-MuK" kind="relationship" relationship="viewControllers" id="5LO-88-1YI"/>
                         <segue destination="s9h-XS-v2P" kind="relationship" relationship="viewControllers" id="l9F-QZ-RMj"/>
                     </connections>
@@ -609,6 +575,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7pB-sg-qY5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="12" y="158"/>
+        </scene>
+        <!--提出物一覧-->
+        <scene sceneID="oU8-P8-cdg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xjn-Yy-Hh7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="提出物一覧" image="document" selectedImage="document" id="cMB-BS-hUb"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rme-5v-VbU">
+                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="JdK-eT-5jv" kind="relationship" relationship="rootViewController" id="KtN-B9-5e6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sd8-0L-ar7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1715.9420289855075" y="-508.25892857142856"/>
         </scene>
     </scenes>
     <resources>
