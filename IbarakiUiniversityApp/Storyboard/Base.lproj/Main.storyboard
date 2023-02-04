@@ -448,6 +448,7 @@
                     <connections>
                         <outlet property="documentDataPicker" destination="gc6-Ta-6He" id="XZb-QG-Iku"/>
                         <outlet property="documentNameTextField" destination="09w-Js-iCv" id="2ek-mS-TQm"/>
+                        <outlet property="updateButton" destination="zGD-mJ-YGh" id="VTP-QA-WED"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jxD-dm-uSl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

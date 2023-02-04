@@ -10,6 +10,7 @@ import UIKit
 class EditDocumentViewController: UIViewController {
     @IBOutlet private weak var documentNameTextField: UITextField!
     @IBOutlet private weak var documentDataPicker: UIDatePicker!
+    @IBOutlet private weak var updateButton: UIButton!
 
     var editDocumentUUID: String?
     var documentRepository = DocumentRepository()
@@ -18,6 +19,7 @@ class EditDocumentViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
         guard let editDocumentUUID = editDocumentUUID else { return }
         documentSwiftModel = documentRepository.loadDocumentOfUUID(uuid: editDocumentUUID)
         documentNameTextField.text = documentSwiftModel?.documentTitle
@@ -26,8 +28,26 @@ class EditDocumentViewController: UIViewController {
         documentDataPicker.date = deadLine
     }
 
+    private func setupUI() {
+        updateButton.layer.cornerRadius = 10
+    }
+
     @IBAction private func updateDocument(_ sender: Any) {
         print("データの更新")
-        self.navigationController?.popViewController(animated: true)
+
+        documentSwiftModel?.documentTitle = documentNameTextField.text
+        documentSwiftModel?.deadLine = documentDataPicker.date
+        guard let editDocumentUUID = editDocumentUUID,
+              let documentSwiftModel = documentSwiftModel
+        else { return }
+        switch documentRepository.updateDocument(
+            uuid: editDocumentUUID,
+            updateDocument: documentSwiftModel
+        ) {
+        case .success(_):
+            self.navigationController?.popToRootViewController(animated: true)
+        case .failure(let error):
+            print(error)
+        }
     }
 }
