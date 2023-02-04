@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -22,8 +23,8 @@
                         <rect key="frame" x="10" y="15" width="298" height="120"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWo-sB-cTZ">
-                        <rect key="frame" x="20" y="40" width="278" height="31.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWo-sB-cTZ">
+                        <rect key="frame" x="20" y="30" width="278" height="31.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
@@ -41,7 +42,7 @@
                     <constraint firstItem="L4u-9Y-FXa" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Atg-Xf-VJv"/>
                     <constraint firstAttribute="bottomMargin" secondItem="6E1-fx-MKN" secondAttribute="bottom" constant="20" id="Ax9-CK-Jth"/>
                     <constraint firstAttribute="trailing" secondItem="L4u-9Y-FXa" secondAttribute="trailing" constant="10" id="QtB-5T-TjN"/>
-                    <constraint firstItem="VWo-sB-cTZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="40" id="VP0-Cu-gXy"/>
+                    <constraint firstItem="VWo-sB-cTZ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="VP0-Cu-gXy"/>
                     <constraint firstItem="L4u-9Y-FXa" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="f5t-sd-As9"/>
                     <constraint firstAttribute="trailing" secondItem="VWo-sB-cTZ" secondAttribute="trailing" constant="20" id="fDg-TQ-xce"/>
                     <constraint firstItem="6E1-fx-MKN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="20" id="g0z-hN-pZa"/>

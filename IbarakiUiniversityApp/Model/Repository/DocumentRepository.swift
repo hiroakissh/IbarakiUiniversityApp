@@ -8,18 +8,40 @@
 import Foundation
 import RealmSwift
 
-final class DocumentRepository {
-    // swiftlint:disable force_try
-    private let realm = try! Realm()
+enum EditDocumentsDBError: Error {
+    case updateFailure
+    case removeFailure
+}
 
+protocol DocumentRepositoryProtocol {
+    func loadDocument() -> [SwiftDocumentModel]
+    func loadDocumentOfUUID(uuid: String) -> SwiftDocumentModel
+    func appendDocument(documentTitle: String, deadLine: Date)
+    func removeDocument(at index: Int) -> Result<String, EditDocumentsDBError>
+    func updateDocument(uuid: String, updateDocument: SwiftDocumentModel) -> Result<String, EditDocumentsDBError>
+}
+
+final class DocumentRepository: DocumentRepositoryProtocol {
     func loadDocument() -> [SwiftDocumentModel] {
+        // swiftlint:disable:next force_try
+        let realm = try! Realm()
         let realmDocuments = realm.objects(RealmDocumentModel.self)
         let realmDocumentsArray = Array(realmDocuments)
         let documents = realmDocumentsArray.map {SwiftDocumentModel(managedObject: $0)}
         return documents
     }
 
+    func loadDocumentOfUUID(uuid: String) -> SwiftDocumentModel {
+        // swiftlint:disable:next force_try
+        let realm = try! Realm()
+        let realmDocument = realm.objects(RealmDocumentModel.self).filter("documentUUID=='\(uuid)'")
+        let document = SwiftDocumentModel(managedObject: realmDocument.first!)
+        return document
+    }
+
     func appendDocument(documentTitle: String, deadLine: Date) {
+        // swiftlint:disable:next force_try
+        let realm = try! Realm()
         let realmDocument = RealmDocumentModel()
         let uuid = UUID()
         realmDocument.documentUUID = uuid.uuidString
@@ -36,7 +58,9 @@ final class DocumentRepository {
         print(realmDocument)
     }
 
-    func removeDocument(at index: Int) {
+    func removeDocument(at index: Int) -> Result<String, EditDocumentsDBError>{
+        // swiftlint:disable:next force_try
+        let realm = try! Realm()
         let documentItems: Results<RealmDocumentModel>!
         documentItems = realm.objects(RealmDocumentModel.self)
         do {
@@ -45,10 +69,24 @@ final class DocumentRepository {
             }
         } catch {
             print("Realm Remove Error")
+            return .failure(.removeFailure)
         }
+        return .success("Success")
     }
 
-    func updateDocument() {
+    func updateDocument(uuid: String, updateDocument: SwiftDocumentModel) -> Result<String, EditDocumentsDBError> {
+        // swiftlint:disable:next force_try
+        let realm = try! Realm()
+        let realmDocument = realm.objects(RealmDocumentModel.self).filter("documentUUID=='\(uuid)'")
+        do {
+            try realm.write {
+                realmDocument.first?.documentTitle = updateDocument.documentTitle
+                realmDocument.first?.deadLine = updateDocument.deadLine
+            }
+        } catch {
+            return .failure(.updateFailure)
+        }
+        return .success("Success")
     }
 }
 

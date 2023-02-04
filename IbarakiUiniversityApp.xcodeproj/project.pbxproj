@@ -14,6 +14,7 @@
 		532D06D1270ED17C0010ABC4 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532D06D0270ED17C0010ABC4 /* AddToDoViewController.swift */; };
 		532EA2E528DAB81000DD1A28 /* IbarakiUnimversityAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532EA2E428DAB81000DD1A28 /* IbarakiUnimversityAppTests.swift */; };
 		533BFA12286600970058455D /* ShowWebSiteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533BFA11286600970058455D /* ShowWebSiteViewController.swift */; };
+		535B26AC298E0C9C000DCBC5 /* DocumentTransitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535B26AB298E0C9C000DCBC5 /* DocumentTransitionModel.swift */; };
 		53633A7E270EF392006C6802 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53633A7D270EF392006C6802 /* TabBarViewController.swift */; };
 		5384D9422833B761007F3408 /* IBADAIAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5384D9412833B761007F3408 /* IBADAIAppUITests.swift */; };
 		5384D9442833B761007F3408 /* IBADAIAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5384D9432833B761007F3408 /* IBADAIAppUITestsLaunchTests.swift */; };
@@ -33,6 +34,9 @@
 		53B5FD192814BE2C00503725 /* RealmToDoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B5FD182814BE2C00503725 /* RealmToDoModel.swift */; };
 		53C6629327F04B5200E82593 /* DocumentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53C6629127F04B5200E82593 /* DocumentTableViewCell.swift */; };
 		53C6629427F04B5200E82593 /* DocumentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 53C6629227F04B5200E82593 /* DocumentTableViewCell.xib */; };
+		53D609C2296179D0007FB2A2 /* DocumentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D609C1296179D0007FB2A2 /* DocumentDetailViewController.swift */; };
+		53D609C529617E5A007FB2A2 /* DateCalculationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D609C429617E5A007FB2A2 /* DateCalculationModel.swift */; };
+		53D609C7296184F8007FB2A2 /* EditDocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D609C6296184F8007FB2A2 /* EditDocumentViewController.swift */; };
 		53F2F29A295FDC76004BD749 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 53F2F299295FDC76004BD749 /* RealmSwift */; };
 		53F2F29C295FDE22004BD749 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 53F2F29B295FDE22004BD749 /* RealmSwift */; };
 		53F2F29E295FDE28004BD749 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 53F2F29D295FDE28004BD749 /* RealmSwift */; };
@@ -64,6 +68,7 @@
 		532EA2E228DAB81000DD1A28 /* IbarakiUnimversityAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IbarakiUnimversityAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		532EA2E428DAB81000DD1A28 /* IbarakiUnimversityAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IbarakiUnimversityAppTests.swift; sourceTree = "<group>"; };
 		533BFA11286600970058455D /* ShowWebSiteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ShowWebSiteViewController.swift; path = IbarakiUiniversityApp/Controller/ShowWebSiteViewController.swift; sourceTree = SOURCE_ROOT; };
+		535B26AB298E0C9C000DCBC5 /* DocumentTransitionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTransitionModel.swift; sourceTree = "<group>"; };
 		535F67CA286ABE0500433752 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		535F67CB286ABE0500433752 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		53633A7D270EF392006C6802 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +93,9 @@
 		53B5FD182814BE2C00503725 /* RealmToDoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmToDoModel.swift; sourceTree = "<group>"; };
 		53C6629127F04B5200E82593 /* DocumentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTableViewCell.swift; sourceTree = "<group>"; };
 		53C6629227F04B5200E82593 /* DocumentTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DocumentTableViewCell.xib; sourceTree = "<group>"; };
+		53D609C1296179D0007FB2A2 /* DocumentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailViewController.swift; sourceTree = "<group>"; };
+		53D609C429617E5A007FB2A2 /* DateCalculationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCalculationModel.swift; sourceTree = "<group>"; };
+		53D609C6296184F8007FB2A2 /* EditDocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDocumentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,8 @@
 			children = (
 				53C6629127F04B5200E82593 /* DocumentTableViewCell.swift */,
 				53C6629227F04B5200E82593 /* DocumentTableViewCell.xib */,
+				53D609C1296179D0007FB2A2 /* DocumentDetailViewController.swift */,
+				53D609C6296184F8007FB2A2 /* EditDocumentViewController.swift */,
 			);
 			path = DocumentTable;
 			sourceTree = "<group>";
@@ -178,6 +188,14 @@
 				532EA2E428DAB81000DD1A28 /* IbarakiUnimversityAppTests.swift */,
 			);
 			path = IbarakiUnimversityAppTests;
+			sourceTree = "<group>";
+		};
+		535B26AA298E0C65000DCBC5 /* TransitionModel */ = {
+			isa = PBXGroup;
+			children = (
+				535B26AB298E0C9C000DCBC5 /* DocumentTransitionModel.swift */,
+			);
+			path = TransitionModel;
 			sourceTree = "<group>";
 		};
 		5384D9402833B761007F3408 /* IBADAIAppUITests */ = {
@@ -237,6 +255,8 @@
 		53A58E22270707F8008EC8D7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				535B26AA298E0C65000DCBC5 /* TransitionModel */,
+				53D609C329617E08007FB2A2 /* DateCalculation */,
 				53B5FD112814BD7900503725 /* SwiftModel */,
 				53B5FD0E2814BD7200503725 /* Repository */,
 				53B5FD0B2814BD6000503725 /* RealmModel */,
@@ -280,6 +300,14 @@
 				53B5FD142814BDE900503725 /* SwiftDocumentModel.swift */,
 			);
 			path = SwiftModel;
+			sourceTree = "<group>";
+		};
+		53D609C329617E08007FB2A2 /* DateCalculation */ = {
+			isa = PBXGroup;
+			children = (
+				53D609C429617E5A007FB2A2 /* DateCalculationModel.swift */,
+			);
+			path = DateCalculation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,7 +410,7 @@
 			);
 			mainGroup = 53A58E012706F8BA008EC8D7;
 			packageReferences = (
-				53F2F294295FDBF9004BD749 /* XCRemoteSwiftPackageReference "realm-swift.git" */,
+				53F2F294295FDBF9004BD749 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 53A58E0B2706F8BA008EC8D7 /* Products */;
 			projectDirPath = "";
@@ -473,12 +501,16 @@
 				53B5FD132814BD7900503725 /* SwiftToDoModel.swift in Sources */,
 				532D06D1270ED17C0010ABC4 /* AddToDoViewController.swift in Sources */,
 				53B5FD172814BDFC00503725 /* DocumentRepository.swift in Sources */,
+				535B26AC298E0C9C000DCBC5 /* DocumentTransitionModel.swift in Sources */,
+				53D609C7296184F8007FB2A2 /* EditDocumentViewController.swift in Sources */,
 				53B5FD102814BD7200503725 /* ToDoRepository.swift in Sources */,
 				53A58E0E2706F8BA008EC8D7 /* AppDelegate.swift in Sources */,
 				53A58E102706F8BA008EC8D7 /* SceneDelegate.swift in Sources */,
 				53A58E252707091E008EC8D7 /* DocumentsListViewController.swift in Sources */,
 				5309CBC527F467060072ED57 /* LabToDoTableViewCell.swift in Sources */,
 				53C6629327F04B5200E82593 /* DocumentTableViewCell.swift in Sources */,
+				53D609C2296179D0007FB2A2 /* DocumentDetailViewController.swift in Sources */,
+				53D609C529617E5A007FB2A2 /* DateCalculationModel.swift in Sources */,
 				533BFA12286600970058455D /* ShowWebSiteViewController.swift in Sources */,
 				53B5FD0D2814BD6000503725 /* RealmDocumentModel.swift in Sources */,
 				53633A7E270EF392006C6802 /* TabBarViewController.swift in Sources */,
@@ -732,9 +764,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -762,9 +793,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -820,7 +850,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		53F2F294295FDBF9004BD749 /* XCRemoteSwiftPackageReference "realm-swift.git" */ = {
+		53F2F294295FDBF9004BD749 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift.git";
 			requirement = {
@@ -833,17 +863,17 @@
 /* Begin XCSwiftPackageProductDependency section */
 		53F2F299295FDC76004BD749 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 53F2F294295FDBF9004BD749 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			package = 53F2F294295FDBF9004BD749 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 		53F2F29B295FDE22004BD749 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 53F2F294295FDBF9004BD749 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			package = 53F2F294295FDBF9004BD749 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 		53F2F29D295FDE28004BD749 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 53F2F294295FDBF9004BD749 /* XCRemoteSwiftPackageReference "realm-swift.git" */;
+			package = 53F2F294295FDBF9004BD749 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

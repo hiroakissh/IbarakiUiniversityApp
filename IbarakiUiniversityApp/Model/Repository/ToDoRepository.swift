@@ -9,11 +9,10 @@ import Foundation
 import RealmSwift
 
 final class ToDoRepository {
-    // swiftlint:disable:next force_try
-    private let realm = try! Realm()
-
     // 読み込み 共通型で返す
     func loadLabToDo() -> [SwiftLabToDoModel] {
+        // swiftlint:disable:next force_try
+        let realm = try! Realm()
         let realmToDos = realm.objects(RealmToDoModel.self)
         let realmToDosArray = Array(realmToDos)
         let labToDos = realmToDosArray.map {SwiftLabToDoModel(managedObject: $0)}
@@ -22,6 +21,8 @@ final class ToDoRepository {
 
     // 共通型で読み込んでRealmに保存
     func appendLabToDo(todo: String) {
+        // swiftlint:disable:next force_try
+        let realm = try! Realm()
         let realmToDo = RealmToDoModel()
         let uuid = UUID()
         realmToDo.todoUUID = uuid.uuidString
@@ -40,6 +41,8 @@ final class ToDoRepository {
     // 共通型で受け取って、アイテムの削除
     // アイテムの削除で共通型で返す
     func removeLabToDo(at index: Int) {
+        // swiftlint:disable:next force_try
+        let realm = try! Realm()
         let toDoItems: Results<RealmToDoModel>!
         toDoItems = realm.objects(RealmToDoModel.self)
         do {

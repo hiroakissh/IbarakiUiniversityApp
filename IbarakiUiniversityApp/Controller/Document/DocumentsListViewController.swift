@@ -8,19 +8,10 @@
 import UIKit
 
 class DocumentsListViewController: UIViewController {
-    enum DocumentStatus {
-        case normal
-        case befor1Week
-        case befor3Day
-        case befor1Day
-        case deadline
-        case overdue
-        case none
-    }
 
     enum DocumentCellObject {
         case none
-        case document(String, Date)
+        case document(String, String, Date)
     }
 
     @IBOutlet private weak var tableView: UITableView!
@@ -30,6 +21,8 @@ class DocumentsListViewController: UIViewController {
     private var documentRepository = DocumentRepository()
 
     private var documentCellObject: [DocumentCellObject] = []
+
+    private let dateCalculationModel = DateCalculationModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +40,7 @@ class DocumentsListViewController: UIViewController {
             documentCellObject = [.none]
         } else {
             documentCellObject = documentItems.map {
-                .document($0.documentTitle ?? "提出物が正しく表示できません", $0.deadLine ?? Date.now )
+                .document($0.uuidString, $0.documentTitle ?? "提出物が正しく表示できません", $0.deadLine ?? Date.now )
             }
         }
     }
@@ -101,7 +94,7 @@ class DocumentsListViewController: UIViewController {
                 let content = UNMutableNotificationContent()
                 content.sound = .default
                 content.title = documentItem.documentTitle ?? ""
-                let documentStatus = observeDocumentStatus(date: documentItem.deadLine ?? Date())
+                let documentStatus = dateCalculationModel.observeDocumentStatus(date: documentItem.deadLine ?? Date())
                 if documentStatus != .none {
                     notificationSubtitle(status: documentStatus, content: content)
                     // 午前の通知
@@ -178,14 +171,14 @@ extension DocumentsListViewController: UITableViewDataSource {
             noneCell.textLabel?.textColor = .white
             noneCell.textLabel?.backgroundColor = .darkGray
             return noneCell
-        case .document(let name, let date):
+        case .document(_, let name, let date):
             let documentCell = tableView.dequeueReusableCell(
                 withIdentifier: "documentCell",
                 for: indexPath
                 // swiftlint:disable:next force_cast
             ) as! DocumentTableViewCell
             documentCell.documentNameLabel?.text = name
-            documentCell.deadlineLabel.text = diffDate(date: date)
+            documentCell.deadlineLabel.text = dateCalculationModel.diffDate(date: date)
             return documentCell
         }
     }
@@ -200,11 +193,17 @@ extension DocumentsListViewController: UITableViewDataSource {
         let documentItems = documentRepository.loadDocument()
         if editingStyle == .delete {
             if !documentItems.isEmpty {
-                documentRepository.removeDocument(at: indexPath.row)
-                observeDocumentCellObject()
-                notification()
-                tableView.reloadData()
-                updateBadge()
+                let removeResult = documentRepository.removeDocument(at: indexPath.row)
+                switch removeResult {
+                case .success(_):
+                    observeDocumentCellObject()
+                    notification()
+                    tableView.reloadData()
+                    updateBadge()
+                case .failure(let error):
+                    print(error)
+                    return
+                }
             } else {
                 return
             }
@@ -212,62 +211,31 @@ extension DocumentsListViewController: UITableViewDataSource {
         if editingStyle == .none {
         }
     }
-
-    func diffDay(date: Date) -> Int {
-        // ここは後でよく考える
-        let now = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyyMMdd"
-        let nowDayString = formatter.string(from: now)
-        let dateDayString = formatter.string(from: date)
-        let nowDay = formatter.date(from: nowDayString)
-        let dateDay = formatter.date(from: dateDayString)
-        let calendar = Calendar(identifier: .gregorian)
-
-        let diff = calendar.dateComponents([.day], from: nowDay ?? now, to: dateDay ?? now)
-        let diffDay = Int(diff.day!)
-        return diffDay
-    }
-
-    private func diffDate(date: Date) -> String {
-        let diffDay = diffDay(date: date)
-        if diffDay > 0 {
-            return "締め切りまで \(diffDay) 日です"
-        } else if diffDay == 0 {
-            return "今日が提出期限です"
-        } else {
-            return "提出期限が過ぎています"
-        }
-    }
-
-    private func observeDocumentStatus(date: Date) -> DocumentStatus {
-        let diffDay = diffDay(date: date)
-        if diffDay == 1 {
-            if diffDay > 1 {
-                if diffDay >= 3 {
-                    if diffDay > 7 {
-                        if diffDay > 14 {
-                            return .none
-                        }
-                        return .normal
-                    }
-                    return .befor1Week
-                }
-                return .befor3Day
-            }
-            return .befor1Day
-        } else if diffDay == 0 {
-            return .deadline
-        } else if diffDay < 0 {
-            return .overdue
-        } else {
-            return .none
-        }
-    }
 }
 
 extension DocumentsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 150
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "DocumentDetail" {
+            let documentDetailVC = segue.destination as? DocumentDetailViewController
+            documentDetailVC?.detailDocument = sender as? DocumentTransitionModel
+        }
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch documentCellObject[indexPath.row] {
+        case .none:
+            return
+        case .document(let uuid, let title, let deadLine):
+            var documentTransitionModel = DocumentTransitionModel(
+                uuid: uuid,
+                title: title,
+                deadLine: deadLine
+            )
+            performSegue(withIdentifier: "DocumentDetail", sender: documentTransitionModel)
+        }
     }
 }
